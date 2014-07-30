@@ -143,6 +143,15 @@ let g:syntastic_ruby_checkers = ['rubocop']
   nnoremap <LEFT>    :<C-u>Unite -no-split -buffer-name=mru     file_mru<cr>
 " }}}
 
+" Strip trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfunction
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
 "  ***********
 "  My keybinds
 "  ***********
