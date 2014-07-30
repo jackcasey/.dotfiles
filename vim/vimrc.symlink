@@ -55,6 +55,7 @@ set number          " line numbers inline
 set nowrap          " don't soft wrap long lines
 set timeoutlen=500  " ms wait before giving up on sequenced shortcuts
 set backupdir=/tmp  " Leave .tmp files tidily away in /tmp
+set directory=/tmp
 
 " Better tabs
 set tabstop=2                  " Show tabs as 2 characters wide
@@ -88,7 +89,6 @@ set ignorecase      " ignore case when searching etc
 set smartcase       " don't ignore case when search contains uppercase characters
 set hlsearch        " highlight last search results
 set incsearch       " incremental search
-nnoremap <space> :noh<esc>   " space to clear search results
 set showmatch       " highlight matching parens
 set mat=5           " Highlight matching parens for .5s
 
@@ -151,6 +151,9 @@ let g:syntastic_ruby_checkers = ['rubocop']
 map <leader>ev :e ~/.vimrc<cr>
 
 
+" space to clear search results
+nnoremap <space> :noh<esc>
+
 " Smash escape
 " inoremap jk <esc>
 " inoremap kj <esc>
@@ -170,8 +173,10 @@ nnoremap <silent> <Leader>+ :resize +5<CR>
 nnoremap <silent> <Leader>_ :resize -5<CR>
 
 " Buffer management
-nmap <leader>w :w!<cr>                      " write current buffer
-nmap <leader>bb :b#<cr>                     " switch to last buffer
+" write current buffer
+nnoremap <leader>w :w<cr>
+" switch to last buffer
+nnoremap <leader>bb :b#<cr>
 " Unite
 let g:unite_source_history_yank_enable = 1
 nnoremap <c-p>    :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
@@ -183,11 +188,16 @@ nnoremap <c-P>y    :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
 nnoremap <c-P>b    :<C-u>Unite -no-split -buffer-name=buffer  -start-insert buffer<cr>
 nnoremap <RIGHT>   :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 nnoremap <LEFT>    :<C-u>Unite -no-split -buffer-name=mru     file_mru<cr>
-nmap <leader>bp :bp<cr>                     " switch to previous buffer
-nmap <leader>bn :bn<cr>                     " switch to next buffer
-nmap <leader>bs :<C-u>w<cr>:bp<cr>:bd#<cr>  " save and close buffer
-nmap <leader>bc :<C-u>bp<cr>:bd#<cr>  " save and close buffer
-nmap <leader>bk :<C-u>bp<cr>:bd!#<cr>       " kill buffer (close w/o saving) 
+" switch to previous buffer
+nmap <leader>bp :bp<cr>
+" switch to next buffer
+nmap <leader>bn :bn<cr>
+" save and close buffer
+nmap <leader>bs :<C-u>w<cr>:bp<cr>:bd#<cr>
+" save and close buffer
+nmap <leader>bc :<C-u>bp<cr>:bd#<cr>
+" kill buffer (close w/o saving) 
+nmap <leader>bk :<C-u>bp<cr>:bd!#<cr>
 nnoremap <up> :bprev<CR>
 nnoremap <down> :bnext<CR>
 
