@@ -1,11 +1,15 @@
 pushd $HOME/.dotfiles
 
 echo 'Linking all symlinks into homedir:'
+echo "  NB: I'll skip over any that are already symlinks"
 for i in `find \`pwd\` -iname '*.symlink'`; do
   file=$(basename $i)
   file=.${file%%.symlink}
-  echo "$i -> $HOME/$file"
-  ln -s -i $i $HOME/$file
+  homefile=$HOME/$file
+  if [ ! -L $homefile ]; then
+    echo "$i -> $homefile"
+    ln -s -i $i $homefile
+  fi
 done
 
 echo 'Calling all auto setups:'
