@@ -1,0 +1,34 @@
+PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.bin:/usr/local/share/npm/bin:/usr/local/Cellar/python/2.7.1/bin:/usr/local/bin:usr/local/Cellar/imagemagick/6.7.1-1/bin/Magick-config:$PATH
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+source $HOME/.bash_aliases
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+export PROMPT_BASE='\[\033[01;34m\]\w\[\033[00m\] $ '
+export PS1=$PROMPTBASE
+
+# TODO.TXT
+export TODOTXT_DEFAULT_ACTION=ls
+export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k 1,1n'
+source $HOME/.bin/todo_completion
+complete -F _todo t
+
+export EDITOR=vim
+export WRK_HOME=/usr/local/bin/wrk
+export NODE_PATH=/usr/local/lib/node_modules
+export RUBYLIB="/usr/local/lib:$RUBYLIB"
+export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export HISTSIZE=50000
+export HISTFILESIZE=500000
+shopt -s histappend
+
+export JRUBY_OPTS=--1.8
+ws() { RUBY_NAME=${1:-jruby} && cd ~/ && cd ~/dev/website; }
+
+source /Users/jack/oh-my-git/prompt.sh

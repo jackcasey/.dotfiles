@@ -1,0 +1,41 @@
+# go to dotfiles directory
+alias gdf='cd $HOME/.dotfiles'
+
+# Fix less ANSI / Colours 
+alias less="less -R"
+
+# Ruby bundler
+alias be='bundle exec'
+
+# Rails
+alias ready_test='RAILS_ENV=test be rake db:drop db:setup --trace'
+alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
+# Git 
+alias gs="git status"
+alias gh="git hist"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gpr="git pull --rebase"
+alias gitrmdel="git status | grep deleted | cut -c14- | xargs git rm"
+alias gitrmdbs="git reset db/schema.rb; git checkout db/schema.rb"
+alias githide='git update-index --assume-unchanged'
+alias gitunhide='git update-index --no-assume-unchanged'
+alias gitwhite='git diff -w --no-color | git apply --cached --ignore-whitespace'
+alias bee='~/beautify_git_hash.py bee | tail -n1 | sh'
+alias beef='~/beautify_git_hash.py beef | tail -n1 | sh'
+# alias clean_branches='git br --merged | grep -v ^* | cut -c3- | xargs git br -d'
+
+# Todo.txt integration Unwanted
+alias t='todo.sh'
+alias p='todo.sh -F -d ~/.todo/config_personal'
+alias tdt='t didt'
+alias tdy='t didy'
+alias tre='cat "/Users/jack/Google Drive/todotxt/agworld/done.txt" | cut -d" " -f2 | sort | uniq -c | tail -n10 | cut -c1-4 | spark'
+
+# PostgreSQL
+alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+
+# Misc
+alias bigwag='jruby -J-Xmx4000m -S wag'
+alias diffmerge='/Applications/DiffMerge.app/Contents/MacOS/DiffMerge'
