@@ -1,0 +1,15 @@
+# Use extended and eager saved and shared history
+export HISTSIZE=50000
+export HISTFILESIZE=500000
+shopt -s histappend
+
+# Use a fancy prompt with a nice oh-my-git git status line
+export PROMPT_BASE='\[\033[01;34m\]\w\[\033[00m\] $ '
+export PS1=$PROMPTBASE
+source $HOME/.dotfiles/bash/oh-my-git/prompt.sh
+
+# VIM of course 
+export EDITOR=vim
+
+# load all my aliases
+source $HOME/.dotfiles/bash/bash_aliases

@@ -26,13 +26,6 @@ alias bee='~/beautify_git_hash.py bee | tail -n1 | sh'
 alias beef='~/beautify_git_hash.py beef | tail -n1 | sh'
 # alias clean_branches='git br --merged | grep -v ^* | cut -c3- | xargs git br -d'
 
-# Todo.txt integration Unwanted
-alias t='todo.sh'
-alias p='todo.sh -F -d ~/.todo/config_personal'
-alias tdt='t didt'
-alias tdy='t didy'
-alias tre='cat "/Users/jack/Google Drive/todotxt/agworld/done.txt" | cut -d" " -f2 | sort | uniq -c | tail -n10 | cut -c1-4 | spark'
-
 # PostgreSQL
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 
