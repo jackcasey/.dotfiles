@@ -1,0 +1,31 @@
+[user]
+	name = Jack Casey
+	email = jack.casey@agworld.com.au
+[alias]
+	co = checkout
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	throwitallaway = !git reset --hard $(git rev-list --max-count=1 --simplify-by-decoration HEAD^)
+	out = !git hist --boundary $(git rev-list --max-count=1 --simplify-by-decoration HEAD^)..
+[color]
+	ui = true
+[github]
+	user = jackcasey
+[merge]
+  keepBackup = false;
+	tool = diffmerge
+	defaultToUpstream = true
+[rerere]
+	enabled = 1
+[push]
+	default = upstream
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = true
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = diffmerge $LOCAL $REMOTE
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
