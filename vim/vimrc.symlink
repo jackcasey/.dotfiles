@@ -54,6 +54,7 @@ set cursorline      " Highlight currently selected line
 set number          " line numbers inline
 set nowrap          " don't soft wrap long lines
 set timeoutlen=500  " ms wait before giving up on sequenced shortcuts
+set backupdir=/tmp  " Leave .tmp files tidily away in /tmp
 
 " Better tabs
 set tabstop=2                  " Show tabs as 2 characters wide
@@ -190,4 +191,4 @@ nmap <leader>bk :<C-u>bp<cr>:bd!#<cr>       " kill buffer (close w/o saving)
 nnoremap <up> :bprev<CR>
 nnoremap <down> :bnext<CR>
 
- 
+nnoremap <leader>e :<C-u>Explore<cr> 
