@@ -1,10 +1,5 @@
-# The personal bash profile options
-source $HOME/.dotfiles/bash/bash_personal
-
-# The rest might be quite machine specific...
-# or set up by the tools themselves
-# might need to actually not symlink bash_profile but just
-# prepend the above to it as part of setup...
+# source ~/.bashrc as per convention
+source $HOME/.bashrc
 
 PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.bin:/usr/local/share/npm/bin:/usr/local/Cellar/python/2.7.1/bin:/usr/local/bin:$PATH
@@ -23,3 +18,16 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export JRUBY_OPTS=--1.8
 ws() { RUBY_NAME=${1:-jruby} && cd ~/ && cd ~/dev/website; }
+
+# Use extended and eager saved and shared history
+export HISTSIZE=50000
+export HISTFILESIZE=500000
+shopt -s histappend
+
+# Use a fancy prompt with a nice oh-my-git git status line
+export PROMPT_BASE='\[\033[01;34m\]\w\[\033[00m\] $ '
+export PS1=$PROMPTBASE
+source $HOME/.dotfiles/bash/oh-my-git/prompt.sh
+
+# VIM of course
+export EDITOR=vim
