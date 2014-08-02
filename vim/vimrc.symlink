@@ -1,4 +1,4 @@
-autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost ~/.vimrc source %
 
 if has('vim_starting')
 	set nocompatible
@@ -30,7 +30,8 @@ endif
   NeoBundle 'altercation/vim-colors-solarized'
   NeoBundle 'tpope/vim-fugitive.git'
   NeoBundle 'tpope/vim-commentary.git'          " gcc gcap gcgc
-  NeoBundle 'scrooloose/syntastic'              " Syntax checking via external tools
+  NeoBundle 'scrooloose/syntastic'               " Syntax checking via external tools
+  NeoBundle 'tpope/vim-surround'                " Add shortcuts for accessing surrounding delimiters
 
   call neobundle#end()
 " }}}
@@ -42,13 +43,13 @@ NeoBundleCheck
 
 " Basic necessities
 syntax on
-set regexpengine=1  " Fix a bug with slow syntax highlighting in vim 7.4 
+set regexpengine=1  " Fix a bug with slow syntax highlighting in vim 7.4
 set hidden 				  " Allow multiple files open in one window.
 set wildmenu 				" Better command completion
 set showcmd				  " Current command feedback on last line of terminal
 set mouse=a         " All mouse functionality
 set history=50      " undo history
-set encoding=utf-8  
+set encoding=utf-8
 set laststatus=2    " Show status bar even when only one window
 set cursorline      " Highlight currently selected line
 set number          " line numbers inline
@@ -78,10 +79,10 @@ set backspace=indent,eol,start " make backspace delete always not 'locked'
       en
       return ''
   endfunction
-  set statusline=%f\ [%{&ft}]\ %m%w\ 
+  set statusline=%f\ [%{&ft}]\ %m%w\
   set statusline+=%=
   set statusline+=%{GitBranch()}
-  set statusline+=\ %l\/%L          
+  set statusline+=\ %l\/%L
 " }}}
 
 " Search
@@ -102,12 +103,12 @@ set wildignore+=*.swp,*~,._*
 " let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
-let &t_SI = "\<Esc>]50;CursorShape=2\x7"
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 :autocmd InsertEnter,InsertLeave * set cul!
 
 " Syntastic syntax checking
-let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_ruby_checkers = ['mri']
 
 " Unite {{{
   call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -129,18 +130,8 @@ let g:syntastic_ruby_checkers = ['rubocop']
   \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'' --ignore ''node_modules'''
   let g:unite_source_grep_recursive_opt = ''
   let g:unite_abbr_highlight = 1
-
-  " Unite
   let g:unite_source_history_yank_enable = 1
-  nnoremap <c-p>    :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
-  nnoremap <c-P>f    :<C-u>Unite -no-split -buffer-name=fs      file<cr>
-  nnoremap <c-P>g    :<C-u>Unite -no-split -buffer-name=grep    grep<cr>
-  nnoremap <c-P>r    :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-  nnoremap <c-P>o    :<C-u>Unite -no-split -buffer-name=outline outline<cr>
-  nnoremap <c-P>y    :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
-  nnoremap <c-P>b    :<C-u>Unite -no-split -buffer-name=buffer  -start-insert buffer<cr>
-  nnoremap <RIGHT>   :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
-  nnoremap <LEFT>    :<C-u>Unite -no-split -buffer-name=mru     file_mru<cr>
+  let g:unite_matcher_fuzzy_max_input_length = 40
 " }}}
 
 " Strip trailing whitespace
@@ -159,21 +150,12 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " Edit vimrc quickly
 map <leader>ev :e ~/.vimrc<cr>
 
-
 " space to clear search results
-nnoremap <space> :noh<esc>
-
-" Smash escape
-" inoremap jk <esc>
-" inoremap kj <esc>
+nnoremap <space> :nohlsearch<esc>
 
 " shortcuts for windows
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-l> <C-w>l
 " window resizing
 nnoremap <C-w>a :<C-u>vert sba 2<CR>
 nnoremap <silent> <Leader>= :vertical resize +25<CR>
@@ -187,8 +169,7 @@ nnoremap <leader>w :w<cr>
 " switch to last buffer
 nnoremap <leader>bb :b#<cr>
 " Unite
-let g:unite_source_history_yank_enable = 1
-nnoremap <c-p>    :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <c-p>     :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
 nnoremap <c-P>f    :<C-u>Unite -no-split -buffer-name=fs      file<cr>
 nnoremap <c-P>g    :<C-u>Unite -no-split -buffer-name=grep    grep<cr>
 nnoremap <c-P>r    :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
@@ -205,9 +186,12 @@ nmap <leader>bn :bn<cr>
 nmap <leader>bs :<C-u>w<cr>:bp<cr>:bd#<cr>
 " save and close buffer
 nmap <leader>bc :<C-u>bp<cr>:bd#<cr>
-" kill buffer (close w/o saving) 
+" kill buffer (close w/o saving)
 nmap <leader>bk :<C-u>bp<cr>:bd!#<cr>
 nnoremap <up> :bprev<CR>
 nnoremap <down> :bnext<CR>
 
-nnoremap <leader>e :<C-u>Explore<cr> 
+nnoremap <leader>p "+p
+nnoremap <leader>y "+y
+
+nnoremap <leader>e :<C-u>Explore<cr>

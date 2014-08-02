@@ -20,7 +20,7 @@
 [push]
 	default = upstream
 [mergetool "diffmerge"]
-	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = true
 [diff]
 	tool = diffmerge

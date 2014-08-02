@@ -22,4 +22,4 @@ export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export JRUBY_OPTS=--1.8
-ws() { RUBY_NAME=${1:-jruby} && cd ~/ && cd ~/dev/website; }
+ws() { RUBY_NAME=${1:-ruby} && cd ~/ && cd ~/dev/website; }
