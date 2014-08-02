@@ -1,3 +1,8 @@
+if [[ ! $OS == 'mac' ]]; then
+  echo '    System is not mac, skipping.'
+  exit
+fi
+
 # Sets reasonable OS X defaults.
 #
 # Or, in other words, set shit how I like in OS X.
