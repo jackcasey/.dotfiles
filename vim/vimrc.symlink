@@ -1,7 +1,8 @@
-autocmd! bufwritepost ~/.vimrc source %
+" autocmd! bufwritepost ~/.vimrc source %
 
 if has('vim_starting')
 	set nocompatible
+  filetype off
 
 	" Required:
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -29,20 +30,22 @@ endif
   NeoBundle 'Shougo/unite-outline'
   NeoBundle 'altercation/vim-colors-solarized'
   NeoBundle 'tpope/vim-fugitive.git'
-  NeoBundle 'tpope/vim-commentary.git'          " gcc gcap gcgc
-  NeoBundle 'scrooloose/syntastic'               " Syntax checking via external tools
-  NeoBundle 'tpope/vim-surround'                " Add shortcuts for accessing surrounding delimiters
+  NeoBundle 'tpope/vim-commentary.git'      " gcc gcap gcgc
+  NeoBundle 'scrooloose/syntastic'          " Syntax checking via external tools
+  NeoBundle 'tpope/vim-surround' "shortcuts for accessing surrounding delimiters
+  NeoBundle 'kchmck/vim-coffee-script'
+  NeoBundle 'airblade/vim-gitgutter'
+  NeoBundle 'joequery/Stupid-EasyMotion'
 
   call neobundle#end()
 " }}}
-
-filetype indent plugin on
 
 " Install uninstalled bundles on startup
 NeoBundleCheck
 
 " Basic necessities
-syntax on
+syntax enable
+filetype indent plugin on
 set regexpengine=1  " Fix a bug with slow syntax highlighting in vim 7.4
 set hidden 				  " Allow multiple files open in one window.
 set wildmenu 				" Better command completion
@@ -54,40 +57,40 @@ set laststatus=2    " Show status bar even when only one window
 set cursorline      " Highlight currently selected line
 set number          " line numbers inline
 set nowrap          " don't soft wrap long lines
-set timeoutlen=500  " ms wait before giving up on sequenced shortcuts
+set timeoutlen=750  " ms wait before giving up on sequenced shortcuts
 set backupdir=/tmp  " Leave .tmp files tidily away in /tmp
 set directory=/tmp
+match ErrorMsg '\%>80v.\+' " Show characters past 80 on a line in red
 
 " Better tabs
 set tabstop=2                  " Show tabs as 2 characters wide
 set shiftwidth=2               " Use 2 spaces per indent
 set expandtab                  " Insert spaces for tabs
 set autoindent                 " Newlines will start auto indented
-set smartindent                " Be smart about indenting blocks in c-like languages
+set smartindent                " Be smart about indenting in c-like languages
 set backspace=indent,eol,start " make backspace delete always not 'locked'
 
 " Statusline {{{
   function! GitBranch()
-      " let branch = system("git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
-      let branch = fugitive#statusline()
-      if branch != ''
-          let branch = substitute(branch, '\n', '', 'g')
-          let branch = substitute(branch, 'Git', '', 'g')
-          let branch = substitute(branch, '[', '', 'g')
-          let branch = substitute(branch, ']', '', 'g')
-          return branch
-      en
-      return ''
+    let branch = fugitive#statusline()
+    if branch != ''
+      let branch = substitute(branch, '\n', '', 'g')
+      let branch = substitute(branch, 'Git', '', 'g')
+      let branch = substitute(branch, '[', '', 'g')
+      let branch = substitute(branch, ']', '', 'g')
+      return branch
+    en
+    return ''
   endfunction
   set statusline=%f\ [%{&ft}]\ %m%w\
   set statusline+=%=
   set statusline+=%{GitBranch()}
-  set statusline+=\ %l\/%L
+  set statusline+=\ %l:%v
 " }}}
 
 " Search
 set ignorecase      " ignore case when searching etc
-set smartcase       " don't ignore case when search contains uppercase characters
+set smartcase       " don't ignore case when searching for uppercase characters
 set hlsearch        " highlight last search results
 set incsearch       " incremental search
 set showmatch       " highlight matching parens
@@ -103,6 +106,8 @@ set wildignore+=*.swp,*~,._*
 " let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+
+" Change cursor to bar in insert mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 :autocmd InsertEnter,InsertLeave * set cul!
@@ -121,13 +126,15 @@ let g:syntastic_ruby_checkers = ['mri']
     imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
   endfunction
 
-  let g:unite_source_rec_async_command= 'ag --follow --nocolor --nogroup --hidden --ignore "node_modules" -g ""'
+  let g:unite_source_rec_async_command='ag --follow --nocolor --nogroup ' .
+        \ '--hidden --ignore "node_modules" -g ""'
   let g:unite_source_grep_command='ag'
   let g:unite_source_grep_recursive_opt=''
   let g:unite_source_grep_search_word_highlight = 1
   let g:unite_source_grep_default_opts =
-  \ '-i --line-numbers --nocolor --nogroup --hidden --ignore ' .
-  \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'' --ignore ''node_modules'''
+        \ '-i --line-numbers --nocolor --nogroup --hidden --ignore ''.hg'' ' .
+        \ '--ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'' ' .
+        \ '--ignore ''node_modules'''
   let g:unite_source_grep_recursive_opt = ''
   let g:unite_abbr_highlight = 1
   let g:unite_source_history_yank_enable = 1
@@ -136,10 +143,10 @@ let g:syntastic_ruby_checkers = ['mri']
 
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
@@ -149,13 +156,14 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Edit vimrc quickly
 map <leader>ev :e ~/.vimrc<cr>
+augroup myvimrc
+  au!
+  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
 
 " space to clear search results
 nnoremap <space> :nohlsearch<esc>
 
-" shortcuts for windows
-nnoremap <leader>v <C-w>v<C-w>l
-nnoremap <leader>s <C-w>s
 " window resizing
 nnoremap <C-w>a :<C-u>vert sba 2<CR>
 nnoremap <silent> <Leader>= :vertical resize +25<CR>
@@ -169,7 +177,8 @@ nnoremap <leader>w :w<cr>
 " switch to last buffer
 nnoremap <leader>bb :b#<cr>
 " Unite
-nnoremap <c-p>     :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <c-p>a    :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <c-p>p    :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/git<cr>
 nnoremap <c-P>f    :<C-u>Unite -no-split -buffer-name=fs      file<cr>
 nnoremap <c-P>g    :<C-u>Unite -no-split -buffer-name=grep    grep<cr>
 nnoremap <c-P>r    :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
@@ -191,7 +200,33 @@ nmap <leader>bk :<C-u>bp<cr>:bd!#<cr>
 nnoremap <up> :bprev<CR>
 nnoremap <down> :bnext<CR>
 
-nnoremap <leader>p "+p
-nnoremap <leader>y "+y
+" leader yank and paste for system clipboard
+nnoremap <leader>p "*p
+nnoremap <leader>y "*y
 
+" vim file explorer
 nnoremap <leader>e :<C-u>Explore<cr>
+
+function! BackgroundToggle()
+  if(&background == light)
+    set background=dark
+  else
+    set background=light
+  endif
+endfunc
+
+function! NumberToggle()
+  if(&relativenumber!)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+" switch background between light and dark
+nnoremap <leader>sb :call BackgroundToggle()<cr>
+
+" toggle line numbers between absolute and relative
+nnoremap <leader>sn :let [&nu, &rnu] = [&nu+&rnu==0, &nu]<cr>
+
+set colorcolumn=+1             " Highlight column after max textwidth
