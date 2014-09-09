@@ -50,7 +50,7 @@ set regexpengine=1  " Fix a bug with slow syntax highlighting in vim 7.4
 set hidden 				  " Allow multiple files open in one window.
 set wildmenu 				" Better command completion
 set showcmd				  " Current command feedback on last line of terminal
-set mouse=a         " All mouse functionality
+set mouse=n         " Normal mouse functionality
 set history=50      " undo history
 set encoding=utf-8
 set laststatus=2    " Show status bar even when only one window
