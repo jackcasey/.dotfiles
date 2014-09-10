@@ -208,7 +208,7 @@ nnoremap <leader>y "*y
 nnoremap <leader>e :<C-u>Explore<cr>
 
 function! BackgroundToggle()
-  if(&background == light)
+  if(&background == 'light')
     set background=dark
   else
     set background=light
