@@ -35,7 +35,8 @@ endif
   NeoBundle 'tpope/vim-surround' "shortcuts for accessing surrounding delimiters
   NeoBundle 'kchmck/vim-coffee-script'
   NeoBundle 'airblade/vim-gitgutter'
-  NeoBundle 'joequery/Stupid-EasyMotion'
+  " NeoBundle 'joequery/Stupid-EasyMotion'
+  NeoBundle 'Lokaltog/vim-easymotion'
 
   call neobundle#end()
 " }}}
@@ -47,6 +48,7 @@ NeoBundleCheck
 syntax enable
 filetype indent plugin on
 set regexpengine=1  " Fix a bug with slow syntax highlighting in vim 7.4
+
 set hidden 				  " Allow multiple files open in one window.
 set wildmenu 				" Better command completion
 set showcmd				  " Current command feedback on last line of terminal
@@ -95,6 +97,7 @@ set hlsearch        " highlight last search results
 set incsearch       " incremental search
 set showmatch       " highlight matching parens
 set mat=5           " Highlight matching parens for .5s
+let g:EasyMotion_smartcase = 1
 
 " Ignore patterns when globbing / autocompleting
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -199,6 +202,11 @@ nmap <leader>bc :<C-u>bp<cr>:bd#<cr>
 nmap <leader>bk :<C-u>bp<cr>:bd!#<cr>
 nnoremap <up> :bprev<CR>
 nnoremap <down> :bnext<CR>
+" Jump around with easymotion
+map <C-j> <Plug>(easymotion-j)
+map <C-k> <Plug>(easymotion-k)
+map <C-u> <Plug>(easymotion-s)
+map <C-i> <Plug>(easymotion-w)
 
 " leader yank and paste for system clipboard
 nnoremap <leader>p "*p
