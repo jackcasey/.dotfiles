@@ -117,7 +117,7 @@ let g:syntastic_ruby_checkers = ['mri']
 
 " Unite {{{
   call unite#filters#matcher_default#use(['matcher_fuzzy'])
-  call unite#filters#sorter_default#use(['sorter_rank'])
+  call unite#filters#sorter_default#use(['sorter_selecta'])
   " Custom mappings for the unite buffer
   autocmd FileType unite call s:unite_settings()
   function! s:unite_settings()
