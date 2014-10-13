@@ -16,9 +16,6 @@ export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export JRUBY_OPTS=--1.8
-ws() { RUBY_NAME=${1:-ruby} && cd ~/ && cd ~/dev/website; }
-
 # Use extended and eager saved and shared history
 export HISTSIZE=50000
 export HISTFILESIZE=500000
@@ -28,6 +25,9 @@ shopt -s histappend
 export PROMPT_BASE='\[\033[01;34m\]\w\[\033[00m\] $ '
 export PS1=$PROMPTBASE
 source $HOME/.dotfiles/bash/oh-my-git/prompt.sh
+
+# cucumber uses an invisible colour in solarize
+export CUCUMBER_COLORS=comment=cyan
 
 # VIM of course
 export EDITOR=vim

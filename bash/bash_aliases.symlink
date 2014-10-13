@@ -1,7 +1,11 @@
+# use macvim if available
+command -v mvim >> /dev/null && alias v=mvim
+command -v mvim >> /dev/null || alias v=vim
+
 # go to dotfiles directory
 alias gdf='cd $HOME/.dotfiles'
 
-# Fix less ANSI / Colours 
+# Fix less ANSI / Colours
 alias less="less -R"
 
 # Ruby bundler
@@ -11,7 +15,7 @@ alias be='bundle exec'
 alias ready_test='RAILS_ENV=test be rake db:drop db:setup --trace'
 alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
-# Git 
+# Git
 alias gs="git status"
 alias gh="git hist"
 alias gd="git diff"
@@ -32,3 +36,6 @@ alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serv
 # Misc
 alias bigwag='jruby -J-Xmx4000m -S wag'
 alias diffmerge='/Applications/DiffMerge.app/Contents/MacOS/DiffMerge'
+alias ws='cd ~/dev/website'
+
+alias preppy='git pull && cd . && bundle && npm prune && npm install && be rake db:migrate && ready_test'
