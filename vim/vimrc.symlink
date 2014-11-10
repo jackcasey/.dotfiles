@@ -176,7 +176,8 @@ augroup END
 nnoremap <space> :nohlsearch<esc>
 
 " easy escape to normal mode
-imap <c-a> <esc>
+inoremap jk <Esc>
+inoremap kj <Esc>
 
 " window resizing
 nnoremap <C-w>a :<C-u>vert sba 2<CR>
