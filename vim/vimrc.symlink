@@ -8,6 +8,7 @@ if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+runtime macros/matchit.vim
 
 " Neobundle all the things {{{
   call neobundle#begin(expand('~/.vim/bundle'))
@@ -37,6 +38,8 @@ endif
   NeoBundle 'airblade/vim-gitgutter'
   " NeoBundle 'joequery/Stupid-EasyMotion'
   NeoBundle 'Lokaltog/vim-easymotion'
+  NeoBundle 'kana/vim-textobj-user'
+  NeoBundle 'nelstrom/vim-textobj-rubyblock'
 
   call neobundle#end()
 " }}}
@@ -53,7 +56,7 @@ set hidden 				  " Allow multiple files open in one window.
 set wildmenu 				" Better command completion
 set showcmd				  " Current command feedback on last line of terminal
 set mouse=a         " All mouse functionality
-set history=50      " undo history
+set history=200    " undo history
 set encoding=utf-8
 set laststatus=2    " Show status bar even when only one window
 set cursorline      " Highlight currently selected line
@@ -62,9 +65,12 @@ set nowrap          " don't soft wrap long lines
 set timeoutlen=750  " ms wait before giving up on sequenced shortcuts
 set backupdir=/tmp  " Leave .tmp files tidily away in /tmp
 set directory=/tmp
+set scrolloff=5     " try to keep 5 lines of buffer above and below cursor
+let mapleader=","
 
 " Better tabs
-set tabstop=2                  " Show tabs as 2 characters wide
+set tabstop=4                  " Show tabs as 4 characters wide
+set softtabstop=2              " Use 2 spaces per indent
 set shiftwidth=2               " Use 2 spaces per indent
 set expandtab                  " Insert spaces for tabs
 set autoindent                 " Newlines will start auto indented
@@ -185,6 +191,9 @@ nnoremap <silent> <Leader>= :vertical resize +25<CR>
 nnoremap <silent> <Leader>- :vertical resize -25<CR>
 nnoremap <silent> <Leader>+ :resize +5<CR>
 nnoremap <silent> <Leader>_ :resize -5<CR>
+
+" toggle spelling
+nnoremap <leader>ss :setlocal spell! spelllang=en_au<CR>
 
 " Buffer management
 " write current buffer
