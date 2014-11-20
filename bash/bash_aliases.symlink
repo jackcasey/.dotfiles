@@ -39,3 +39,10 @@ alias diffmerge='/Applications/DiffMerge.app/Contents/MacOS/DiffMerge'
 alias ws='cd ~/dev/website'
 
 alias preppy='git pull && cd . && bundle && npm prune && npm install && be rake db:migrate && ready_test'
+
+generate_tags() {
+  #do things with parameters like $1 such as
+  ctags -R --languages=$1 --exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules .
+}
+alias ct=generate_tags
+alias ctws='ctags -R --languages=ruby --exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules .'
