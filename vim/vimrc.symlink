@@ -231,9 +231,6 @@ map <C-u> <Plug>(easymotion-s)
 map <C-h> <Plug>(easymotion-bd-w)
 map <C-l> <Plug>(easymotion-w)
 
-" tags
-nnoremap <C-[> :po<CR>
-
 " leader yank and paste for system clipboard
 noremap <leader>p "*p
 noremap <leader>y "*y
