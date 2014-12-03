@@ -40,6 +40,7 @@ runtime macros/matchit.vim
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'kana/vim-textobj-user'
   NeoBundle 'nelstrom/vim-textobj-rubyblock'
+  NeoBundle 'michaeljsmith/vim-indent-object'
 
   call neobundle#end()
 " }}}
