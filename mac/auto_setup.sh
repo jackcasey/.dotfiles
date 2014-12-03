@@ -3,6 +3,26 @@ if [[ ! $OS == 'mac' ]]; then
   exit
 fi
 
+# CAPS-LOCK -> Control
+echo "    Setting caps-lock to control for all keyboards "
+# From 'indirect'
+# https://superuser.com/questions/590526/switch-function-keys-on-os-x-via-via-command-line
+keyboard_ids=$(ioreg -n IOHIDKeyboard -r | grep -E 'VendorID"|ProductID' | awk '{ print $4 }' | paste -s -d'-\n' -)
+echo $keyboard_ids | xargs -n1 -I{} defaults -currentHost write -g "com.apple.keyboard.modifiermapping.{}-0" -array "<dict><key>HIDKeyboardModifierMappingDst</key><integer>2</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>"
+echo "      You may need to log out to get caps-lock mapping to take effect."
+echo "      Or visit System Preferences > Keyboard > Modifier Keys."
+
+# set up karabiner settings if installed
+cli=/Applications/Karabiner.app/Contents/Library/bin/karabiner
+if [ -f $cli ]; then
+  echo -n "    Setting up programmer key mappings with Karabiner "
+  # This is the karabiner export file
+  bash ./mac/karabiner.sh
+else
+  echo "Please install Karabiner and re-run setup to enable programmer key mappings"
+  echo "https://pqrs.org/osx/karabiner/"
+fi
+
 # Sets reasonable OS X defaults.
 #
 # Or, in other words, set shit how I like in OS X.
