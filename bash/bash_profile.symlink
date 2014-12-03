@@ -28,6 +28,8 @@ source $HOME/.dotfiles/bash/oh-my-git/prompt.sh
 
 # cucumber uses an invisible colour in solarize
 export CUCUMBER_COLORS=comment=cyan
+# allow CLI tools (like ls) to use color
+export CLICOLOR=true
 
 # VIM of course
 export EDITOR=vim
