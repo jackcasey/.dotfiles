@@ -15,16 +15,17 @@ for i in `find \`pwd\` -iname '*.symlink'`; do
   file=.${file%%.symlink}
   homefile=$HOME/$file
   if [ ! -L $homefile ]; then
-    echo "  $i -> $homefile"
+    echo "• $i -> $homefile"
     ln -s -i $i $homefile
   else
-    echo "  $homefile is already a symlink"
+    echo "• $homefile is already a symlink"
   fi
 done
 
 echo 'Calling all auto setups:'
 for i in `find . -maxdepth 2 -iname 'auto_setup.sh'`; do
-  echo "  ${i:2}"
+  echo
+  echo "• ${i:2}"
   bash $i
 done
 
