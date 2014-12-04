@@ -8,6 +8,8 @@ $cli set repeat.initial_wait 250
 /bin/echo -n .
 $cli set remap.vim_emu_off_with_cmd_tab 1
 /bin/echo -n .
+$cli set remap.consumer_to_fkeys_f5 1
+/bin/echo -n .
 $cli set parameter.wait_before_and_after_a_click_event 0
 /bin/echo -n .
 $cli set remap.programmer.shifts_parens 1
