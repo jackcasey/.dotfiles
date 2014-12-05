@@ -199,6 +199,8 @@ nnoremap <leader>ss :setlocal spell! spelllang=en_au<CR>
 " Buffer management
 " write current buffer
 nnoremap <leader>w :w<cr>
+" quit
+nnoremap <leader>q :q<cr>
 " switch to last buffer
 nnoremap <leader>bb :b#<cr>
 " Unite bindings
