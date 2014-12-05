@@ -12,16 +12,7 @@ echo $keyboard_ids | xargs -n1 -I{} defaults -currentHost write -g "com.apple.ke
 echo "      You may need to log out to get caps-lock mapping to take effect."
 echo "      Or visit System Preferences > Keyboard > Modifier Keys."
 
-# set up karabiner settings if installed
-cli=/Applications/Karabiner.app/Contents/Library/bin/karabiner
-if [ -f $cli ]; then
-  echo -n "    Setting up programmer key mappings with Karabiner "
-  # This is the karabiner export file
-  bash ./mac/karabiner.sh
-else
-  echo "Please install Karabiner and re-run setup to enable programmer key mappings"
-  echo "https://pqrs.org/osx/karabiner/"
-fi
+bash ./mac/karabiner.sh
 
 # Sets reasonable OS X defaults.
 #

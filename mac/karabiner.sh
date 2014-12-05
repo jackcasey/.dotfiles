@@ -1,37 +1,13 @@
-#!/bin/sh
+# set up karabiner settings if installed
+cli=/Appplications/Karabiner.app/Contents/Library/bin/karabiner
+if [ ! -f $cli ]; then
+  echo "Please install Karabiner and re-run setup to enable programmer key mappings"
+  echo "https://pqrs.org/osx/karabiner/"
+  exit 0
+fi
 
-cli=/Applications/Karabiner.app/Contents/Library/bin/karabiner
+echo -n "    Setting up programmer key mappings with Karabiner "
+# This is the karabiner export file
+bash ./mac/karabiner_export.sh
 
-$cli set parameter.simultaneouskeypresses_pointingbutton_delay 0
-/bin/echo -n .
-$cli set repeat.initial_wait 250
-/bin/echo -n .
-$cli set remap.vim_emu_off_with_cmd_tab 1
-/bin/echo -n .
-$cli set remap.consumer_to_fkeys_f5 1
-/bin/echo -n .
-$cli set parameter.wait_before_and_after_a_click_event 0
-/bin/echo -n .
-$cli set remap.programmer.shifts_parens 1
-/bin/echo -n .
-$cli set remap.vim_emu_off_at_spotlight 1
-/bin/echo -n .
-$cli set remap.hjkl_arrow 1
-/bin/echo -n .
-$cli set option.tabmode_hl 1
-/bin/echo -n .
-$cli set remap.vim_emu_ 1
-/bin/echo -n .
-$cli set remap.tabmode 1
-/bin/echo -n .
-$cli set repeat.wait 18
-/bin/echo -n .
-$cli set remap.simple_vi_mode 1
-/bin/echo -n .
-$cli set remap.vim_emu_off_with_left_click 1
-/bin/echo -n .
-$cli set option.tabmode_uo 1
-/bin/echo -n .
-$cli set remap.vim_emu_jk_toggle 1
-/bin/echo -n .
-/bin/echo
+
