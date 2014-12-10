@@ -41,6 +41,7 @@ runtime macros/matchit.vim
   NeoBundle 'kana/vim-textobj-user'
   NeoBundle 'nelstrom/vim-textobj-rubyblock'
   NeoBundle 'michaeljsmith/vim-indent-object'
+  NeoBundle 'tpope/vim-eunuch'
 
   call neobundle#end()
 " }}}
@@ -184,7 +185,9 @@ nnoremap <space> :nohlsearch<esc>
 
 " easy escape to normal mode
 inoremap jk <Esc>
+cnoremap jk <Esc>
 inoremap kj <Esc>
+cnoremap kj <Esc>
 
 " window resizing
 nnoremap <C-w>a :<C-u>vert sba 2<CR>
@@ -213,6 +216,7 @@ nnoremap <c-P>r    :<C-u>Unite -buffer-name=mru     -start-insert file_mru<cr>
 nnoremap <c-P>o    :<C-u>Unite -no-split -buffer-name=outline outline<cr>
 nnoremap <c-P>y    :<C-u>Unite -buffer-name=yank    history/yank<cr>
 nnoremap <c-P>b    :<C-u>Unite -buffer-name=buffer  -start-insert buffer<cr>
+nnoremap <c-P>w    :UniteWithCursorWord grep<cr>
 nnoremap <RIGHT>   :<C-u>Unite -buffer-name=buffer  buffer<cr>
 nnoremap <LEFT>    :<C-u>Unite -buffer-name=mru     file_mru<cr>
 " switch to previous buffer
