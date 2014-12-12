@@ -32,16 +32,17 @@ runtime macros/matchit.vim
   NeoBundle 'altercation/vim-colors-solarized'
   NeoBundle 'tpope/vim-fugitive.git'
   NeoBundle 'tpope/vim-commentary.git'      " gcc gcap gcgc
-  " NeoBundle 'scrooloose/syntastic'          " Syntax checking via external tools
+  NeoBundle 'scrooloose/syntastic'          " Syntax checking via external tools
   NeoBundle 'tpope/vim-surround' "shortcuts for accessing surrounding delimiters
   NeoBundle 'kchmck/vim-coffee-script'
   NeoBundle 'airblade/vim-gitgutter'
-  " NeoBundle 'joequery/Stupid-EasyMotion'
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'kana/vim-textobj-user'
   NeoBundle 'nelstrom/vim-textobj-rubyblock'
   NeoBundle 'michaeljsmith/vim-indent-object'
   NeoBundle 'tpope/vim-eunuch'
+  NeoBundle 'tpope/vim-unimpaired.git'
+  NeoBundle 'tpope/vim-repeat.git'
 
   call neobundle#end()
 " }}}
@@ -131,8 +132,8 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 :autocmd InsertEnter,InsertLeave * set cul!
 
 " Syntastic syntax checking
-" let g:syntastic_ruby_checkers = ['mri']
-" let g:syntastic_ignored_files = ['feature']
+let g:syntastic_ruby_checkers = ['mri']
+let g:syntastic_ignored_files = ['feature']
 
 " Unite {{{
   call unite#filters#matcher_default#use(['matcher_fuzzy'])
