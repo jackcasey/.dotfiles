@@ -49,3 +49,4 @@ alias ctws='ctags -R --languages=ruby --exclude=.git --exclude=log --exclude=cov
 
 # Combined SSH configs
 alias ssh="cat ~/.ssh/config.d/* ~/.ssh/config > ~/.ssh/combined_config; ssh -F ~/.ssh/combined_config"
+alias sshlist="cat ~/.ssh/combined_config | grep ^Host | cut -c6-"
