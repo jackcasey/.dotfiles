@@ -28,6 +28,7 @@ alias gitunhide='git update-index --no-assume-unchanged'
 alias gitwhite='git diff -w --no-color | git apply --cached --ignore-whitespace'
 alias bee='~/beautify_git_hash.py bee | tail -n1 | sh'
 alias beef='~/beautify_git_hash.py beef | tail -n1 | sh'
+alias gitpushup = 'git push --set-upstream origin `git symbolic-ref HEAD --short`'
 # alias clean_branches='git br --merged | grep -v ^* | cut -c3- | xargs git br -d'
 
 # PostgreSQL
