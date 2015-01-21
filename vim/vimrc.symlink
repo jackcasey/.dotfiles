@@ -114,7 +114,6 @@ set wildignore+=*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 set wildignore+=*.swp,*~,._*
 
 " Colors
-" let g:solarized_termcolors=256
 let g:solarized_termcolors=16
 colorscheme solarized
 set background=light
