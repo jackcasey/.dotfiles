@@ -37,3 +37,6 @@ set -o vi
 
 # set locale if unset. This is used by perl (and others?)
 [ ! -z "$STATE" ] && export LC_ALL=en_AU.UTF-8
+
+# website is very strict, needs this set
+export RAILS_ENV=development
