@@ -49,5 +49,5 @@ alias ct=generate_tags
 alias ctws='ctags -R --languages=ruby --exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules .'
 
 # Combined SSH configs
-alias ssh="cat ~/.ssh/config.d/* ~/.ssh/config > ~/.ssh/combined_config; ssh -F ~/.ssh/combined_config"
-alias sshlist="cat ~/.ssh/combined_config | grep ^Host | cut -c6-"
+alias sshsetup="cat ~/.ssh/config.d/* > ~/.ssh/config"
+alias sshlist="cat ~/.ssh/config | grep ^Host | cut -c6-"

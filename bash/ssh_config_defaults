@@ -1,0 +1,11 @@
+Host anv
+  Hostname anv-import-test.test.agworld.co
+
+Host *
+  ServerAliveInterval 240
+  Compression yes
+  LogLevel VERBOSE
+  User jack
+  IdentityFile ~/.ssh/id_rsa
+  ForwardAgent yes
+  IdentitiesOnly yes
