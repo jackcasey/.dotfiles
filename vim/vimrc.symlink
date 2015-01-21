@@ -188,8 +188,6 @@ nnoremap <space> :nohlsearch<esc>
 " easy escape to normal mode
 inoremap jk <Esc>
 cnoremap jk <Esc>
-inoremap kj <Esc>
-cnoremap kj <Esc>
 
 " window resizing
 nnoremap <C-w>a :<C-u>vert sba 2<CR>
