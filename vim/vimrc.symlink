@@ -43,6 +43,8 @@ runtime macros/matchit.vim
   NeoBundle 'tpope/vim-eunuch'
   NeoBundle 'tpope/vim-unimpaired.git'
   NeoBundle 'tpope/vim-repeat.git'
+  NeoBundle 'digitaltoad/vim-jade.git'
+  NeoBundle 'tpope/vim-markdown'
 
   call neobundle#end()
 " }}}
