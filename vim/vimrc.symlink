@@ -197,7 +197,12 @@ nnoremap <silent> <Leader>+ :resize +5<CR>
 nnoremap <silent> <Leader>_ :resize -5<CR>
 
 " toggle spelling
+" [s and ]s to navigate, z= to fix a mistake,zg to add to dictionary
 nnoremap <leader>ss :setlocal spell! spelllang=en_au<CR>
+
+" use tab to jump between matching pairs of brackets etc
+nnoremap <tab> %
+vnoremap <tab> %
 
 " Buffer management
 " write current buffer
