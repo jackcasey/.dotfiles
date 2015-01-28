@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>CONTROL_L+SPACE to SHIFT_L+MINUS (Underscore)</name>
+    <identifier>private.ctrl_space_for_underscore</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SPACE, ModifierFlag::CONTROL_L,
+      KeyCode::MINUS, ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+  <item>
+    <name>KBParadise V60 Emulation</name>
+    <identifier>private.kb_paradise_v60_emulation</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::W, ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_UP
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_DOWN
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_LEFT
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::D, ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_RIGHT
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::P, ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_UP
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_DOWN
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::L, ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_LEFT
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::QUOTE, ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_RIGHT
+    </autogen>
+  </item>
+</root>

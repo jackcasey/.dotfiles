@@ -1,3 +1,5 @@
+#!/bin/bash
+
 pushd $HOME/.dotfiles
 
 source ./check_os.sh

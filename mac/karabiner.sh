@@ -1,9 +1,15 @@
+#!/bin/bash
+
 # set up karabiner settings if installed
-cli=/Appplications/Karabiner.app/Contents/Library/bin/karabiner
-if [ ! -f $cli ]; then
-  echo "Please install Karabiner and re-run setup to enable programmer key mappings"
-  echo "https://pqrs.org/osx/karabiner/"
-  exit 0
+command -v curl >/dev/null 2>&1 || { echo >&2 "  Please install karabiner (https://pqrs.org/osx/karabiner/) to your path to run this script."; exit 1; }
+
+file=`pwd`/mac/private.xml
+homefile="$HOME/Library/Application Support/Karabiner/private.xml"
+if [ ! -L "$homefile" ]; then
+  echo "• $file -> $homefile"
+  ln -s -i $file "$homefile"
+else
+  echo "• $homefile is already a symlink"
 fi
 
 echo -n "    Setting up programmer key mappings with Karabiner "
