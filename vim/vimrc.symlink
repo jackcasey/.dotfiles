@@ -29,7 +29,6 @@ runtime macros/matchit.vim
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Shougo/neomru.vim'
   NeoBundle 'Shougo/unite-outline'
-  NeoBundle 'altercation/vim-colors-solarized'
   NeoBundle 'tpope/vim-fugitive.git'
   NeoBundle 'tpope/vim-commentary.git'      " gcc gcap gcgc
   NeoBundle 'scrooloose/syntastic'          " Syntax checking via external tools
@@ -45,6 +44,8 @@ runtime macros/matchit.vim
   NeoBundle 'tpope/vim-repeat.git'
   NeoBundle 'digitaltoad/vim-jade.git'
   NeoBundle 'tpope/vim-markdown'
+  NeoBundle 'benjaminwhite/Benokai'
+  NeoBundle 'DAddYE/soda.vim'
 
   call neobundle#end()
 " }}}
@@ -114,11 +115,6 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 set wildignore+=*.swp,*~,._*
-
-" Colors
-let g:solarized_termcolors=16
-colorscheme solarized
-set background=light
 
 " GUI Options
 " Hide scrollbars
@@ -252,15 +248,23 @@ noremap <leader>y "*y
 " vim file explorer
 nnoremap <leader>e :<C-u>Explore<cr>
 
+" colour scheme and toggle function
 function! BackgroundToggle()
-  if(&background == 'light')
-    " exec 'colorscheme solarized'
-    set background=dark
+  if(s:colscheme == 'light')
+    colorscheme Benokai
+    let s:colscheme='dark'
+    hi! link SignColumn LineNr
   else
-    " exec 'colorscheme solarized'
-    set background=light
+    colorscheme soda
+    let s:colscheme='light'
+    hi! link SignColumn LineNr
   endif
 endfunc
+colorscheme Benokai
+let s:colscheme='dark'
+" gitgutter the right color
+hi! link SignColumn LineNr
+
 
 function! NumberToggle()
   if(&relativenumber!)
