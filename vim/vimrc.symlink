@@ -44,6 +44,7 @@ runtime macros/matchit.vim
   NeoBundle 'tpope/vim-repeat.git'
   NeoBundle 'digitaltoad/vim-jade.git'
   NeoBundle 'tpope/vim-markdown'
+  NeoBundle 'terryma/vim-multiple-cursors'
   NeoBundle 'benjaminwhite/Benokai'
   NeoBundle 'DAddYE/soda.vim'
 
@@ -128,6 +129,7 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 :autocmd InsertEnter,InsertLeave * set cul!
 
+" use global (/g) option for substitution regexes as default
 set gdefault
 
 " Syntastic syntax checking
@@ -281,3 +283,18 @@ nnoremap <leader>sb :call BackgroundToggle()<cr>
 nnoremap <leader>sn :let [&nu, &rnu] = [&nu+&rnu==0, &nu]<cr>
 
 set colorcolumn=+1             " Highlight column after max textwidth
+
+" Multicursors
+let g:multi_cursor_insert_maps={'j': 1}
+let g:multi_cursor_normal_maps={'j': 1, 'r': 1, 'c': 1, 's': 1}
+
+" indent and unindent like any sane editor
+nnoremap <tab> >>_
+nnoremap <s-tab> <<_
+inoremap <s-tab> <c-d>
+vnoremap <tab> >gv
+vnoremap <s-tab> <gv
+
+" folding on syntax mode
+set foldmethod=syntax
+autocmd BufWinEnter * silent! normal zn
