@@ -52,5 +52,25 @@
       KeyCode::QUOTE, ModifierFlag::COMMAND_R,
       KeyCode::CURSOR_RIGHT
     </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_UP,
+      KeyCode::VK_NONE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_DOWN,
+      KeyCode::VK_NONE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_LEFT,
+      KeyCode::VK_NONE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_RIGHT,
+      KeyCode::VK_NONE
+    </autogen>
   </item>
 </root>
