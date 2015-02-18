@@ -52,3 +52,4 @@ alias ctws='ctags -R --languages=ruby --exclude=.git --exclude=log --exclude=cov
 # Combined SSH configs
 alias sshsetup="cat ~/.ssh/config.d/* > ~/.ssh/config"
 alias sshlist="cat ~/.ssh/config | grep ^Host | cut -c6-"
+alias psqlsizes="echo 'select t1.datname AS db_name, pg_size_pretty(pg_database_size(t1.datname)) as db_size from pg_database t1 order by pg_database_size(t1.datname) desc;' | psql"

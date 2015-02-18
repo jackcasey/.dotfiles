@@ -33,7 +33,6 @@ export CLICOLOR=true
 
 # VIM of course
 export EDITOR=vim
-set -o vi
 
 # set locale if unset. This is used by perl (and others?)
 [ ! -z "$STATE" ] && export LC_ALL=en_AU.UTF-8
