@@ -298,3 +298,6 @@ vnoremap <s-tab> <gv
 " folding on syntax mode
 set foldmethod=syntax
 autocmd BufWinEnter * silent! normal zn
+
+" terminal window title to filename/etc
+set title
