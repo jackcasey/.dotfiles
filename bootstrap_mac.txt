@@ -1,0 +1,56 @@
+Instructions for setting up a brand new Mac Yosemite machine:
+
+Install Xcode from app store
+
+Install command line utils:
+===========================
+xcode-select --install
+
+Install rvm & ruby:
+====================
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable
+rvm install ruby-2.1.3
+
+Install homebrew:
+=================
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+Install git:
+============
+brew install git
+brew install bash-completion
+
+Install good font that doesn't suck:
+====================================
+cd /tmp/
+curl https://codeload.github.com/adobe-fonts/source-code-pro/zip/1.017R > font.zip
+unzip font.zip
+open source-code-pro-1.017R/OTF/*
+
+Install necessities:
+====================
+brew install psql
+brew install mongodb
+brew install caskroom/cask/brew-cask
+brew cask install karabiner
+brew cask install iterm2
+brew cask install alfred
+brew cask install drive
+brew cask install dropbox
+brew cask install diffmerge
+brew install ag
+brew install ctags
+brew install vim --with-lua
+brew install macvim --with-cscope --with-lua --HEAD
+
+Install my dotfiles:
+====================
+git clone git+ssh://git@github.com/jackcasey/.dotfiles
+cd .dotfiles
+bash setup_all.sh
+
+Set up Vim
+==========
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+Run vim somehow, and run :NeoBundleInstall and quit and reload. *Need to fix this to install cleanly itself*
