@@ -37,7 +37,7 @@ alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serv
 
 # Misc
 alias bigwag='jruby -J-Xmx4000m -S wag'
-alias diffmerge='/Applications/DiffMerge.app/Contents/MacOS/DiffMerge'
+alias diffmerge='/Users/jack/Applications/DiffMerge.app/Contents/MacOS/DiffMerge'
 alias ws='cd ~/dev/website'
 
 alias preppy='git pull && cd . && bundle && npm prune && npm install && be rake db:migrate && ready_test'
