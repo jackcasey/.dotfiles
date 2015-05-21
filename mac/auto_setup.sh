@@ -7,12 +7,14 @@ fi
 echo "    Setting caps-lock to control for all keyboards "
 # From 'indirect'
 # https://superuser.com/questions/590526/switch-function-keys-on-os-x-via-via-command-line
-keyboard_ids=$(ioreg -n IOHIDKeyboard -r | grep -E 'VendorID"|ProductID' | awk '{ print $4 }' | paste -s -d'-\n' -)
+keyboard_ids=$(ioreg -n IOHIDKeyboard -r | grep -E 'VendorID"|ProductID' | awk '{ print $4 }' | paste -s -d'-\n' - | grep ^1452)
 echo $keyboard_ids | xargs -n1 -I{} defaults -currentHost write -g "com.apple.keyboard.modifiermapping.{}-0" -array "<dict><key>HIDKeyboardModifierMappingDst</key><integer>2</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>"
 echo "      You may need to log out to get caps-lock mapping to take effect."
 echo "      Or visit System Preferences > Keyboard > Modifier Keys."
 
-ln -s /Applications/Karabiner.app/Contents/Library/bin/karabiner /usr/local/bin/karabiner
+if [ ! -L "/usr/local/bin/karabiner" ]; then
+  ln -s /Applications/Karabiner.app/Contents/Library/bin/karabiner /usr/local/bin/karabiner
+fi
 bash ./mac/karabiner.sh
 
 # Sets reasonable OS X defaults.
