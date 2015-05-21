@@ -31,7 +31,7 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'tpope/vim-commentary.git'      " gcc gcap gcgc
-NeoBundle 'scrooloose/syntastic'          " Syntax checking via external tools
+" NeoBundle 'scrooloose/syntastic'          " Syntax checking via external tools
 NeoBundle 'tpope/vim-surround' "shortcuts for accessing surrounding delimiters
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'airblade/vim-gitgutter'
@@ -47,6 +47,12 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'benjaminwhite/Benokai'
 NeoBundle 'DAddYE/soda.vim'
+NeoBundle 'Chiel92/vim-autoformat'
+NeoBundle 'mxw/vim-jsx'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'wavded/vim-stylus'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'godlygeek/tabular'
 call neobundle#end()
 
 " required
@@ -133,8 +139,8 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set gdefault
 
 " Syntastic syntax checking
-let g:syntastic_ruby_checkers = ['mri']
-let g:syntastic_ignored_files = ['feature']
+" let g:syntastic_ruby_checkers = ['mri']
+" let g:syntastic_ignored_files = ['feature']
 
 " Unite {{{
   call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -176,7 +182,7 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 "  ***********
 
 " Edit vimrc quickly
-map <leader>ev :e ~/.vimrc<cr>
+map <leader>vr :e ~/.vimrc<cr>
 augroup myvimrc
   au!
   au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so ~/.vimrc
@@ -203,6 +209,9 @@ nnoremap <leader>ss :setlocal spell! spelllang=en_au<CR>
 " use tab to jump between matching pairs of brackets etc
 nnoremap <tab> %
 vnoremap <tab> %
+
+" Make Y work like C and D
+:map Y y$
 
 " Buffer management
 " write current buffer
@@ -296,8 +305,8 @@ vnoremap <tab> >gv
 vnoremap <s-tab> <gv
 
 " folding on syntax mode
-set foldmethod=syntax
-autocmd BufWinEnter * silent! normal zn
+" set foldmethod=syntax
+" autocmd BufWinEnter * silent! normal zn
 
 " terminal window title to filename/etc
 set title
