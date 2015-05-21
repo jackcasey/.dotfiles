@@ -40,7 +40,7 @@ alias bigwag='jruby -J-Xmx4000m -S wag'
 alias diffmerge='/Users/jack/Applications/DiffMerge.app/Contents/MacOS/DiffMerge'
 alias ws='cd ~/dev/website'
 
-alias preppy='git pull && cd . && bundle && npm prune && npm install && be rake db:migrate && ready_test'
+alias preppy='git pull && bundle && npm prune && npm install && be rake db:migrate && ready_test'
 
 generate_tags() {
   #do things with parameters like $1 such as
@@ -58,3 +58,14 @@ alias psqlsizes="echo 'select t1.datname AS db_name, pg_size_pretty(pg_database_
 long() {
   time $@ && say done
 }
+
+# switching rails website env
+alias devus="export AGW_region=us"
+alias devau="export AGW_region=au"
+
+alias cuc="RAILS_ENV=test cucumber"
+alias rsp="RAILS_ENV=test ./bin/rspec"
+alias grd="RAILS_ENV=test guard"
+
+# emacs macosx from command line
+alias emacs='open -a /Applications/Emacs.app $1'
