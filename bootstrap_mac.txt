@@ -18,8 +18,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 Install git:
 ============
-brew install git
-brew install bash-completion
+# brew install git
+# brew install bash-completion
+# see brew_all.sh for all the brews
 
 Install good font that doesn't suck:
 ====================================
@@ -30,19 +31,7 @@ open source-code-pro-1.017R/OTF/*
 
 Install necessities:
 ====================
-brew install psql
-brew install mongodb
-brew install caskroom/cask/brew-cask
-brew cask install karabiner
-brew cask install iterm2
-brew cask install alfred
-brew cask install drive
-brew cask install dropbox
-brew cask install diffmerge
-brew install ag
-brew install ctags
-brew install vim --with-lua
-brew install macvim --with-cscope --with-lua --HEAD
+# see brew_all.sh for all the brews
 
 Install my dotfiles:
 ====================
