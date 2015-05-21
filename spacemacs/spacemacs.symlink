@@ -176,6 +176,10 @@ layers configuration."
 
   ;; tabs to 2 spaces
   (setq-default tab-width 2 indent-tabs-mode nil)
+  (setq-default standard-indent 2)
+  (setq-default smie-indent-basic 2)
+  (setq-default evil-shift-width 2)
+
 
   )
 
