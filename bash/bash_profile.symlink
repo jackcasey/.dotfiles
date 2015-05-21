@@ -8,8 +8,9 @@ export PATH=$HOME/.bin:/usr/local/share/npm/bin:/usr/local/Cellar/python/2.7.1/b
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
-export NODE_PATH=/usr/local/lib/node_modules
 export RUBYLIB="/usr/local/lib:$RUBYLIB"
 export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
 
