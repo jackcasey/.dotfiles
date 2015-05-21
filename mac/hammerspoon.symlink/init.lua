@@ -1,13 +1,13 @@
 hs.window.animationDuration = 0
 
 -- Full screen
-hs.hotkey.bind({"cmd", "alt"}, "G", function()
+hs.hotkey.bind({"cmd", "alt"}, "/", function()
   local win = hs.window.focusedWindow()
   win:setFrame(win:screen():frame())
 end)
 
 -- Cycle Left
-hs.hotkey.bind({"cmd", "alt"}, "H", function()
+hs.hotkey.bind({"cmd", "alt"}, ",", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -33,7 +33,7 @@ hs.hotkey.bind({"cmd", "alt"}, "H", function()
 end)
 
 -- Cycle Right
-hs.hotkey.bind({"cmd", "alt"}, "L", function()
+hs.hotkey.bind({"cmd", "alt"}, ".", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -56,4 +56,11 @@ hs.hotkey.bind({"cmd", "alt"}, "L", function()
   end
 
   win:setFrame(f)
+end)
+
+-- Next Monitor
+hs.hotkey.bind({"cmd", "alt"}, "M", function()
+  local win = hs.window.focusedWindow()
+  local nextScreen = win:screen():next()
+  win:moveToScreen(nextScreen)
 end)
