@@ -64,7 +64,7 @@ alias devus="export AGW_region=us"
 alias devau="export AGW_region=au"
 
 alias cuc="RAILS_ENV=test cucumber"
-alias rsp="RAILS_ENV=test ./bin/rspec"
+alias rsp="RAILS_ENV=test rspec"
 alias grd="RAILS_ENV=test guard"
 
 # emacs macosx from command line
