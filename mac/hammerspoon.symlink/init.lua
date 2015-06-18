@@ -18,10 +18,10 @@ hs.hotkey.bind({"cmd", "alt"}, ",", function()
   f.h = max.h
 
   -- Cycle through 1/2, 1/3 and 2/3
-  if f.x == max.x and f.w == max.w / 2 then
+  if math.abs(f.x - max.x) < 10 and math.abs(f.w - max.w / 2) < 10 then
     f.x = max.x
     f.w = max.w / 3
-  elseif f.x == max.x and f.w == max.w / 3 then
+  elseif math.abs(f.x - max.x) < 10 and math.abs(f.w - max.w / 3) < 10 then
     f.x = max.x
     f.w = 2 * max.w / 3
   else
@@ -44,10 +44,10 @@ hs.hotkey.bind({"cmd", "alt"}, ".", function()
   f.h = max.h
 
   -- Cycle through 1/2, 1/3 and 2/3
-  if f.x == max.w / 2 and f.w == max.w / 2 then
+  if math.abs(f.x - max.w / 2) < 10 and math.abs(f.w - max.w / 2) < 10 then
     f.x = 2 * max.w / 3
     f.w = max.w / 3
-  elseif f.x == 2 * max.w / 3 and f.w == max.w / 3 then
+  elseif math.abs(f.x - 2 * max.w / 3) < 10 and math.abs(f.w - max.w / 3) < 10 then
     f.x = max.w / 3
     f.w = 2 * max.w / 3
   else
