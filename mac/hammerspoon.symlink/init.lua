@@ -10,23 +10,22 @@ end)
 hs.hotkey.bind({"cmd", "alt"}, "C", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
+  local screen = win:screen():frame()
 
   -- Full height
-  f.y = max.y
-  f.h = max.h
+  f.y = 0
+  f.h = screen.h
 
   -- Cycle through 1/2, 1/3 and 2/3
-  if math.abs(f.x - max.x) < 10 and math.abs(f.w - max.w / 2) < 10 then
-    f.x = max.x
-    f.w = max.w / 3
-  elseif math.abs(f.x - max.x) < 10 and math.abs(f.w - max.w / 3) < 10 then
-    f.x = max.x
-    f.w = 2 * max.w / 3
+  if math.abs(f.w - screen.w / 2) < 10 then
+    f.x = screen.x
+    f.w = screen.w / 3
+  elseif math.abs(f.w - screen.w / 3) < 10 then
+    f.x = screen.x
+    f.w = 2 * screen.w / 3
   else
-    f.x = max.x
-    f.w = max.w / 2
+    f.x = screen.x
+    f.w = screen.w / 2
   end
 
   win:setFrame(f)
@@ -36,23 +35,22 @@ end)
 hs.hotkey.bind({"cmd", "alt"}, "V", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
+  local screen = win:screen():frame()
 
   -- Full height
-  f.y = max.y
-  f.h = max.h
+  f.y = 0
+  f.h = screen.h
 
   -- Cycle through 1/2, 1/3 and 2/3
-  if math.abs(f.x - max.w / 2) < 10 and math.abs(f.w - max.w / 2) < 10 then
-    f.x = 2 * max.w / 3
-    f.w = max.w / 3
-  elseif math.abs(f.x - 2 * max.w / 3) < 10 and math.abs(f.w - max.w / 3) < 10 then
-    f.x = max.w / 3
-    f.w = 2 * max.w / 3
+  if math.abs(f.w - screen.w / 2) < 10 then
+    f.x = screen.x + (2 * screen.w / 3)
+    f.w = screen.w / 3
+  elseif math.abs(f.w - screen.w / 3) < 10 then
+    f.x = screen.x + (screen.w / 3)
+    f.w = 2 * screen.w / 3
   else
-    f.x = max.w / 2
-    f.w = max.w / 2
+    f.x = screen.x + (screen.w / 2)
+    f.w = screen.w / 2
   end
 
   win:setFrame(f)
@@ -63,4 +61,10 @@ hs.hotkey.bind({"cmd", "alt"}, "Z", function()
   local win = hs.window.focusedWindow()
   local nextScreen = win:screen():next()
   win:moveToScreen(nextScreen)
+end)
+
+
+-- reload config
+hs.hotkey.bind({"cmd", "alt"}, "R", function()
+  hs.reload()
 end)
