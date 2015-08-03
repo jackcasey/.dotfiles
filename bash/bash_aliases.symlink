@@ -12,7 +12,7 @@ alias less="less -R"
 alias be='bundle exec'
 
 # Rails
-alias ready_test='RAILS_ENV=test be rake db:drop db:setup --trace'
+alias ready_test='psql -d agworld_test -c "drop view oldest_calculation_events;"; RAILS_ENV=test be rake db:drop db:setup --trace'
 alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # Git
@@ -34,6 +34,7 @@ alias omg='sh ~/.dotfiles/bash/oh-my-git/help.sh'
 
 # PostgreSQL
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pgdc='psql -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = '\''agworld_test'\''"'
 
 # Misc
 alias bigwag='jruby -J-Xmx4000m -S wag'
@@ -47,6 +48,7 @@ generate_tags() {
   ctags -R --languages=$1 --exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules .
 }
 alias ct=generate_tags
+alias etws='ctags -e -R --languages=ruby --exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules .'
 alias ctws='ctags -R --languages=ruby --exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules .'
 
 # Combined SSH configs
@@ -63,9 +65,11 @@ long() {
 alias devus="export AGW_region=us"
 alias devau="export AGW_region=au"
 
-alias cuc="RAILS_ENV=test cucumber"
-alias rsp="RAILS_ENV=test rspec"
+alias cuc="NO_COVERAGE=true RAILS_ENV=test cucumber"
+alias rsp="NO_COVERAGE=true RAILS_ENV=test rspec -cfd"
 alias grd="RAILS_ENV=test guard"
 
 # emacs macosx from command line
 alias emacs='open -a /Applications/Emacs.app $1'
+
+alias policeme="git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop"
