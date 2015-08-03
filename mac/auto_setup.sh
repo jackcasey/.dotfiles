@@ -1,3 +1,5 @@
+source ./functions.sh
+
 if [[ ! $OS == 'mac' ]]; then
   echo '    System is not mac, skipping.'
   exit
@@ -12,9 +14,8 @@ echo $keyboard_ids | xargs -n1 -I{} defaults -currentHost write -g "com.apple.ke
 echo "      You may need to log out to get caps-lock mapping to take effect."
 echo "      Or visit System Preferences > Keyboard > Modifier Keys."
 
-if [ ! -L "/usr/local/bin/karabiner" ]; then
-  ln -s /Applications/Karabiner.app/Contents/Library/bin/karabiner /usr/local/bin/karabiner
-fi
+safelink /Applications/Karabiner.app/Contents/Library/bin/karabiner /usr/local/bin/karabiner
+
 bash ./mac/karabiner.sh
 
 # Sets reasonable OS X defaults.

@@ -1,7 +1,7 @@
 #!/bin/bash
-
 pushd $HOME/.dotfiles
 
+source ./functions.sh
 source ./check_os.sh
 echo System is $OS
 
@@ -16,18 +16,7 @@ for i in `find \`pwd\` -iname '*.symlink'`; do
   file=$(basename $i)
   file=.${file%%.symlink}
   homefile=$HOME/$file
-  if [ ! -L $homefile ]; then
-    echo "• $i -> $homefile"
-    if [[ -d $homefile && -d $i ]]; then
-      echo "Directory $homefile exists so cannot be changed to a symlink."
-      echo "Please remove and re-run setup if you want to use the .dotfiles version."
-      read -rsp $'Press any key to continue...\n' -n1 key
-    else
-      ln -s -i $i $homefile
-    fi
-  else
-    echo "• $homefile is already a symlink"
-  fi
+  safelink $file $homefile
 done
 
 echo 'Calling all auto setups:'
