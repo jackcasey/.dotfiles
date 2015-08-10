@@ -41,3 +41,8 @@
     confirmCompletion: "tab"
   "easy-motion-redux": {}
   "cursor-history": {}
+  "bracket-matcher": {}
+  "atom-ctags":
+    autoBuildTagsWhenActive: true
+    cmdArgs: "--exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules"
+    buildTimeout: 15000

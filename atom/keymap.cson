@@ -28,8 +28,12 @@
   'up':          'pane:show-previous-item'
   'down':        'pane:show-next-item'
   'space space': 'easy-motion-redux:start-with-letter'
-  'space a k' :  'application:open-your-keymap'
-  'space a r' :  'window:reload'
+
+  # ctags
+  'space p shift-R': 'atom-ctags:rebuild'
+  'ctrl-]':      'atom-ctags:go-to-declaration'
+  'ctrl-t':      'atom-ctags:return-from-declaration'
+
 
 'atom-text-editor.vim-mode.normal-mode':
   'ctrl-i': 'cursor-history:next'
