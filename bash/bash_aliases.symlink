@@ -73,3 +73,4 @@ alias grd="RAILS_ENV=test guard"
 alias emacs='open -a /Applications/Emacs.app $1'
 
 alias policeme="git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop"
+alias fixme="git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop -a"
