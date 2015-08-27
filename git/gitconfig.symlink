@@ -32,3 +32,9 @@
 	required = true
 [mergetool]
 	keepBackup = false
+[alias]
+	dc = diff
+	dsc = diff --staged
+[pager]
+	dc = cat
+	dsc = cat
