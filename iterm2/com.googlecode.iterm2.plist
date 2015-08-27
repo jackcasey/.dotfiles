@@ -117,21 +117,21 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>929 113 445 443 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>-1127 308 924 485 -1440 54 1440 877 </string>
+	<string>359 270 924 485 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1463 457 384 129 0 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 54 1440 877 -1440 54 1440 877 </string>
+	<string>-1440 22 1440 855 -1440 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 180 1440 877 0 0 1920 1057 </string>
+	<string>493 203 714 854 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 187 952 862 0 0 1920 1057 </string>
+	<string>0 180 1440 877 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>480 187 952 862 0 0 1920 1057 </string>
+	<string>486 238 890 601 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>0 5 1274 872 0 0 1440 877 </string>
+	<string>0 19 1913 1038 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>721 189 650 476 0 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_8E559189-1944-4490-8C61-B5C9BA024C6D</key>
@@ -727,11 +727,11 @@
 			<key>Semantic History</key>
 			<dict>
 				<key>action</key>
-				<string>best editor</string>
+				<string>command</string>
 				<key>editor</key>
 				<string>com.sublimetext.3</string>
 				<key>text</key>
-				<string>cd \5 &amp;&amp; vim /\1 +\2</string>
+				<string>/usr/local/bin/atom -n \1:\2</string>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -2384,7 +2384,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-20T07:57:03Z</date>
+	<date>2015-08-27T02:18:22Z</date>
 	<key>SUSkippedVersion</key>
 	<string>2.1.1</string>
 	<key>SavePasteHistory</key>
