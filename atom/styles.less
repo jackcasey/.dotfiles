@@ -7,7 +7,23 @@
  * If you are unfamiliar with LESS, you can read more about it here:
  * http://www.lesscss.org
  */
-
+atom-overlay {
+  linter-message {
+    font-size: 90%;
+    .badge.badge-flexible {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      padding: 2px 4px;
+    }
+  }
+  #linter-inline {
+    background-color: white;
+  }
+  ::before {
+    border-color: transparent transparent white white;
+  }
+}
 .tree-view {
 }
 
@@ -25,9 +41,9 @@ atom-text-editor::shadow .cursor {
 atom-overlay .easy-motion-redux-letter {
   position: absolute;
   // z-index: 1;
-  background-color: lighten( @app-background-color, 55% ) !important;
+  background-color: orange !important;
   border-radius: 2px;
-  color: darken(blue, 30%);
+  color: white;
   font-weight: 400;
   font-style: italic;
 }

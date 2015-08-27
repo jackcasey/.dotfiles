@@ -4,18 +4,24 @@
     fontFamily: "SourceCodePro-Light"
     fontSize: 16
     lineHeight: 1.3
+    preferredLineLength: 120
   core:
     themes: [
       "atom-dark-ui"
       "monokai"
     ]
+    disabledPackages: [
+      "welcome"
+      "symbols-view"
+      "atomatigit"
+    ]
+    destroyEmptyPanes: false
   "vim-mode":
     useSmartcaseForSearch: true
     useClipboardAsDefaultRegister: true
   "exception-reporting":
     userId: "92fbfa32-55eb-71cf-9895-6d5562807114"
-  welcome:
-    showOnStartup: false
+  welcome: {}
   "git-blame":
     ignoreWhiteSpaceDiffs: true
   "vim-surround": {}
@@ -25,8 +31,10 @@
     executablePath: "/Users/jack/.rvm/gems/ruby-2.1.3@agworld-3.2/bin/rubocop"
   linter:
     showErrorTabFile: false
+    showErrorPanel: false
   "atom-alignment": {}
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   atomatigit: {}
   "git-plus": {}
   "clip-history": {}
@@ -39,10 +47,17 @@
     useClipboardAsDefaultRegister: true
   "autocomplete-plus":
     confirmCompletion: "tab"
+    backspaceTriggersAutocomplete: true
   "easy-motion-redux": {}
   "cursor-history": {}
   "bracket-matcher": {}
   "atom-ctags":
     autoBuildTagsWhenActive: true
-    cmdArgs: "--exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules"
+    cmdArgs: "--exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules --exclude=spec --exclude=fixtures --exclude=features --exclude=db --exclude=bin --exclude=public --exclude=tmp --exclude=app/assets"
     buildTimeout: 15000
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+  term2: {}
+".coffee.source":
+  editor:
+    preferredLineLength: 120
