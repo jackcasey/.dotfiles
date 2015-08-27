@@ -12,10 +12,10 @@ command -v git >/dev/null 2>&1 || { echo >&2 "  Please install git to run this s
 echo '  OK'
 
 echo 'Linking all symlinks into homedir:'
-for i in `find \`pwd\` -iname '*.symlink'`; do
-  file=$(basename $i)
-  file=.${file%%.symlink}
-  homefile=$HOME/$file
+for file in `find \`pwd\` -iname '*.symlink'`; do
+  basefile=$(basename $file)
+  basefile=.${basefile%%.symlink}
+  homefile=$HOME/$basefile
   safelink $file $homefile
 done
 
