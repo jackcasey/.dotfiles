@@ -1,5 +1,3 @@
-echo 'bash_profile'
-
 # source ~/.bashrc as per convention
 source $HOME/.bashrc
 
