@@ -31,6 +31,7 @@ alias beef='~/beautify_git_hash.py beef | tail -n1 | sh'
 alias gitpushup='git push --set-upstream origin `git symbolic-ref HEAD --short`'
 # alias clean_branches='git br --merged | grep -v ^* | cut -c3- | xargs git br -d'
 alias omg='sh ~/.dotfiles/bash/oh-my-git/help.sh'
+alias gitrecent='for ref in $(git for-each-ref --sort=-committerdate --format="%(refname)" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '\''! a[$0]++'\'''
 
 # PostgreSQL
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
