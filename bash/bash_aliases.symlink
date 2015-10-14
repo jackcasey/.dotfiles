@@ -78,9 +78,9 @@ alias fixme="git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec 
 
 # jrnl for journal keeping and utilities
 alias compact='grep -v ^$'
-alias j='jrnl'
-alias jt='jrnl -on today | compact'
-alias jy='jrnl -on yesterday | compact'
+alias j='jrnl --short'
+alias jt='jrnl --short -on today'
+alias jy='jrnl --short -on yesterday'
 alias jtime="compact | cut -d' ' -f3 | sed s/m// | sed s/h/*60/ | paste -sd+ - | bc | xargs -I{} echo 'scale=2; {}.0/60.0' | bc"
 alias jtt="jt | jtime"
 alias jyt="jy | jtime"
