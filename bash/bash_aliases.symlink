@@ -74,3 +74,22 @@ alias emacs='open -a /Applications/Emacs.app $1'
 
 alias policeme="git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop"
 alias fixme="git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop -a"
+
+# jrnl for journal keeping and utilities
+alias compact='grep -v ^$'
+alias j='jrnl'
+alias jt='jrnl -on today | compact'
+alias jy='jrnl -on yesterday | compact'
+alias jtime="compact | cut -d' ' -f3 | sed s/m// | sed s/h/*60/ | paste -sd+ - | bc | xargs -I{} echo 'scale=2; {}.0/60.0' | bc"
+alias jtt="jt | jtime"
+alias jyt="jy | jtime"
+todays() {
+  jt | grep $@ | jtime
+}
+alias todaysother='jt | grep -v @sprint | grep -v @misc | grep -v @lead | jtime'
+alias today='echo -n "Sprint: " && todays @sprint && echo -n "Lead:   " && todays @lead && echo -n "Misc:   " && todays @misc && echo -n "Other:  " && todaysother && echo "------------" && echo -n "Total:  " && jtt'
+yesterdays() {
+  jy | grep $@ | jtime
+}
+alias yesterdaysother='jy | grep -v @sprint | grep -v @misc | grep -v @lead | jtime'
+alias yesterday='echo -n "Sprint: " && yesterdays @sprint && echo -n "Lead:   " && yesterdays @lead && echo -n "Misc:   " && yesterdays @misc && echo -n "Other:  " && yesterdaysother && echo "------------" && echo -n "Total:  " && jyt'

@@ -18,3 +18,5 @@ brew cask install google-drive
 brew cask install dropbox
 brew cask install diffmerge
 brew cask install hammerspoon
+
+brew install jrnl
