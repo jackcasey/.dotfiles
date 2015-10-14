@@ -27,8 +27,9 @@
 'atom-text-editor.vim-mode:not(.insert-mode)':
   'up':          'pane:show-previous-item'
   'down':        'pane:show-next-item'
+
+  # candidates to move to atom-spacemacs
   'space space': 'easy-motion-redux:start-with-letter'
-  'space f f':   'tree-view:reveal-active-file'
 
   # ctags
   'space p shift-R': 'atom-ctags:rebuild'
@@ -39,10 +40,6 @@
 'atom-text-editor.vim-mode.normal-mode':
   'ctrl-i': 'cursor-history:next'
   'ctrl-o': 'cursor-history:prev'
-
-'.tree-view':
-  'space space': 'tree-view:reveal-active-file'
-  'space f f':   'tree-view:reveal-active-file'
 
 'atom-workspace':
   'ctrl-c ctrl-c': 'window:close'
