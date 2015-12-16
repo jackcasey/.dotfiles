@@ -65,11 +65,11 @@
 	<key>Hotkey</key>
 	<true/>
 	<key>HotkeyChar</key>
-	<integer>27</integer>
+	<integer>126</integer>
 	<key>HotkeyCode</key>
-	<integer>53</integer>
+	<integer>50</integer>
 	<key>HotkeyModifiers</key>
-	<integer>524576</integer>
+	<integer>401666</integer>
 	<key>IRMemory</key>
 	<integer>4</integer>
 	<key>JobName</key>
@@ -117,19 +117,19 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>929 113 445 443 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>-1178 181 924 485 -1440 0 1440 877 </string>
+	<string>996 444 924 485 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1463 457 384 129 0 0 1920 1057 </string>
+	<string>575 430 384 129 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 45 1440 831 -1440 0 1440 877 </string>
+	<string>-1440 103 1440 831 -1440 57 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-1367 171 890 601 -1440 0 1440 877 </string>
+	<string>-865 52 890 601 -1440 57 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 180 1440 877 0 0 1920 1057 </string>
+	<string>19 276 890 601 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>486 238 890 601 0 0 1920 1057 </string>
+	<string>455 260 890 601 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>0 19 1913 1038 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -2318,6 +2318,10 @@
 	</array>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>466322594.52067399</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>466587189.8301</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2380,13 +2384,11 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>http://iterm2.com/appcasts/testing.xml</string>
+	<string>https://iterm2.com/appcasts/testing.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-08-27T02:18:22Z</date>
-	<key>SUSkippedVersion</key>
-	<string>2.1.1</string>
+	<date>2015-10-15T07:32:48Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2436,6 +2438,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20150412</string>
+	<string>2.1.4</string>
 </dict>
 </plist>
