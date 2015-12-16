@@ -2,9 +2,9 @@
   editor:
     invisibles: {}
     fontFamily: "SourceCodePro-Light"
-    fontSize: 16
     lineHeight: 1.3
     preferredLineLength: 120
+    fontSize: 16
     showInvisibles: true
   core:
     themes: [
@@ -14,8 +14,8 @@
     disabledPackages: [
       "welcome"
       "symbols-view"
-      "atomatigit"
       "linter-rubocop"
+      "spell-check"
     ]
     destroyEmptyPanes: false
   "vim-mode":
@@ -33,10 +33,10 @@
     command: "/Users/jack/.rvm/gems/ruby-2.1.3@agworld-3.2/bin/rubocop"
   linter:
     showErrorTabFile: false
+    statusIconScope: "File"
     showErrorPanel: false
   "atom-alignment": {}
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   atomatigit: {}
   "git-plus": {}
   "clip-history": {}
@@ -61,6 +61,25 @@
     ignoreWhitespaceOnCurrentLine: false
   term2: {}
   blame: {}
+  "spell-check": {}
+  "atom-beautify":
+    analytics: false
+    beautifyEntireFileOnSave: false
+  "vim-mode-plus":
+    useSmartcaseForSearch: true
+    incrementalSearch: true
+    useClipboardAsDefaultRegister: true
+  "linter-aspell":
+    ignoredWords: "config,pearce,fettleton,orc,bonecruncher,aergon"
+".js.regexp.replacement.source":
+  editor:
+    preferredLineLength: 120
+".js.regexp.source":
+  editor:
+    preferredLineLength: 120
+".js.source":
+  editor:
+    preferredLineLength: 120
 ".coffee.source":
   editor:
     preferredLineLength: 120

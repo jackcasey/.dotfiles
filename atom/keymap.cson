@@ -24,7 +24,7 @@
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 
-'atom-text-editor.vim-mode:not(.insert-mode)':
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'up':          'pane:show-previous-item'
   'down':        'pane:show-next-item'
 
@@ -35,11 +35,15 @@
   'space p shift-R': 'atom-ctags:rebuild'
   'ctrl-]':      'atom-ctags:go-to-declaration'
   'ctrl-t':      'atom-ctags:return-from-declaration'
+  ':':           'ex-mode:open'
 
-
-'atom-text-editor.vim-mode.normal-mode':
+'atom-text-editor.vim-mode-plus.normal-mode':
   'ctrl-i': 'cursor-history:next'
   'ctrl-o': 'cursor-history:prev'
 
 'atom-workspace':
   'ctrl-c ctrl-c': 'window:close'
+
+'atom-text-editor.vim-mode-plus.insert-mode':
+  'f d': 'vim-mode-plus:activate-normal-mode'
+  'j k': 'vim-mode-plus:activate-normal-mode'
