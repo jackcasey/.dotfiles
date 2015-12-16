@@ -3,7 +3,13 @@ hs.window.animationDuration = 0
 -- Full screen
 hs.hotkey.bind({"cmd", "alt"}, "P", function()
   local win = hs.window.focusedWindow()
-  win:setFrame(win:screen():frame())
+  local f = win:frame()
+  local screen = win:screen():frame()
+  f.y = screen.y
+  f.x = screen.x
+  f.w = screen.w
+  f.h = screen.h
+  win:setFrame(f)
 end)
 
 -- Cycle Left
@@ -13,7 +19,7 @@ hs.hotkey.bind({"cmd", "alt"}, "[", function()
   local screen = win:screen():frame()
 
   -- Full height
-  f.y = 0
+  f.y = screen.y
   f.h = screen.h
 
   -- Cycle through 1/2, 1/3 and 2/3
@@ -38,7 +44,7 @@ hs.hotkey.bind({"cmd", "alt"}, "]", function()
   local screen = win:screen():frame()
 
   -- Full height
-  f.y = 0
+  f.y = screen.y
   f.h = screen.h
 
   -- Cycle through 1/2, 1/3 and 2/3
