@@ -253,4 +253,114 @@
     <autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::COMMAND_R, KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::SLASH, ModifierFlag::COMMAND_R, KeyCode::VK_NONE</autogen>
   </item>
+  <item>
+    <name>My home mods</name>
+
+    <item>
+      <name>Jack's vi navigation and other central symbol shortcuts</name>
+      <appendix>Use Space to enable symbol layer.</appendix>
+      <appendix><![CDATA[  h j k l -> arrow keys ]]></appendix>
+      <appendix><![CDATA[  u i -> ( ) ]]></appendix>
+      <appendix><![CDATA[  m , -> { } ]]></appendix>
+      <appendix><![CDATA[  p -> | ]]></appendix>
+      <appendix><![CDATA[  . - > _ ]]></appendix>
+      <appendix></appendix>
+      <appendix>(You can adjust timeout by "__BlockUntilKeyUp__ Timeout" in Parameters tab.</appendix>
+      <appendix></appendix>
+      <identifier>remap.my_home_mods</identifier>
+
+      {{ SIMPLE_VI_MODE_CONDITION }}
+
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SPACE,
+
+        <!--
+          Hi-jack the virtual modifier SIMPLE_VI_MODE_2
+        -->
+        @begin
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_my_home_mods,
+        KeyCode::VK_MODIFIER_SIMPLE_VI_MODE_2,
+        @end
+
+        @begin
+        KeyCode::SPACE,
+        @end
+      </autogen>
+    </item>
+    <item hidden="true">
+      <identifier vk_config="true">notsave.my_home_mods</identifier>
+      <modifier_only>ModifierFlag::SIMPLE_VI_MODE_2</modifier_only>
+
+      <autogen>
+        __BlockUntilKeyUp__ KeyCode::SPACE
+      </autogen>
+
+      <autogen>
+        __KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT,
+        Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+        ModifierFlag::SIMPLE_VI_MODE_2,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN,
+        Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+        ModifierFlag::SIMPLE_VI_MODE_2,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP,
+        Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+        ModifierFlag::SIMPLE_VI_MODE_2,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT,
+        Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+        ModifierFlag::SIMPLE_VI_MODE_2,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__ KeyCode::O, KeyCode::BACKSLASH, ModifierFlag::SHIFT_L,
+        Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+        ModifierFlag::SIMPLE_VI_MODE_2,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__ KeyCode::M, KeyCode::BRACKET_LEFT,
+        Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+        ModifierFlag::SIMPLE_VI_MODE_2,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__ KeyCode::COMMA, KeyCode::BRACKET_RIGHT,
+        Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+        ModifierFlag::SIMPLE_VI_MODE_2,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__ KeyCode::U, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L,
+        Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+        ModifierFlag::SIMPLE_VI_MODE_2,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__ KeyCode::I, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L,
+        Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+        ModifierFlag::SIMPLE_VI_MODE_2,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__ KeyCode::DOT, KeyCode::MINUS, ModifierFlag::SHIFT_L,
+        Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+        ModifierFlag::SIMPLE_VI_MODE_2,
+      </autogen>
+
+      <autogen>
+        __DropAllKeys__
+        ModifierFlag::SIMPLE_VI_MODE_2,
+        Option::DROPALLKEYS_DROP_KEY,
+      </autogen>
+    </item>
+  </item>
 </root>
