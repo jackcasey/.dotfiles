@@ -94,3 +94,5 @@ yesterdays() {
 }
 alias yesterdaysother='jy | grep -v @sprint | grep -v @misc | grep -v @lead | jtime'
 alias yesterday='echo -n "Sprint: " && yesterdays @sprint && echo -n "Lead:   " && yesterdays @lead && echo -n "Misc:   " && yesterdays @misc && echo -n "Other:  " && yesterdaysother && echo "------------" && echo -n "Total:  " && jyt'
+
+alias railsperf='egrep "(Completed 200 OK)|(Instantiation Breakdown)"'
