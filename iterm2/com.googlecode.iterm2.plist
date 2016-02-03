@@ -82,6 +82,8 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSColorPanelMode</key>
+	<string>5</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Documents</string>
 	<key>NSNavPanelExpandedStateForSaveMode</key>
@@ -114,24 +116,26 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSColorPanel</key>
+	<string>717 238 231 329 0 0 1920 1057 </string>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>929 113 445 443 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>996 444 924 485 0 0 1920 1057 </string>
+	<string>845 344 924 485 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>575 430 384 129 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 103 1440 831 -1440 57 1440 877 </string>
+	<string>-1440 185 1440 831 -1440 139 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-865 52 890 601 -1440 57 1440 877 </string>
+	<string>2112 294 890 601 1920 180 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>19 276 890 601 0 0 1440 877 </string>
+	<string>0 380 1280 677 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>455 260 890 601 0 0 1920 1057 </string>
+	<string>243 157 890 601 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>0 19 1913 1038 0 0 1920 1057 </string>
+	<string>0 26 1440 851 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>721 189 650 476 0 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_8E559189-1944-4490-8C61-B5C9BA024C6D</key>
@@ -175,9 +179,9 @@
 			<key>Ansi 11 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.3706221878528595</real>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.89426827430725098</real>
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
@@ -231,9 +235,9 @@
 				<key>Blue Component</key>
 				<real>0.0</real>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>1</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>1</real>
 			</dict>
 			<key>Ansi 4 Color</key>
 			<dict>
@@ -2321,7 +2325,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>466322594.52067399</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>466587189.8301</real>
+	<real>473921858.75525498</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2388,7 +2392,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-10-15T07:32:48Z</date>
+	<date>2016-01-12T03:52:52Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
