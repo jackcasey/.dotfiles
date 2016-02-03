@@ -29,7 +29,7 @@
   'down':        'pane:show-next-item'
 
   # candidates to move to atom-spacemacs
-  'space space': 'easy-motion-redux:start-with-letter'
+  'space space': 'easy-motion-redux:words_starting'
 
   # ctags
   'space p shift-R': 'atom-ctags:rebuild'
