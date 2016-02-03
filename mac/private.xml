@@ -260,9 +260,9 @@
       <name>Jack's vi navigation and other central symbol shortcuts</name>
       <appendix>Use Space to enable symbol layer.</appendix>
       <appendix><![CDATA[  h j k l -> arrow keys ]]></appendix>
-      <appendix><![CDATA[  u i -> ( ) ]]></appendix>
-      <appendix><![CDATA[  m , -> { } ]]></appendix>
-      <appendix><![CDATA[  p -> | ]]></appendix>
+      <appendix><![CDATA[  u i -> { } ]]></appendix>
+      <appendix><![CDATA[  m , -> [ ] ]]></appendix>
+      <appendix><![CDATA[  o -> | ]]></appendix>
       <appendix><![CDATA[  . - > _ ]]></appendix>
       <appendix></appendix>
       <appendix>(You can adjust timeout by "__BlockUntilKeyUp__ Timeout" in Parameters tab.</appendix>
