@@ -35,11 +35,21 @@
   'space p shift-R': 'atom-ctags:rebuild'
   'ctrl-]':      'atom-ctags:go-to-declaration'
   'ctrl-t':      'atom-ctags:return-from-declaration'
+
   ':':           'ex-mode:open'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
   'ctrl-i': 'cursor-history:next'
   'ctrl-o': 'cursor-history:prev'
+
+  # Surround family
+  'y s': 'vim-mode-plus:surround'
+  'y s w': 'vim-mode-plus:surround-word'
+  'y m s':  'vim-mode-plus:map-surround'
+  # 'd s': 'vim-mode-plus:delete-surround'
+  'd s': 'vim-mode-plus:delete-surround-any-pair'
+  # 'c s': 'vim-mode-plus:change-surround'
+  'c s': 'vim-mode-plus:change-surround-any-pair'
 
 'atom-workspace':
   'ctrl-c ctrl-c': 'window:close'
@@ -47,3 +57,16 @@
 'atom-text-editor.vim-mode-plus.insert-mode':
   'f d': 'vim-mode-plus:activate-normal-mode'
   'j k': 'vim-mode-plus:activate-normal-mode'
+
+'atom-text-editor.vim-mode-plus.normal-mode, atom-text-editor.vim-mode-plus.visual-mode':
+  'space m': 'quick-highlight:toggle'
+  'space M': 'quick-highlight:clear'
+
+# 'atom-text-editor.vim-mode-plus.normal-mode':
+#   'g f':      'open-this:here'
+
+'atom-text-editor':
+  'ctrl-k': 'vim-mode-plus-user:move-selected-text-up'
+  'ctrl-j': 'vim-mode-plus-user:move-selected-text-down'
+  'ctrl-l': 'vim-mode-plus-user:move-selected-text-right'
+  'ctrl-h': 'vim-mode-plus-user:move-selected-text-left'

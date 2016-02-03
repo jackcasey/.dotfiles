@@ -7,6 +7,19 @@
  * If you are unfamiliar with LESS, you can read more about it here:
  * http://www.lesscss.org
  */
+.badge {
+  background: #4182c4;
+}
+linter-message {
+  background: #ddd;
+  font-size: 12px;
+}
+#linter-inline {
+  background: #ddd;
+  ::before {
+    border-color: transparent transparent #ddd #ddd;
+  }
+}
 
 // atom-overlay {
 //   linter-message {
@@ -26,19 +39,19 @@
 //   }
 // }
 
-.tree-view {
-}
+// .tree-view {
+// }
 
 // style the background and foreground colors on the atom-text-editor-element
 // itself
-atom-text-editor {
-
-}
+// atom-text-editor {
+//
+// }
 
 // To style other content in the text editor's shadow DOM, use the ::shadow
 // expression
-atom-text-editor::shadow .cursor {
-}
+// atom-text-editor::shadow .cursor {
+// }
 
 atom-overlay .easy-motion-redux-letter {
   position: absolute;
