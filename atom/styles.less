@@ -21,26 +21,54 @@ linter-message {
   }
 }
 
-// atom-overlay {
-//   linter-message {
-//     font-size: 90%;
-//     .badge.badge-flexible {
-//       position: absolute;
-//       right: 5px;
-//       top: 5px;
-//       padding: 2px 4px;
-//     }
-//   }
-//   #linter-inline {
-//     background-color: white;
-//   }
-//   ::before {
-//     border-color: transparent transparent white white;
-//   }
-// }
+// condense tree view a little bit
+@tree-view-item-height: 23px;
+.tree-view {
+  .list-group .selected::before, .list-tree .selected::before {
+    height: @tree-view-item-height;
+  }
+  .list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
+    line-height: @tree-view-item-height;
+  }
+}
 
-// .tree-view {
-// }
+atom-text-editor::shadow .gutter.git-diff-icon .line-number {
+  &.git-line-modified::before {
+    color: #fa0;
+    content: "~";
+  }
+  &.git-line-added::before {
+    color: #0e4;
+  }
+  &.git-line-removed::before {
+    color: #f30;
+    content: "x";
+  }
+}
+
+atom-text-editor::shadow .line-number.cursor-line,
+atom-text-editor::shadow .line-number::before,
+{
+  color: rgba(255,255,255,255);
+  opacity: 1.0;
+}
+
+atom-text-editor::shadow .line-number {
+  color: rgba(255,255,255,0.6);
+  opacity: 1.0;
+}
+
+atom-text-editor::shadow .linter-gutter.linter-highlight {
+  height: 90% !important;
+  width: 25%;
+  border-radius: 0;
+  &.warning {
+    background-color: #f80;
+  }
+  &.error {
+    background-color: #f00;
+  }
+}
 
 // style the background and foreground colors on the atom-text-editor-element
 // itself

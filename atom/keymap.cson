@@ -38,18 +38,20 @@
 
   ':':           'ex-mode:open'
 
-'atom-text-editor.vim-mode-plus.normal-mode':
   'ctrl-i': 'cursor-history:next'
   'ctrl-o': 'cursor-history:prev'
 
   # Surround family
-  'y s': 'vim-mode-plus:surround'
-  'y s w': 'vim-mode-plus:surround-word'
-  'y m s':  'vim-mode-plus:map-surround'
-  # 'd s': 'vim-mode-plus:delete-surround'
-  'd s': 'vim-mode-plus:delete-surround-any-pair'
-  # 'c s': 'vim-mode-plus:change-surround'
-  'c s': 'vim-mode-plus:change-surround-any-pair'
+  'space y s': 'vim-mode-plus:surround'
+  'space y s w': 'vim-mode-plus:surround-word'
+  'space y m s': 'vim-mode-plus:map-surround'
+  'space d S': 'vim-mode-plus:delete-surround'
+  'space d s': 'vim-mode-plus:delete-surround-any-pair'
+  'space c S': 'vim-mode-plus:change-surround'
+  'space c s': 'vim-mode-plus:change-surround-any-pair'
+
+  'space g g': 'git-plus:menu'
+  'space a d': 'window:toggle-dev-tools'
 
 'atom-workspace':
   'ctrl-c ctrl-c': 'window:close'
@@ -61,9 +63,6 @@
 'atom-text-editor.vim-mode-plus.normal-mode, atom-text-editor.vim-mode-plus.visual-mode':
   'space m': 'quick-highlight:toggle'
   'space M': 'quick-highlight:clear'
-
-# 'atom-text-editor.vim-mode-plus.normal-mode':
-#   'g f':      'open-this:here'
 
 'atom-text-editor':
   'ctrl-k': 'vim-mode-plus-user:move-selected-text-up'
