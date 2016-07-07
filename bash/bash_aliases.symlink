@@ -21,6 +21,7 @@ alias gh="git hist"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gpr="git pull --rebase"
+alias gp="git push"
 alias gitrmdel="git status | grep deleted | cut -c14- | xargs git rm"
 alias gitrmdbs="git reset db/schema.rb; git checkout db/schema.rb"
 alias githide='git update-index --assume-unchanged'
@@ -38,9 +39,9 @@ alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serv
 alias pgdc='psql -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = '\''agworld_test'\''"'
 
 # Misc
-alias bigwag='jruby -J-Xmx4000m -S wag'
 alias diffmerge='/Users/jack/Applications/DiffMerge.app/Contents/MacOS/DiffMerge'
 alias ws='cd ~/dev/website'
+alias e='$EDITOR'
 
 alias preppy='git pull && bundle && npm prune && npm install && be rake db:migrate && ready_test'
 
@@ -67,6 +68,7 @@ alias devus="export AGW_region=us"
 alias devau="export AGW_region=au"
 
 alias cuc="NO_COVERAGE=true RAILS_ENV=test cucumber"
+alias cucchrome="RAILS_ENV=test JS_DRIVER=chrome be cucumber --tags @focus"
 alias rsp="NO_COVERAGE=true RAILS_ENV=test rspec -cfd"
 alias grd="RAILS_ENV=test guard"
 
@@ -76,23 +78,9 @@ alias emacs='open -a /Applications/Emacs.app $1'
 alias policeme="git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop"
 alias fixme="git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop -a"
 
-# jrnl for journal keeping and utilities
-alias compact='grep -v ^$'
-alias j='jrnl --short'
-alias jt='jrnl --short -on today'
-alias jy='jrnl --short -on yesterday'
-alias jtime="compact | cut -d' ' -f3 | sed s/m// | sed s/h/*60/ | paste -sd+ - | bc | xargs -I{} echo 'scale=2; {}.0/60.0' | bc"
-alias jtt="jt | jtime"
-alias jyt="jy | jtime"
-todays() {
-  jt | grep $@ | jtime
-}
-alias todaysother='jt | grep -v @sprint | grep -v @misc | grep -v @lead | jtime'
-alias today='echo -n "Sprint: " && todays @sprint && echo -n "Lead:   " && todays @lead && echo -n "Misc:   " && todays @misc && echo -n "Other:  " && todaysother && echo "------------" && echo -n "Total:  " && jtt'
-yesterdays() {
-  jy | grep $@ | jtime
-}
-alias yesterdaysother='jy | grep -v @sprint | grep -v @misc | grep -v @lead | jtime'
-alias yesterday='echo -n "Sprint: " && yesterdays @sprint && echo -n "Lead:   " && yesterdays @lead && echo -n "Misc:   " && yesterdays @misc && echo -n "Other:  " && yesterdaysother && echo "------------" && echo -n "Total:  " && jyt'
-
 alias railsperf='egrep "(Completed 200 OK)|(Instantiation Breakdown)"'
+alias uni='bundle exec unicorn -p 3000'
+
+alias ll='ls -lahrt'
+
+alias atomm='env -i /usr/local/bin/atom'
