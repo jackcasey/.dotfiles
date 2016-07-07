@@ -27,7 +27,7 @@
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
-	<false/>
+	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>8E559189-1944-4490-8C61-B5C9BA024C6D</string>
 	<key>DimBackgroundWindows</key>
@@ -55,6 +55,8 @@
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
+	<true/>
+	<key>HideTabCloseButton</key>
 	<true/>
 	<key>HighlightTabLabels</key>
 	<true/>
@@ -94,6 +96,8 @@
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
+	<key>NSScrollViewShouldScrollUnderTitlebar</key>
+	<false/>
 	<key>NSTableView Columns KeyBingingTable</key>
 	<array>
 		<data>
@@ -105,7 +109,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>319</string>
+		<string>322</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -121,17 +125,19 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>929 113 445 443 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>845 344 924 485 0 0 1920 1057 </string>
+	<string>82 398 599 388 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>575 430 384 129 0 0 1440 877 </string>
+	<string>520 562 400 129 0 0 1440 877 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>410 364 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 185 1440 831 -1440 139 1440 877 </string>
+	<string>-1440 164 1440 852 -1440 139 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2112 294 890 601 1920 180 1440 877 </string>
+	<string>120 222 890 602 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 380 1280 677 0 0 1920 1057 </string>
+	<string>0 18 1913 1039 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>243 157 890 601 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -849,7 +855,7 @@
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -1576,7 +1582,7 @@
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -1781,6 +1787,8 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Bound Hosts</key>
+			<array/>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
@@ -2299,9 +2307,16 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
-			<array/>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>BounceTrigger</string>
+					<key>regex</key>
+					<string></string>
+				</dict>
+			</array>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -2320,12 +2335,30 @@
 			<string>/Users/jack</string>
 		</dict>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
+	<key>NoSyncDisablePromotions</key>
+	<true/>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
+	<key>NoSyncInstallationId</key>
+	<string>2D62B097-5514-4C0E-BA79-BC3993B04119</string>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
+	<key>NoSyncSuppressAnnyoingBellOffer</key>
+	<true/>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>477908437.99084699</real>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>466322594.52067399</real>
+	<real>477886963.17043102</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>473921858.75525498</real>
+	<real>477886951.70764101</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2375,6 +2408,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/jack/.dotfiles/iterm2</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -2384,18 +2419,22 @@
 	<key>RightOption</key>
 	<integer>3</integer>
 	<key>SUAutomaticallyUpdate</key>
-	<false/>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
+	<key>SUFeedAlternateAppNameKey</key>
+	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml</string>
+	<string>https://iterm2.com/appcasts/testing3.xml?shard=27</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-01-12T03:52:52Z</date>
+	<date>2016-05-17T02:05:33Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
+	<false/>
+	<key>Show Toolbelt</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
@@ -2409,6 +2448,8 @@
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>6</integer>
+	<key>TabStyle</key>
+	<integer>1</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>ThreeFingerEmulates</key>
@@ -2442,6 +2483,10 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.1.4</string>
+	<string>2.9.20160426</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>
