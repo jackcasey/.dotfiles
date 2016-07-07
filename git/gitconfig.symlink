@@ -13,7 +13,7 @@
 	user = jackcasey
 [merge]
   keepBackup = false;
-	tool = diffmerge
+	tool = p4merge
 	defaultToUpstream = true
 [rerere]
 	enabled = 1
@@ -38,3 +38,8 @@
 [pager]
 	dc = cat
 	dsc = cat
+[mergetool "p4merge"]
+  cmd = p4merge $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = false
+	keepTemporaries = false
+	keepBackup = false
