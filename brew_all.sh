@@ -9,6 +9,7 @@ brew install ctags
 brew install vim --with-lua
 brew install macvim --with-cscope --with-lua --HEAD
 brew install nvm
+brew install tig
 
 brew upgrade brew-cask && brew cask cleanup
 brew cask install karabiner
