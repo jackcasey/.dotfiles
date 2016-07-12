@@ -27,9 +27,8 @@
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'up':          'pane:show-previous-item'
   'down':        'pane:show-next-item'
-
-  # candidates to move to atom-spacemacs
-  'space space': 'easy-motion-redux:words_starting'
+  'q':           'atom-keyboard-macros-vim:toggle_record_macro_vim'
+  '@':           'atom-keyboard-macros-vim:execute_macro_vim'
 
   # ctags
   'space p shift-R': 'atom-ctags:rebuild'
@@ -41,18 +40,9 @@
   'ctrl-i': 'cursor-history:next'
   'ctrl-o': 'cursor-history:prev'
 
-  # Surround family
-  'space y s': 'vim-mode-plus:surround'
-  'space y s w': 'vim-mode-plus:surround-word'
-  'space y m s': 'vim-mode-plus:map-surround'
-  'space d S': 'vim-mode-plus:delete-surround'
-  'space d s': 'vim-mode-plus:delete-surround-any-pair'
-  'space c S': 'vim-mode-plus:change-surround'
-  'space c s': 'vim-mode-plus:change-surround-any-pair'
-
-  'space g g': 'git-plus:menu'
-  'space g t': 'git-time-machine:toggle'
   'space a d': 'window:toggle-dev-tools'
+
+  ':': 'vim-mode-plus-ex-mode:open'
 
 'atom-workspace':
   'ctrl-c ctrl-c': 'window:close'

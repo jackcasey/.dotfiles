@@ -1,4 +1,6 @@
 "*":
+  "activate-power-mode":
+    autoToggle: false
   "atom-alignment": {}
   "atom-beautify":
     analytics: false
@@ -32,6 +34,7 @@
       "jsonlint"
       "wordcount"
     ]
+    packagesWithKeymapsDisabled: []
     themes: [
       "atom-dark-ui"
       "monokai"
@@ -40,6 +43,7 @@
   "easy-motion-redux": {}
   editor:
     fontFamily: "SourceCodePro-Light"
+    fontSize: 15
     invisibles: {}
     lineHeight: 1.3
     preferredLineLength: 120
@@ -49,13 +53,17 @@
     ignoreWhiteSpaceDiffs: true
   "git-diff":
     showIconsInEditorGutter: true
-  "git-plus": {}
+  "git-plus":
+    experimental: true
+    splitPane: "Right"
+    wordDiff: false
   jsformat:
     format_on_save: false
   "lazy-motion":
     saveHistoryOnCancel: false
   linter:
-    ignoreMatchedFiles: "**/schema.rb, **/*.yml"
+    ignoreMatchedFiles: "**/schema.rb"
+    lintOnFly: false
     showErrorPanel: false
     showErrorTabFile: false
     statusIconScope: "File"
@@ -102,6 +110,7 @@
 ".diff.source":
   editor:
     preferredLineLength: 120
+    softWrap: true
 ".feature.gherkin.text":
   editor:
     preferredLineLength: 120
