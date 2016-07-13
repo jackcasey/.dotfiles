@@ -1,5 +1,3 @@
-linter-aspell@2.0.1
-
 activate-power-mode@0.7.0
 atom-alignment@0.12.1
 atom-beautify@0.29.9
@@ -22,7 +20,6 @@ jsformat@0.9.3
 language-cjsx@0.3.0
 language-jsx@0.1.1
 linter@1.11.14
-linter-aspell@2.0.1
 linter-coffeescript@1.0.0
 linter-json-lint@0.1.1
 linter-rubocop@0.4.7
