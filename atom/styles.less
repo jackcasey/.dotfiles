@@ -12,6 +12,23 @@
   // font-family: 'Avenir Next Ultra Light';
 }
 
+// Hide the close (x) tab button on hover. Just rely on Command+W or Middle click
+// .tab-bar .tab.modified .close-icon {
+//   display:block;
+// }
+.tab-bar .tab .close-icon::before {
+  content:none;
+}
+.tab-bar .tab.modified:hover .close-icon {
+  right: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #0098ff;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
 atom-panel.modal.overlay {
   width: 700px;
   margin-left: -350px;

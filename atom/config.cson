@@ -3,8 +3,12 @@
     autoToggle: false
   "atom-alignment": {}
   "atom-beautify":
-    analytics: false
-    beautifyEntireFileOnSave: false
+    general:
+      _analyticsUserId: "c7c30fc1-1969-4b83-9f34-eeb8fbad1ca6"
+      analytics: false
+      beautifyEntireFileOnSave: false
+    js:
+      indent_size: 2
   "atom-ctags":
     autoBuildTagsWhenActive: true
     buildTimeout: 15000
@@ -43,10 +47,11 @@
   "easy-motion-redux": {}
   editor:
     fontFamily: "SourceCodePro-Light"
-    fontSize: 15
+    fontSize: 16
     invisibles: {}
     lineHeight: 1.3
     preferredLineLength: 120
+    showInvisibles: true
   "exception-reporting":
     userId: "92fbfa32-55eb-71cf-9895-6d5562807114"
   "git-blame":

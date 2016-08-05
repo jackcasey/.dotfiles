@@ -13,20 +13,21 @@
 #   'enter': 'editor:newline'
 #
 # 'atom-workspace':
-#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-shift-p': 'core:moee-up'
 #   'ctrl-p': 'core:move-down'
 #
 # You can find more information about keymaps in these guides:
 # * https://atom.io/docs/latest/customizing-atom#customizing-key-bindings
 # * https://atom.io/docs/latest/advanced/keymaps
 #
-# This file uses CoffeeScript Object Notation (CSON).
-# If you are unfamiliar with CSON, you can read more about it here:
+# This file uses Coffetar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'up':          'pane:show-previous-item'
   'down':        'pane:show-next-item'
+  'shift-up':    'pane:move-item-left'
+  'shift-down':  'pane:move-item-right'
   'q':           'atom-keyboard-macros-vim:toggle_record_macro_vim'
   '@':           'atom-keyboard-macros-vim:execute_macro_vim'
 
