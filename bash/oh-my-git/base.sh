@@ -8,7 +8,7 @@ function enrich {
     fi
     if [[ $use_color_off == false && $flag == false ]]; then symbol=' '; fi
     if [[ $flag == true ]]; then color=$coloron; else color=$off; fi
-    PS1="${PS1}\[${color}\]${symbol}\[${reset}\] "
+    PS1="${PS1}${color}${symbol}${reset} "
 }
 
 function build_prompt {
