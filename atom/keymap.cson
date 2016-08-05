@@ -61,12 +61,3 @@
   'ctrl-j': 'vim-mode-plus-user:move-selected-text-down'
   'ctrl-l': 'vim-mode-plus-user:move-selected-text-right'
   'ctrl-h': 'vim-mode-plus-user:move-selected-text-left'
-
-
-'atom-text-editor.vim-mode-plus.normal-mode':
-  'space n l': 'narrow:lines'
-  'space n f': 'narrow:fold'
-  'space o': 'narrow:fold'
-  'space n s c': 'narrow:search-current-project'
-  'space n s s': 'narrow:search'
-  'space n c': 'narrow:focus'
