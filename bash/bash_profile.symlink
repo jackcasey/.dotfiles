@@ -30,8 +30,8 @@ source $HOME/.dotfiles/bash/oh-my-git/prompt.sh
 # allow CLI tools (like ls) to use color
 export CLICOLOR=true
 
-export EDITOR=atom-beta
-export GIT_EDITOR="atom-beta --wait"
+export EDITOR=atom
+export GIT_EDITOR="atom --wait"
 
 # set locale if unset. This is used by perl (and others?)
 [ ! -z "$STATE" ] && export LC_ALL=en_AU.UTF-8
