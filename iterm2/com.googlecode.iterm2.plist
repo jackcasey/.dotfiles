@@ -88,6 +88,8 @@
 	<string>5</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Documents</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 532}</string>
 	<key>NSNavPanelExpandedStateForSaveMode</key>
 	<true/>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -125,7 +127,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>929 113 445 443 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>82 398 599 388 0 0 1920 1057 </string>
+	<string>504 244 599 502 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>520 562 400 129 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -133,9 +135,9 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 164 1440 852 -1440 139 1440 877 </string>
+	<string>-1440 140 1440 876 -1440 139 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>120 222 890 602 0 0 1440 877 </string>
+	<string>-1440 184 1440 832 -1440 139 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 18 1913 1039 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -699,7 +701,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Light 18</string>
+			<string>SourceCodePro-ExtraLight 18</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -2337,10 +2339,20 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncConfirmBeta</key>
+	<true/>
 	<key>NoSyncDisablePromotions</key>
 	<true/>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
+	<integer>0</integer>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
+	<key>NoSyncInstallUtilitiesPackage</key>
+	<true/>
+	<key>NoSyncInstallUtilitiesPackage_selection</key>
+	<integer>2</integer>
 	<key>NoSyncInstallationId</key>
 	<string>2D62B097-5514-4C0E-BA79-BC3993B04119</string>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
@@ -2425,11 +2437,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing3.xml?shard=27</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=27</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-05-17T02:05:33Z</date>
+	<date>2016-07-21T03:47:26Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2483,7 +2495,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20160426</string>
+	<string>3.0.4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
