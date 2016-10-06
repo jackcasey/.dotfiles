@@ -38,6 +38,8 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>EliminateCloseButtons</key>
+	<true/>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -87,7 +89,9 @@
 	<key>NSColorPanelMode</key>
 	<string>5</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Documents</string>
+	<string>~</string>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 532}</string>
 	<key>NSNavPanelExpandedStateForSaveMode</key>
@@ -127,19 +131,23 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>929 113 445 443 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>504 244 599 502 0 0 1920 1057 </string>
+	<string>504 573 606 456 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>520 562 400 129 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 364 620 392 0 0 1440 877 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>-879 220 606 456 -1440 139 1440 877 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>-996 406 918 381 -1440 139 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 140 1440 876 -1440 139 1440 877 </string>
+	<string>0 22 1440 855 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-1440 184 1440 832 -1440 139 1440 877 </string>
+	<string>0 25 1434 852 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 18 1913 1039 0 0 1920 1057 </string>
+	<string>720 22 714 855 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>243 157 890 601 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -168,12 +176,16 @@
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.067964352667331696</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.24337403476238251</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.98737823963165283</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
@@ -381,12 +393,16 @@
 			<false/>
 			<key>Foreground Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.85499793291091919</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.85498338937759399</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.85500895977020264</real>
 			</dict>
 			<key>Guid</key>
 			<string>8E559189-1944-4490-8C61-B5C9BA024C6D</string>
@@ -2441,7 +2457,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-07-21T03:47:26Z</date>
+	<date>2016-08-29T05:51:32Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2495,7 +2511,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.4</string>
+	<string>3.0.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
