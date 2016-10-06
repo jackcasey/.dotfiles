@@ -18,12 +18,22 @@
 : ${merge_tracking_branch_symbol='ᄉ'}
 : ${should_push_symbol='↑'}
 
+
 # Colors
-: ${on="\[\033[1;37m\]"}
-: ${off="\[\033[0m\]"}
-: ${red="\[\033[0;31m\]"}
-: ${green="\[\033[0;32m\]"}
-: ${yellow="\[\033[1;33m\]"}
-: ${violet="\[\033[0;35m\]"}
-: ${branch_color="\[\033[1;34m\]"}
-: ${reset="\[\033[0m\]"}
+: ${_on="\033[1;37m"}
+: ${_off="\033[0m"}
+: ${_red="\033[0;31m"}
+: ${_green="\033[0;32m"}
+: ${_yellow="\033[1;33m"}
+: ${_violet="\033[0;35m"}
+: ${_branch_color="\033[1;34m"}
+: ${_reset="\033[0m"}
+
+: ${on="\[${_on}\]"}
+: ${off="\[${_off}\]"}
+: ${red="\[${_red}\]"}
+: ${green="\[${_green}\]"}
+: ${yellow="\[${_yellow}\]"}
+: ${violet="\[${_violet}\]"}
+: ${branch_color="\[${_branch_color}\]"}
+: ${reset="\[${_reset}\]"}

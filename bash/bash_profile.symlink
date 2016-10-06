@@ -39,10 +39,11 @@ export GIT_EDITOR="atom --wait"
 # website is very strict, needs this set
 export RAILS_ENV=development
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH=$PATH:$HOME/usr/local/bin
 export PATH=$PATH:$HOME/usr/bin
 
-ulimit -n 2560
+ulimit -n 4096
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

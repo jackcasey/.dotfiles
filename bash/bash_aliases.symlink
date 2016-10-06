@@ -84,3 +84,5 @@ alias uni='bundle exec unicorn -p 3000'
 alias ll='ls -lahrt'
 
 alias atomm='env -i /usr/local/bin/atom'
+
+alias update_keyboard='cd ~/projects/controller/Keyboards && ./whitefox.bash && sleep 2 && dfu-util -D WhiteFox.gcc/kiibohd.dfu.bin'
