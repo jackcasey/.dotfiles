@@ -29,6 +29,19 @@
   pointer-events: none;
 }
 
+// infinite atom tabs
+.tab-bar {
+    > .tab {
+        min-width: 0;
+        .title {
+            // 7% looks good when the tab count is low
+            // and basically squishes to nothing when the tab count is high.
+            margin: 0 7%;
+            text-align: left;
+        }
+    }
+}
+
 atom-panel.modal.overlay {
   width: 700px;
   margin-left: -350px;

@@ -23,6 +23,9 @@
 # This file uses Coffetar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 
+'atom-text-editor.vim-mode-plus.operator-pending-mode':
+  'i f':         'vim-mode-plus:inner-fold'
+
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'up':          'pane:show-previous-item'
   'down':        'pane:show-next-item'
@@ -32,9 +35,9 @@
   '@':           'atom-keyboard-macros-vim:execute_macro_vim'
 
   # ctags
-  'space p shift-R': 'atom-ctags:rebuild'
-  'ctrl-]':      'atom-ctags:go-to-declaration'
-  'ctrl-t':      'atom-ctags:return-from-declaration'
+  'space s g': 'symbol-gen:generate'
+  'space s f': 'symbols-view:toggle-file-symbols'
+  'space s p': 'symbols-view:toggle-project-symbols'
 
   ':':           'ex-mode:open'
 
@@ -44,6 +47,8 @@
   'space a d': 'window:toggle-dev-tools'
 
   ':': 'vim-mode-plus-ex-mode:open'
+
+  '-': 'toggle:there'
 
 'atom-workspace':
   'ctrl-c ctrl-c': 'window:close'

@@ -31,12 +31,11 @@
     destroyEmptyPanes: false
     disabledPackages: [
       "welcome"
-      "symbols-view"
       "spell-check"
-      "build"
       "hyperclick"
       "jsonlint"
       "wordcount"
+      "build"
     ]
     packagesWithKeymapsDisabled: []
     themes: [
@@ -47,13 +46,15 @@
   "easy-motion-redux": {}
   editor:
     fontFamily: "SourceCodePro-Light"
-    fontSize: 16
     invisibles: {}
     lineHeight: 1.3
     preferredLineLength: 120
-    showInvisibles: true
   "exception-reporting":
     userId: "92fbfa32-55eb-71cf-9895-6d5562807114"
+  "fuzzy-finder":
+    ignoredNames: [
+      "app/services/web_api/activity.rb"
+    ]
   "git-blame":
     ignoreWhiteSpaceDiffs: true
   "git-diff":
@@ -67,7 +68,7 @@
   "lazy-motion":
     saveHistoryOnCancel: false
   linter:
-    ignoreMatchedFiles: "**/schema.rb"
+    ignoreMatchedFiles: "**/@(schema|main_menu).rb"
     lintOnFly: false
     showErrorPanel: false
     showErrorTabFile: false
@@ -88,6 +89,7 @@
     leftEditorColor: "red"
     rightEditorColor: "green"
     syncHorizontalScroll: true
+  "symbols-view": {}
   term2: {}
   "tree-view":
     hideIgnoredNames: true
@@ -98,6 +100,7 @@
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
   "vim-mode-plus":
+    groupChangesWhenLeavingInsertMode: false
     incrementalSearch: true
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
@@ -119,6 +122,12 @@
 ".feature.gherkin.text":
   editor:
     preferredLineLength: 120
+".html.ruby.text":
+  editor:
+    preferredLineLength: 120
+".js.rails.source source.jquery.js":
+  editor:
+    preferredLineLength: 120
 ".js.regexp.replacement.source":
   editor:
     preferredLineLength: 120
@@ -132,5 +141,14 @@
   editor:
     preferredLineLength: 120
 ".narrow.source":
+  editor:
+    preferredLineLength: 120
+".rails.rjs.ruby.source":
+  editor:
+    preferredLineLength: 120
+".rails.ruby.source":
+  editor:
+    preferredLineLength: 120
+".ruby.source.sql":
   editor:
     preferredLineLength: 120
