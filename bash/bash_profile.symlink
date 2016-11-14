@@ -49,3 +49,6 @@ ulimit -n 4096
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 export ATOM_HOME=~/.atom-proton
+export PATH="/usr/local/sbin:$PATH"
+
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
