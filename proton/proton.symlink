@@ -70,6 +70,8 @@
   :disabled-packages [
     :relative-numbers
     :welcome
+    :atomatigit
+    :autocomplete-ruby
     ;; :autoupdate-packages
     ;; :about
   ]
@@ -85,13 +87,10 @@
     ["editor.preferredLineLength" 120]
     ["editor.softWrap" false]
 
-
     ;; the current default theme
-    ["core.themes" ["one-dark-ui" "atom-dark-syntax"]]
+    ["core.themes" ["one-dark-ui" "monokai"]]
     ["core.useCustomTitleBar" true]
-    ;; here are some more popular theme ideas for you to pick from:
-    ;; ["core.themes" ["atom-material-ui" "atom-material-syntax"]]
-    ;; ["core.themes" ["one-dark-ui" "one-dark-syntax"]]
+    ["core.followSymlinks" false]
 
     ;; proton configuration
     ["proton.core.showTabBar" true]
@@ -108,6 +107,12 @@
     ["linter.statusIconScope" "File"]
     ["linter.ignoreMatchedFiles" "**/@(schema|main_menu).rb"]
     ["linter.lintOnFly" false]
+
+    ["zentabs.manualMode" false]
+    ["zentabs.maximumOpenedTabs" 10]
+    ["zentabs.neverCloseUnsaved" true]
+
+    ["whitespace.ignoreWhitespaceOnCurrentLine" false]
   ]
 
   ;; Don't like a keybinding or want to add something yourself? Do it here
