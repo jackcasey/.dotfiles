@@ -19,6 +19,7 @@
     ;; -----------------------------------
     :tools/git
     :tools/linter
+    :tools/todo
     ;; :tools/bookmarks
     ;; :tools/build
     ;; :tools/minimap
@@ -120,10 +121,23 @@
   ;; and adds a action under `y` with the title `execute hello`.
   ;; Upon executing, proton will dispatch the action `hello` on the current view
   ;;
-  ;; :keybindings {:z {:category "foo-category"
-  ;;                   :y {:title "execute hello"
-  ;;                       :action "hello"}}}
   :keybindings {
+    :p {:category "project"
+        :y {:title "copy project path"
+            :action "editor:copy-project-path",
+            :target ".editor.is-focused"}
+        :r {:title "go to symbol"
+            :action "symbols-view:toggle-project-symbols",
+            :target ".editor.is-focused"}
+        }
+    :f {:category "files"
+        :t {:title "reveal in tree view"
+            :action "tree-view:reveal-active-file",
+            :target ".editor.is-focused"}
+        :r {:title "go to symbol"
+            :action "symbols-view:toggle-file-symbols",
+            :target ".editor.is-focused"}
+       }
   }
 
   ;; Want some custom behavior inside a certain window?
