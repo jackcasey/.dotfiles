@@ -32,7 +32,8 @@ source $HOME/.dotfiles/bash/oh-my-git/prompt.sh
 export CLICOLOR=true
 
 export EDITOR=atom
-export GIT_EDITOR="atom --wait"
+export VISUAL=atom
+export GIT_EDITOR="v"
 
 # set locale if unset. This is used by perl (and others?)
 [ ! -z "$STATE" ] && export LC_ALL=en_AU.UTF-8
