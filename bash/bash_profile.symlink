@@ -7,8 +7,9 @@ export PATH=$HOME/.bin:/usr/local/share/npm/bin:/usr/local/Cellar/python/2.7.1/b
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 export RUBYLIB="/usr/local/lib:$RUBYLIB"
 export PATH=$PATH:/Library/Frameworks/GDAL.framework/Programs
@@ -52,3 +53,10 @@ export ATOM_HOME=~/.atom-proton
 export PATH="/usr/local/sbin:$PATH"
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+function title {
+  echo -ne "\033]0;"$*"\007"
+}
+
+export PATH="$PATH:./node_modules/.bin"
+export DISABLE_SPRING=yes
