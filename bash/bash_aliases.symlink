@@ -67,10 +67,10 @@ long() {
 alias devus="export AGW_region=us"
 alias devau="export AGW_region=au"
 
-alias cuc="NO_COVERAGE=true RAILS_ENV=test cucumber"
-alias cucchrome="RAILS_ENV=test JS_DRIVER=chrome be cucumber --tags @focus"
-alias rsp="NO_COVERAGE=true RAILS_ENV=test rspec -cfd"
-alias grd="RAILS_ENV=test guard"
+alias cuc="TEST_ASSETS=true NO_COVERAGE=true RAILS_ENV=test cucumber"
+alias cucchrome="TEST_ASSETS=true RAILS_ENV=test JS_DRIVER=chrome be cucumber --tags @focus"
+alias rsp="TEST_ASSETS=true NO_COVERAGE=true RAILS_ENV=test rspec -cfd"
+alias grd="TEST_ASSETS=true RAILS_ENV=test guard"
 
 # emacs macosx from command line
 alias emacs='open -a /Applications/Emacs.app $1'
