@@ -106,7 +106,7 @@
 
     ;; the current default theme
     ["core.themes" ["one-dark-ui" "monokai"]]
-    ["core.useCustomTitleBar" true]
+    ["core.titleBar" "custom"]
 
     ["core.followSymlinks" false]
     ["core.customFileTypes" {

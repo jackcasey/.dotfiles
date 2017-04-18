@@ -2,75 +2,71 @@
  * Your Stylesheet
  *
  * This stylesheet is loaded when Atom starts up and is reloaded automatically
- * when it is changed.
+ * when it is changed and saved.
  *
- * If you are unfamiliar with LESS, you can read more about it here:
- * http://www.lesscss.org
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
  */
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
 .tree-view {
-  font-size:110%;
-  // font-family: 'Avenir Next Ultra Light';
+  // background-color: whitesmoke;
 }
 
-// Hide the close (x) tab button on hover. Just rely on Command+W or Middle click
-// .tab-bar .tab.modified .close-icon {
-//   display:block;
-// }
-.tab-bar .tab .close-icon::before {
-  content:none;
-}
-.tab-bar .tab.modified:hover .close-icon {
-  right: 0;
-  top: 10px;
-  width: 8px;
-  height: 8px;
-  border: 2px solid #0098ff;
-  border-radius: 12px;
-  pointer-events: none;
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: white;
+  // background-color: hsl(180, 24%, 12%);
+  // .line-number { display: none; }
 }
 
-// infinite atom tabs
-.tab-bar {
-    > .tab {
-        min-width: 0;
-        .title {
-            // 7% looks good when the tab count is low
-            // and basically squishes to nothing when the tab count is high.
-            margin: 0 7%;
-            text-align: left;
-        }
+// To style other content in the text editor's shadow DOM, use the .editor expression
+atom-text-editor.editor .cursor {
+  // border-color: red;
+}
+
+atom-text-editor.editor .gutter {
+  .line-number.git-line-modified { border-left: 2px solid #ffa500; }
+  .line-number.git-line-added { border-left: 2px solid #0f0; }
+  .line-number.git-line-removed:before { border-left: 6px solid #f55; }
+  .line-number {
+    // opacity: 0.8;
+    &.cursor-line {
+      opacity: 1;
     }
+  }
 }
-
 atom-panel.modal.overlay {
-  width: 700px;
-  margin-left: -350px;
+  max-width: none;
+  width: 900px;
   .select-list {
     font-size: 130%;
     .list-group {
       max-height: 600px;
-      .secondary-line {
-        font-size: 75%;
+      line-height: 1.75em;
+      li.two-lines {
+        padding: 2px 5px;
+        .secondary-line {
+          line-height: 1.25em;
+          font-size: 75%;
+          margin-bottom: 3px;
+        }
       }
     }
   }
 }
 
-.badge {
-  background: #4182c4;
-}
-linter-message {
-  background: #ddd;
-  font-size: 12px;
-}
-#linter-inline {
-  background: #ddd;
-  ::before {
-    border-color: transparent transparent #ddd #ddd;
-  }
-}
-
 // condense tree view a little bit
+.tree-view {
+  font-family: 'SourceCodePro-Light';
+}
 @tree-view-item-height: 23px;
 .tree-view {
   .list-group .selected::before, .list-tree .selected::before {
@@ -80,66 +76,25 @@ linter-message {
     line-height: @tree-view-item-height;
   }
 }
-
-atom-text-editor.editor .gutter.git-diff-icon .line-number {
-  &.git-line-modified::before {
-    color: #fa0;
-    content: "~";
-  }
-  &.git-line-added::before {
-    color: #0e4;
-    content: "+";
-  }
-  &.git-line-removed::before {
-    color: #f30;
-    content: "x";
-  }
-}
-
-atom-text-editor.editor .line-number.cursor-line,
-atom-text-editor.editor .line-number::before,
-{
-  color: rgba(255,255,255,255);
-  opacity: 1.0;
-}
-
-atom-text-editor.editor .line-number {
-  color: rgba(255,255,255,0.6);
-  opacity: 1.0;
-}
-
-atom-text-editor.editor .linter-gutter.linter-highlight {
-  height: 90% !important;
-  width: 25%;
-  border-radius: 0;
-  &.warning {
-    background-color: #f80;
-  }
-  &.error {
-    background-color: #f00;
-  }
-}
-
-// style the background and foreground colors on the atom-text-editor-element
-// itself
-// atom-text-editor {
-//
-// }
-
-// To style other content in the text editor's shadow DOM, use the .editor
-// expression
-// atom-text-editor.editor .cursor {
-// }
-
 atom-overlay .easy-motion-redux-letter {
   position: absolute;
   // z-index: 1;
-  background-color: orange !important;
-  border-radius: 2px;
+  background-color: grey !important;
+  padding: 1px;
+  border-radius: 7px;
+  margin-left: -1px;
+  margin-top: -1px;
   color: white;
-  font-weight: 400;
+  // font-weight: 400;
   font-style: italic;
+  text-shadow: 1px 1px 2px black;
 }
-div.line.cursor-line {
-  background-color: black !important;
+
+.syntax--embedded {
+  .syntax--punctuation {
+    color: orange
+  }
+  .syntax--source {
+    color: white
+  }
 }

@@ -64,12 +64,6 @@
     format_on_save: false
   "lazy-motion":
     saveHistoryOnCancel: false
-  linter:
-    ignoreMatchedFiles: "**/@(schema|main_menu).rb"
-    lintOnFly: false
-    showErrorPanel: false
-    showErrorTabFile: false
-    statusIconScope: "File"
   "linter-aspell":
     ignoredWords: "config,pearce,fettleton,orc,bonecruncher,aergon,API"
   "linter-rubocop":
