@@ -59,10 +59,7 @@
     ignoreWhiteSpaceDiffs: true
   "git-diff":
     showIconsInEditorGutter: true
-  "git-plus":
-    experimental: true
-    splitPane: "Right"
-    wordDiff: false
+  "git-plus": {}
   jsformat:
     format_on_save: false
   "lazy-motion":

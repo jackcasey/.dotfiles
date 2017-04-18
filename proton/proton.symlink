@@ -30,8 +30,9 @@
     ;; -----------------------------------
     :lang/ruby
     :lang/javascript
-    :lang/clojure
+    :lang/stylus
     :lang/markdown
+    ;; :lang/clojure
     ;; :lang/python
     ;; :lang/csharp
     ;; :lang/julia
@@ -59,8 +60,18 @@
   [
     :monokai
     :cursor-history
+    :atom-fuzzy-grep
+    :quick-highlight
+    :language-vue
+    :vue2-autocomplete
+    :rspec
+    :language-rspec
+    :git-time-machine
+    :vim-mode-plus-ex-mode
+    :vim-mode-plus-exchange
+
     :symbol-gen
-    ;; :pigments
+    ; :git-radar
   ]
 
 
@@ -73,6 +84,11 @@
     :welcome
     :atomatigit
     :autocomplete-ruby
+    :fixmyjs
+    :ruby-test
+    :pigments
+    :ex-mode
+
     ;; :autoupdate-packages
     ;; :about
   ]
@@ -91,11 +107,16 @@
     ;; the current default theme
     ["core.themes" ["one-dark-ui" "monokai"]]
     ["core.useCustomTitleBar" true]
+
     ["core.followSymlinks" false]
+    ["core.customFileTypes" {
+      "source.clojure" ["proton.symlink"]
+    }]
 
     ;; proton configuration
     ["proton.core.showTabBar" true]
-    ["proton.core.relativeLineNumbers" true]
+    ["proton.core.post-init-timeout", 500]
+    ["proton.core.alwaysShowWelcomeScreen" false]
 
     ;; prefer classic vim mode over vim-mode-plus? Change this to :vim-mode
     ["proton.core.inputProvider" :vim-mode-plus]
@@ -104,16 +125,22 @@
     ["autocomplete-plus.backspaceTriggersAutocomplete" true]
     ["autocomplete-plus.confirmCompletion" "tab"]
 
-    ["linter.showErrorPanel" false]
-    ["linter.statusIconScope" "File"]
-    ["linter.ignoreMatchedFiles" "**/@(schema|main_menu).rb"]
-    ["linter.lintOnFly" false]
+    ["linter-ui-default.tooltipFollows" "Keyboard"]
+    ["linter-ui-default.decorateOnTreeView" "None"]
+    ["linter-rubocop.disableWhenNoConfigFile" true]
+    ["linter.lintOnChangeInterval" 1500]
 
     ["zentabs.manualMode" false]
     ["zentabs.maximumOpenedTabs" 10]
     ["zentabs.neverCloseUnsaved" true]
 
     ["whitespace.ignoreWhitespaceOnCurrentLine" false]
+
+    ["vim-mode-plus.automaticallyEscapeInsertModeOnActivePaneItemChange" true]
+    ["vim-mode-plus.charactersToAddSpaceOnSurround" ["{" "}"]]
+    ["vim-mode-plus.ignoreCaseForSearchCurrentWord" true]
+
+    ["rspec.command", "bundle exec rspec"]
   ]
 
   ;; Don't like a keybinding or want to add something yourself? Do it here
@@ -129,8 +156,14 @@
         :r {:title "go to symbol"
             :action "symbols-view:toggle-project-symbols",
             :target ".editor.is-focused"}
+        :g {:title "fuzzy grep"
+            :action "fuzzy-grep:toggle",
+            :target ".editor.is-focused"}
         }
     :f {:category "files"
+        :y {:title "copy file path"
+            :action "editor:copy-path",
+            :target ".editor.is-focused"}
         :t {:title "reveal in tree view"
             :action "tree-view:reveal-active-file",
             :target ".editor.is-focused"}
@@ -138,18 +171,38 @@
             :action "symbols-view:toggle-file-symbols",
             :target ".editor.is-focused"}
        }
+    :d {:category "diff"
+        :n {:title "next"
+            :action "git-diff:move-to-next-diff",
+            :target ".editor.is-focused"}
+        :p {:title "previous"
+            :action "git-diff:move-to-previous-diff",
+            :target ".editor.is-focused"}
+       }
+    :e {:category "errors"
+        :a {:title "autocorrect"
+            :action "rubocop-auto-correct:current-file"
+            :target ".editor.is-focused"}
+       }
+    :r {:category "rspec"
+        :r {:title "run current file"
+            :action "rspec:run"
+            :target ".editor.is-focused"}
+       }
   }
 
   ;; Want some custom behavior inside a certain window?
   ;; Add your own nifty things here!
   :keymaps [
-    ;; Smash escape
     {:selector "atom-text-editor.vim-mode-plus.insert-mode" :keymap [["f d" "vim-mode-plus:activate-normal-mode"]]}
     {:selector "atom-text-editor.vim-mode-plus.insert-mode" :keymap [["j k" "vim-mode-plus:activate-normal-mode"]]}
+    {:selector "atom-text-editor.vim-mode-plus.normal-mode" :keymap [["g m" "vim-mode-plus-user:quick-highlight-word"]]}
+    {:selector "atom-text-editor.vim-mode-plus.normal-mode" :keymap [["_" "vim-mode-plus:replace-with-register"]]}
+    {:selector "atom-text-editor.vim-mode-plus.visual-mode" :keymap [["g m" "vim-mode-plus-user:quick-highlight"]]}
     {:selector "atom-text-editor.vim-mode-plus:not(.insert-mode)" :keymap [
       ["up" "pane:show-previous-item"]
+      ["g M" "quick-highlight:clear"]
       ["down" "pane:show-next-item"]
-      ["space f y" "editor:copy-project-path"]
       ["ctrl-i" "cursor-history:next"]
       ["ctrl-o" "cursor-history:prev"]
     ]}
