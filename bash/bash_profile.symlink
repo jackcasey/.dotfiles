@@ -33,7 +33,7 @@ export CLICOLOR=true
 
 export EDITOR=atom
 export VISUAL=atom
-export GIT_EDITOR="v"
+export GIT_EDITOR="vim"
 
 # set locale if unset. This is used by perl (and others?)
 [ ! -z "$STATE" ] && export LC_ALL=en_AU.UTF-8
