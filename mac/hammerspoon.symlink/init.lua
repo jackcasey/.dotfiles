@@ -1,7 +1,6 @@
 hs.window.animationDuration = 0
 
--- Full screen
-hs.hotkey.bind({"cmd", "alt"}, "P", function()
+fullscreen = function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen():frame()
@@ -10,10 +9,9 @@ hs.hotkey.bind({"cmd", "alt"}, "P", function()
   f.w = screen.w
   f.h = screen.h
   win:setFrame(f)
-end)
+end
 
--- Cycle Left
-hs.hotkey.bind({"cmd", "alt"}, "[", function()
+cycleLeft = function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen():frame()
@@ -23,10 +21,10 @@ hs.hotkey.bind({"cmd", "alt"}, "[", function()
   f.h = screen.h
 
   -- Cycle through 1/2, 1/3 and 2/3
-  if math.abs(f.w - screen.w / 2) < 10 then
+  if math.abs(f.w - screen.w / 2) < 10 and isLeft() then
     f.x = screen.x
     f.w = screen.w / 3
-  elseif math.abs(f.w - screen.w / 3) < 10 then
+  elseif math.abs(f.w - screen.w / 3) < 10 and isLeft() then
     f.x = screen.x
     f.w = 2 * screen.w / 3
   else
@@ -35,10 +33,9 @@ hs.hotkey.bind({"cmd", "alt"}, "[", function()
   end
 
   win:setFrame(f)
-end)
+end
 
--- Cycle Right
-hs.hotkey.bind({"cmd", "alt"}, "]", function()
+cycleRight = function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen():frame()
@@ -48,10 +45,10 @@ hs.hotkey.bind({"cmd", "alt"}, "]", function()
   f.h = screen.h
 
   -- Cycle through 1/2, 1/3 and 2/3
-  if math.abs(f.w - screen.w / 2) < 10 then
+  if math.abs(f.w - screen.w / 2) < 10 and not isLeft() then
     f.x = screen.x + (2 * screen.w / 3)
     f.w = screen.w / 3
-  elseif math.abs(f.w - screen.w / 3) < 10 then
+  elseif math.abs(f.w - screen.w / 3) < 10 and not isLeft() then
     f.x = screen.x + (screen.w / 3)
     f.w = 2 * screen.w / 3
   else
@@ -60,14 +57,37 @@ hs.hotkey.bind({"cmd", "alt"}, "]", function()
   end
 
   win:setFrame(f)
-end)
+end
 
--- Next Monitor
-hs.hotkey.bind({"cmd", "alt"}, "O", function()
+nextMonitor = function()
   local win = hs.window.focusedWindow()
   local nextScreen = win:screen():next()
   win:moveToScreen(nextScreen)
-end)
+end
+
+isLeft = function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen():frame()
+  return f.x < 10
+end
+
+
+-- Full screen
+hs.hotkey.bind({"cmd", "alt"}, "P", fullscreen)
+hs.hotkey.bind({"cmd", "alt"}, "Q", fullscreen)
+
+-- Cycle Left
+hs.hotkey.bind({"cmd", "alt"}, "[", cycleLeft)
+hs.hotkey.bind({"cmd", "alt"}, "A", cycleLeft)
+
+-- Cycle Right
+hs.hotkey.bind({"cmd", "alt"}, "]", cycleRight)
+hs.hotkey.bind({"cmd", "alt"}, "D", cycleRight)
+
+-- Next Monitor
+hs.hotkey.bind({"cmd", "alt"}, "O", nextMonitor)
+hs.hotkey.bind({"cmd", "alt"}, "E", nextMonitor)
 
 
 -- reload config
