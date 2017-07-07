@@ -98,7 +98,7 @@ function time()
 end
 
 function fakeSpaceEvents()
-  print('emitting fake space')
+  -- print('emitting fake space')
   local keyUp = hs.eventtap.event.newKeyEvent(srcMods, 'space', true)
   keyUp:setProperty(USER_DATA, SYNTHETIC)
   local keyDown = hs.eventtap.event.newKeyEvent(srcMods, 'space', false)
@@ -127,14 +127,14 @@ function jeo.handleKeyEvent(event)
   local layer = DEFAULT_LAYER
 
   if space and not symbol and (time() - spaceDownAt > 50) then
-    print('SYMBOL ON')
+    -- print('SYMBOL ON')
     symbol = true
     symbolEmitted = false;
   end
 
-  print('Incoming: ', srcKey, keyDown)
-  print('space: ', space)
-  print('symbol: ', symbol)
+  -- print('Incoming: ', srcKey, keyDown)
+  -- print('space: ', space)
+  -- print('symbol: ', symbol)
 
   -- If event is pass-through toggle, handle it appropriately.
   if keyDown and srcKey == 'escape' and srcMods.cmd and not srcMods.alt then
@@ -168,11 +168,11 @@ function jeo.handleKeyEvent(event)
       space = false
       spaceDownAt = 0
       if symbol then
-        print('SYMBOL OFF')
+        -- print('SYMBOL OFF')
         symbol = false
 
         if symbolEmitted then
-          print('space used as symbol mod and released')
+          -- print('space used as symbol mod and released')
           symbolEmitted = false
           return DELETE
         end
@@ -245,7 +245,7 @@ function jeo.handleKeyEvent(event)
     end
 
     -- Post the new event and consume the old one.
-    print('Outgoing: ', dstMap.key)
+    -- print('Outgoing: ', dstMap.key)
     return DELETE, { newEvent }
   else
     if space and not spaceEmitted then
