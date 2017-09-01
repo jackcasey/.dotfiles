@@ -34,19 +34,10 @@
   'q':           'atom-keyboard-macros-vim:toggle_record_macro_vim'
   '@':           'atom-keyboard-macros-vim:execute_macro_vim'
 
-  # ctags
-  'space s g': 'symbol-gen:generate'
-  'space s f': 'symbols-view:toggle-file-symbols'
-  'space s p': 'symbols-view:toggle-project-symbols'
-
   ':':           'ex-mode:open'
 
   'ctrl-i': 'cursor-history:next'
   'ctrl-o': 'cursor-history:prev'
-
-  'space a d': 'window:toggle-dev-tools'
-
-  ':': 'vim-mode-plus-ex-mode:open'
 
   '-': 'toggle:there'
 
@@ -56,10 +47,6 @@
 'atom-text-editor.vim-mode-plus.insert-mode':
   'f d': 'vim-mode-plus:activate-normal-mode'
   'j k': 'vim-mode-plus:activate-normal-mode'
-
-'atom-text-editor.vim-mode-plus.normal-mode, atom-text-editor.vim-mode-plus.visual-mode':
-  'space m': 'quick-highlight:toggle'
-  'space M': 'quick-highlight:clear'
 
 'atom-text-editor':
   'ctrl-k': 'vim-mode-plus-user:move-selected-text-up'
