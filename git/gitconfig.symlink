@@ -30,6 +30,7 @@
 	trustExitCode = false
 [diff]
 	tool = diffmerge
+	algorithm = patience
 [difftool "diffmerge"]
 	cmd = diffmerge $LOCAL $REMOTE
 [filter "media"]
