@@ -20,6 +20,7 @@
     :tools/git
     :tools/linter
     :tools/todo
+
     ;; :tools/bookmarks
     ;; :tools/build
     ;; :tools/minimap
@@ -32,6 +33,7 @@
     :lang/javascript
     :lang/stylus
     :lang/markdown
+
     ;; :lang/clojure
     ;; :lang/python
     ;; :lang/csharp
@@ -64,14 +66,15 @@
     :quick-highlight
     :language-vue
     :vue2-autocomplete
-    :rspec
-    :language-rspec
-    :git-time-machine
-    :vim-mode-plus-ex-mode
     :vim-mode-plus-exchange
-
+    :narrow
+    :ex-mode
     :symbol-gen
+    :rails-i18n
+
     ; :git-radar
+    ; :rspec
+    ; :language-rspec
   ]
 
 
@@ -83,11 +86,18 @@
     :relative-numbers
     :welcome
     :atomatigit
-    :autocomplete-ruby
     :fixmyjs
     :ruby-test
     :pigments
     :ex-mode
+    :merge-conflicts
+    :advanced-open-file
+    :docblockr
+    :expand-region
+    :tab-switcher
+    :markdown-scroll-sync
+    :autocomplete-ruby
+    :atom-mdtoc
 
     ;; :autoupdate-packages
     ;; :about
@@ -112,6 +122,18 @@
     ["core.customFileTypes" {
       "source.clojure" ["proton.symlink"]
     }]
+    ["core.ignoredNames" [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "vendor/assets"
+      "*.png"
+      "*.jpg"
+    ]]
 
     ;; proton configuration
     ["proton.core.showTabBar" true]
@@ -129,6 +151,7 @@
     ["linter-ui-default.decorateOnTreeView" "None"]
     ["linter-rubocop.disableWhenNoConfigFile" true]
     ["linter.lintOnChangeInterval" 1500]
+    ["linter.ignoreGlob" "**/@(schema|main_menu).rb"]
 
     ["zentabs.manualMode" false]
     ["zentabs.maximumOpenedTabs" 10]
@@ -141,6 +164,7 @@
     ["vim-mode-plus.ignoreCaseForSearchCurrentWord" true]
 
     ["rspec.command", "bundle exec rspec"]
+    ["autocomplete-paths.maxFileCount", 10000]
   ]
 
   ;; Don't like a keybinding or want to add something yourself? Do it here
@@ -182,6 +206,11 @@
     :e {:category "errors"
         :a {:title "autocorrect"
             :action "rubocop-auto-correct:current-file"
+            :target ".editor.is-focused"}
+       }
+    :g {:category "git"
+        :t {:title "panel toggle"
+            :action "github:toggle-git-tab"
             :target ".editor.is-focused"}
        }
     :r {:category "rspec"
