@@ -1,4 +1,10 @@
 return {
+  ['u'] = { key = '[', alt = false, shift = true },
+  ['i'] = { key = ']', alt = false, shift = true },
+  ['o'] = { key = '\\', alt = false, shift = true },
+
+  ['m'] = { key = '9', alt = false, shift = true },
+  [','] = { key = '0', alt = false, shift = true },
   ['.'] = { key = '-', alt = false, shift = true },
 
   ['h'] = { key = 'left',  alt = false, shift = false  },

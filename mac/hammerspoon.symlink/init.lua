@@ -94,9 +94,10 @@ hs.hotkey.bind({"cmd", "alt"}, "E", nextMonitor)
 hs.hotkey.bind({"cmd", "alt"}, "R", function()
   hs.reload()
 end)
-
-hs.dockicon.show()
-
-jeo = require 'jeospoon'
-jeoEventTap = hs.eventtap.new(jeo.KEY_EVENTS, jeo.handleKeyEvent)
-jeoEventTap:start()
+--
+-- jeo = require 'jeospoon'
+-- print("Tap")
+-- jeoEventTap = hs.eventtap.new(jeo.KEY_EVENTS, jeo.handleKeyEvent)
+-- print(jeoEventTap)
+-- ret = jeoEventTap:start()
+-- print(ret)
