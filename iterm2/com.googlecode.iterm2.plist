@@ -280,11 +280,13 @@
 	<key>HotKeyTogglesWindow</key>
 	<true/>
 	<key>Hotkey</key>
-	<true/>
+	<false/>
 	<key>HotkeyChar</key>
-	<integer>126</integer>
+	<integer>0</integer>
 	<key>HotkeyCode</key>
-	<integer>50</integer>
+	<integer>0</integer>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>401666</integer>
 	<key>IRMemory</key>
@@ -350,19 +352,19 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 364 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>-1084 369 606 456 -1440 139 1440 877 </string>
+	<string>-1128 500 599 388 -1440 139 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>445 557 918 381 0 0 1920 1057 </string>
+	<string>255 403 796 474 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 177 1440 832 -1440 139 1440 877 </string>
+	<string>0 27 1440 850 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-960 414 890 602 -1440 139 1440 877 </string>
+	<string>375 149 890 602 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>-720 161 714 855 -1440 139 1440 877 </string>
+	<string>231 275 890 602 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>243 157 890 601 0 0 1440 877 </string>
+	<string>455 229 890 602 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>0 26 1440 851 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -1379,10 +1381,30 @@
 			</dict>
 			<key>Guid</key>
 			<string>9956E9A7-8752-414A-A160-BA46403996EB</string>
+			<key>Has Hotkey</key>
+			<true/>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
+			<key>HotKey Characters</key>
+			<string>~</string>
+			<key>HotKey Characters Ignoring Modifiers</key>
+			<string>~</string>
+			<key>HotKey Key Code</key>
+			<integer>50</integer>
+			<key>HotKey Modifier Flags</key>
+			<integer>401666</integer>
+			<key>HotKey Window Animates</key>
+			<true/>
+			<key>HotKey Window AutoHides</key>
+			<true/>
+			<key>HotKey Window Dock Click Action</key>
+			<integer>0</integer>
+			<key>HotKey Window Floats</key>
+			<false/>
+			<key>HotKey Window Reopens On Activation</key>
+			<false/>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
@@ -2707,7 +2729,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-02-17T01:24:36Z</date>
+	<date>2017-06-15T05:55:12Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2717,7 +2739,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>
@@ -2760,10 +2782,12 @@
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.14</string>
+	<string>3.1.beta.4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
