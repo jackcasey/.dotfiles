@@ -19,8 +19,8 @@
     ;; -----------------------------------
     :tools/git
     :tools/linter
-    :tools/todo
 
+    ;; :tools/todo
     ;; :tools/bookmarks
     ;; :tools/build
     ;; :tools/minimap
@@ -31,8 +31,7 @@
     ;; -----------------------------------
     :lang/ruby
     :lang/javascript
-    :lang/stylus
-    :lang/markdown
+    ;; :lang/stylus
 
     ;; :lang/clojure
     ;; :lang/python
@@ -60,21 +59,25 @@
   ;; Will get uninstalled so choose wisely!
   :additional-packages
   [
-    :monokai
     :cursor-history
+    :fonts
     :atom-fuzzy-grep
     :quick-highlight
-    :language-vue
-    :vue2-autocomplete
-    :vim-mode-plus-exchange
-    :narrow
     :ex-mode
-    :symbol-gen
-    :rails-i18n
+    :narrow
+    :vim-mode-plus-exchange
+    :easysort-yaml
 
-    ; :git-radar
-    ; :rspec
-    ; :language-rspec
+    ;; :linter-solidity
+
+    ;; :language-vue
+    ;; :vue2-autocomplete
+    ;; :symbol-gen
+    ;; :rails-i18n
+    ;; :git-radar
+    ;; :rspec
+    ;; :language-rspec
+    ;; :monokai
   ]
 
 
@@ -83,13 +86,12 @@
   ;; Bundled packages will be disabled instead.
   ;; Use this configuration instead of atom's `core.disabledPackages`
   :disabled-packages [
-    :relative-numbers
     :welcome
+    :relative-numbers
     :atomatigit
     :fixmyjs
     :ruby-test
     :pigments
-    :ex-mode
     :merge-conflicts
     :advanced-open-file
     :docblockr
@@ -97,10 +99,10 @@
     :tab-switcher
     :markdown-scroll-sync
     :autocomplete-ruby
+    :autocomplete-paths
     :atom-mdtoc
-
-    ;; :autoupdate-packages
-    ;; :about
+    :react-snippets
+    :zentabs
   ]
 
   ;; Proton takes over your atom configuration. All settings that are not listed here will get wiped
@@ -109,13 +111,14 @@
   :configuration
   [
     ;; appearance
-    ["editor.fontFamily" "SourceCodePro-Light"]
+    ["editor.fontFamily" "SourceCodePro-ExtraLight"]
+    ["fonts.fontFamily" "Source Code Pro Extra Light"]
     ["editor.fontSize" 16]
     ["editor.preferredLineLength" 120]
     ["editor.softWrap" false]
 
     ;; the current default theme
-    ["core.themes" ["one-dark-ui" "monokai"]]
+    ["core.themes" ["one-dark-ui" "atom-dark-syntax"]]
     ["core.titleBar" "custom"]
 
     ["core.followSymlinks" false]
@@ -153,15 +156,27 @@
     ["linter.lintOnChangeInterval" 1500]
     ["linter.ignoreGlob" "**/@(schema|main_menu).rb"]
 
-    ["zentabs.manualMode" false]
-    ["zentabs.maximumOpenedTabs" 10]
-    ["zentabs.neverCloseUnsaved" true]
-
     ["whitespace.ignoreWhitespaceOnCurrentLine" false]
 
     ["vim-mode-plus.automaticallyEscapeInsertModeOnActivePaneItemChange" true]
     ["vim-mode-plus.charactersToAddSpaceOnSurround" ["{" "}"]]
     ["vim-mode-plus.ignoreCaseForSearchCurrentWord" true]
+    ["vim-mode-plus.findAcrossLines" true]
+    ["vim-mode-plus.findCharsMax" 2]
+    ["vim-mode-plus.findConfirmByTimeout" 150]
+    ["vim-mode-plus.keymapBackslashToInnerCommentOrParagraphWhenToggleLineCommentsIsPending" true]
+    ["vim-mode-plus.keymapCCToChangeInnerSmartWord" true]
+    ["vim-mode-plus.keymapIAndAToInsertAtTargetWhenHasOccurrence" true]
+    ["vim-mode-plus.keymapPToPutWithAutoIndent" true]
+    ["vim-mode-plus.keymapSToSelect" true]
+    ["vim-mode-plus.keymapUnderscoreToReplaceWithRegister" true]
+    ["vim-mode-plus.keymapYToYankToLastCharacterOfLine" true]
+    ["vim-mode-plus.reuseFindForRepeatFind" true]
+    ["vim-mode-plus.sequentialPaste" true]
+    ["vim-mode-plus.sequentialPasteMaxHistory" 5]
+    ["vim-mode-plus.statusBarModeStringStyle" "long"]
+    ["vim-mode-plus.useSmartcaseForFind" true]
+    ["vim-mode-plus.useSmartcaseForSearch" true]
 
     ["rspec.command", "bundle exec rspec"]
     ["autocomplete-paths.maxFileCount", 10000]
@@ -218,16 +233,57 @@
             :action "rspec:run"
             :target ".editor.is-focused"}
        }
-  }
+    :n {:category "narrow"
+        :s {:title "search"
+            :action "narrow:search"
+            :target ".editor.is-focused" }
+        :w {:title "search current word"
+            :action "narrow:search-by-current-word"
+            :target ".editor.is-focused" }
+        :W {:title "search current word"
+            :action "narrow:search-by-current-word-without-focus"
+            :target ".editor.is-focused" }
+        :f {:title "fold"
+            :action "narrow:fold"
+            :target ".editor.is-focused" }
+        :p {:category "project"
+             :s {:title "search"
+                 :action "narrow:search-current-project"
+                 :target ".editor.is-focused" }
+             :w {:title "search current word"
+                 :action "narrow:search-current-project-by-current-word"
+                 :target ".editor.is-focused"}
+           }
+        }
+    }
 
   ;; Want some custom behavior inside a certain window?
   ;; Add your own nifty things here!
   :keymaps [
+    {:selector "atom-text-editor" :keymap [
+      ["ctrl-cmd-i" "cursor-history:next-within-editor"]
+      ["ctrl-cmd-o" "cursor-history:prev-within-editor"]
+    ]}
+
+    {:selector "atom-text-editor.vim-mode-plus.operator-pending-mode" :keymap [
+      ["u" "vim-mode-plus:inner-indentation"]
+      ["m" "vim-mode-plus:a-any-pair"]
+    ]}
+
     {:selector "atom-text-editor.vim-mode-plus.insert-mode" :keymap [["f d" "vim-mode-plus:activate-normal-mode"]]}
     {:selector "atom-text-editor.vim-mode-plus.insert-mode" :keymap [["j k" "vim-mode-plus:activate-normal-mode"]]}
     {:selector "atom-text-editor.vim-mode-plus.normal-mode" :keymap [["g m" "vim-mode-plus-user:quick-highlight-word"]]}
     {:selector "atom-text-editor.vim-mode-plus.normal-mode" :keymap [["_" "vim-mode-plus:replace-with-register"]]}
     {:selector "atom-text-editor.vim-mode-plus.visual-mode" :keymap [["g m" "vim-mode-plus-user:quick-highlight"]]}
+    {:selector "atom-text-editor.vim-mode-plus.normal-mode, atom-text-editor.vim-mode-plus.visual-mode" :keymap [
+      ["-" "vim-mode-plus:replace-with-register"]
+      ["+" "vim-mode-plus:replace-occurrence-with-register"]
+      ["m" "vim-mode-plus:toggle-preset-occurrence"]
+      ["M" "vim-mode-plus:toggle-preset-subword-occurrence"]
+    ]}
+    {:selector "atom-text-editor.vim-mode-plus.operator-pending-mode, atom-text-editor.vim-mode-plus.visual-mode" :keymap [
+      ["'" "vim-mode-plus:inner-any-quote"]
+    ]}
     {:selector "atom-text-editor.vim-mode-plus:not(.insert-mode)" :keymap [
       ["up" "pane:show-previous-item"]
       ["g M" "quick-highlight:clear"]
