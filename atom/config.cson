@@ -1,146 +1,167 @@
 "*":
-  "activate-power-mode":
-    autoToggle: false
+  "activate-power-mode": {}
   "atom-alignment": {}
-  "atom-beautify":
-    general:
-      _analyticsUserId: "c7c30fc1-1969-4b83-9f34-eeb8fbad1ca6"
-      analytics: false
-      beautifyEntireFileOnSave: false
-    js:
-      indent_size: 2
-  "atom-ctags":
-    autoBuildTagsWhenActive: true
-    buildTimeout: 15000
-    cmdArgs: "--exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules --exclude=spec --exclude=fixtures --exclude=features --exclude=db --exclude=bin --exclude=public --exclude=tmp --exclude=app/assets"
+  "atom-beautify": {}
+  "atom-ctags": {}
   "atom-fuzzy-grep": {}
   atomatigit: {}
+  "autocomplete-paths":
+    maxFileCount: 10000
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     confirmCompletion: "tab"
-  blame:
-    dateFormat: "DD/MM/YY"
+  "autoupdate-packages":
+    handling: "Update automatically and silently"
+    lastUpdateTimestamp: 1511496442606
+  blame: {}
   "bracket-matcher": {}
-  build:
-    buildOnSave: true
-    panelVisibility: "Show on Error"
-    stealFocus: false
+  build: {}
   "clip-history": {}
   core:
-    audioBeep: false
-    destroyEmptyPanes: false
+    customFileTypes:
+      "source.clojure": [
+        "proton.symlink"
+      ]
     disabledPackages: [
       "welcome"
-      "spell-check"
       "hyperclick"
       "jsonlint"
       "wordcount"
       "build"
+      "autocomplete-paths"
+      "atomatigit"
+      "linter-jshint"
+      "atom-keymap"
+      "linter-stylint"
+      "Stylus"
+      "zentabs"
+      "atom-pair"
     ]
-    packagesWithKeymapsDisabled: []
+    followSymlinks: false
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "vendor/assets"
+      "*.png"
+      "*.jpg"
+    ]
+    telemetryConsent: "no"
     themes: [
-      "atom-dark-ui"
-      "monokai"
+      "one-dark-ui"
+      "atom-dark-syntax"
     ]
     titleBar: "custom"
   "cursor-history": {}
-  "easy-motion-redux": {}
+  "easy-motion-redux":
+    replaceCharacters: "abcdefghijklmnopqrstuvwxyz"
   editor:
-    fontFamily: "SourceCodePro-Light"
-    invisibles: {}
-    lineHeight: 1.3
+    fontFamily: "SourceCodePro-ExtraLight"
     preferredLineLength: 120
-  "exception-reporting":
-    userId: "92fbfa32-55eb-71cf-9895-6d5562807114"
-  "fuzzy-finder":
-    ignoredNames: [
-      "app/services/web_api/activity.rb"
-    ]
-  "git-blame":
-    ignoreWhiteSpaceDiffs: true
-  "git-diff":
-    showIconsInEditorGutter: true
+  "exception-reporting": {}
+  "file-icons": {}
+  fonts:
+    fontFamily: "Source Code Pro Extra Light"
+  "fuzzy-finder": {}
+  "git-blame": {}
+  "git-diff": {}
   "git-plus": {}
-  jsformat:
-    format_on_save: false
-  "lazy-motion":
-    saveHistoryOnCancel: false
-  "linter-aspell":
-    ignoredWords: "config,pearce,fettleton,orc,bonecruncher,aergon,API"
+  jsformat: {}
+  "lazy-motion": {}
+  linter:
+    ignoreGlob: "**/@(schema|main_menu).rb"
+    lintOnChangeInterval: 1500
+  "linter-aspell": {}
   "linter-rubocop":
-    command: "/Users/jack/.rvm/gems/ruby-2.3.0@global/wrappers/rubocop"
-  "linter-ruby":
-    rubyExecutablePath: "/Users/jack/.rvm/rubies/ruby-2.1.3/bin/ruby"
-  "linter-scss-lint":
-    executablePath: "/Users/jack/.rvm/wrappers/ruby-2.1.3/scss-lint"
+    disableWhenNoConfigFile: true
+  "linter-ruby": {}
+  "linter-scss-lint": {}
+  "linter-ui-default":
+    decorateOnTreeView: "None"
+    tooltipFollows: "Keyboard"
+  narrow: {}
+  proton:
+    core:
+      alwaysShowWelcomeScreen: false
+      inputProvider: "vim-mode-plus"
+      leaderKey: "space"
+      modeKey: ","
+      "post-init-timeout": 500
+      quickOpenProvider: "normal"
+      relativeLineNumbers: false
+      selectedLayers: [
+        "core"
+        "tools/git"
+        "tools/linter"
+        "lang/ruby"
+        "lang/javascript"
+      ]
+      showTabBar: true
+      whichKeyDelay: 0.4
+      whichKeyDelayOnInit: false
+      whichKeyDisabled: false
+      wipeUserConfigs: true
+    lang:
+      javascript:
+        linter: "eslint"
   "recent-finder": {}
+  rspec:
+    command: "bundle exec rspec"
+  "ruby-linter":
+    rubyExecutablePath: "/usr/bin/ruby"
+  "ruby-rubocop":
+    executablePath: null
   "spell-check": {}
-  "split-diff":
-    diffWords: true
-    ignoreWhitespace: true
-    leftEditorColor: "red"
-    rightEditorColor: "green"
-    syncHorizontalScroll: true
+  "split-diff": {}
   "symbols-view": {}
   term2: {}
-  "tree-view":
-    hideIgnoredNames: true
+  "theme-switch":
+    profiles: [
+      "one-dark-ui atom-dark-syntax"
+      "nucleus-dark-ui atom-dark-fusion-syntax"
+      "atom-material-ui atom-material-syntax"
+      "atom-dark-ui atom-dark-syntax"
+      "atom-light-ui atom-light-syntax"
+      "one-dark-ui one-dark-syntax"
+      "one-light-ui one-light-syntax"
+    ]
+  "tree-view": {}
   "vim-mode":
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
-  "vim-mode-next":
-    useClipboardAsDefaultRegister: true
-    useSmartcaseForSearch: true
   "vim-mode-plus":
-    groupChangesWhenLeavingInsertMode: false
-    incrementalSearch: true
-    useClipboardAsDefaultRegister: true
+    automaticallyEscapeInsertModeOnActivePaneItemChange: true
+    charactersToAddSpaceOnSurround: [
+      "{"
+      "}"
+    ]
+    findAcrossLines: true
+    findCharsMax: 2
+    findConfirmByTimeout: 150
+    ignoreCaseForSearchCurrentWord: true
+    keymapBackslashToInnerCommentOrParagraphWhenToggleLineCommentsIsPending: true
+    keymapCCToChangeInnerSmartWord: true
+    keymapIAndAToInsertAtTargetWhenHasOccurrence: true
+    keymapPToPutWithAutoIndent: true
+    keymapSToSelect: true
+    keymapUnderscoreToReplaceWithRegister: true
+    keymapYToYankToLastCharacterOfLine: true
+    reuseFindForRepeatFind: true
+    sequentialPaste: true
+    sequentialPasteMaxHistory: 5
+    statusBarModeStringStyle: "long"
+    useSmartcaseForFind: true
     useSmartcaseForSearch: true
   "vim-surround": {}
-  welcome: {}
+  welcome:
+    showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
   wordcount: {}
-".coffee.source":
-  editor:
-    preferredLineLength: 120
-".cucumber.rspec.ruby.source.steps":
-  editor:
-    preferredLineLength: 120
-".diff.source":
-  editor:
-    preferredLineLength: 120
-    softWrap: true
-".feature.gherkin.text":
-  editor:
-    preferredLineLength: 120
-".html.ruby.text":
-  editor:
-    preferredLineLength: 120
-".js.rails.source source.jquery.js":
-  editor:
-    preferredLineLength: 120
-".js.regexp.replacement.source":
-  editor:
-    preferredLineLength: 120
-".js.regexp.source":
-  editor:
-    preferredLineLength: 120
-".js.source":
-  editor:
-    preferredLineLength: 120
-".json.source":
-  editor:
-    preferredLineLength: 120
-".narrow.source":
-  editor:
-    preferredLineLength: 120
-".rails.rjs.ruby.source":
-  editor:
-    preferredLineLength: 120
-".rails.ruby.source":
-  editor:
-    preferredLineLength: 120
-".ruby.source.sql":
-  editor:
-    preferredLineLength: 120
+  zentabs:
+    maximumOpenedTabs: 10
+    neverCloseUnsaved: true

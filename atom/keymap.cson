@@ -22,34 +22,34 @@
 #
 # This file uses Coffetar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
-
-'atom-text-editor.vim-mode-plus.operator-pending-mode':
-  'i f':         'vim-mode-plus:inner-fold'
-
-'atom-text-editor.vim-mode-plus:not(.insert-mode)':
-  'up':          'pane:show-previous-item'
-  'down':        'pane:show-next-item'
-  'shift-up':    'pane:move-item-left'
-  'shift-down':  'pane:move-item-right'
-  'q':           'atom-keyboard-macros-vim:toggle_record_macro_vim'
-  '@':           'atom-keyboard-macros-vim:execute_macro_vim'
-
-  ':':           'ex-mode:open'
-
-  'ctrl-i': 'cursor-history:next'
-  'ctrl-o': 'cursor-history:prev'
-
-  '-': 'toggle:there'
-
-'atom-workspace':
-  'ctrl-c ctrl-c': 'window:close'
-
-'atom-text-editor.vim-mode-plus.insert-mode':
-  'f d': 'vim-mode-plus:activate-normal-mode'
-  'j k': 'vim-mode-plus:activate-normal-mode'
-
-'atom-text-editor':
-  'ctrl-k': 'vim-mode-plus-user:move-selected-text-up'
-  'ctrl-j': 'vim-mode-plus-user:move-selected-text-down'
-  'ctrl-l': 'vim-mode-plus-user:move-selected-text-right'
-  'ctrl-h': 'vim-mode-plus-user:move-selected-text-left'
+#
+# 'atom-text-editor.vim-mode-plus.operator-pending-mode':
+#   'i f':         'vim-mode-plus:inner-fold'
+#
+# 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+#   'up':          'pane:show-previous-item'
+#   'down':        'pane:show-next-item'
+#   'shift-up':    'pane:move-item-left'
+#   'shift-down':  'pane:move-item-right'
+#   'q':           'atom-keyboard-macros-vim:toggle_record_macro_vim'
+#   '@':           'atom-keyboard-macros-vim:execute_macro_vim'
+#
+#   ':':           'ex-mode:open'
+#
+#   'ctrl-i': 'cursor-history:next'
+#   'ctrl-o': 'cursor-history:prev'
+#
+#   '-': 'toggle:there'
+#
+# 'atom-workspace':
+#   'ctrl-c ctrl-c': 'window:close'
+#
+# 'atom-text-editor.vim-mode-plus.insert-mode':
+#   'f d': 'vim-mode-plus:activate-normal-mode'
+#   'j k': 'vim-mode-plus:activate-normal-mode'
+#
+# 'atom-text-editor':
+#   'ctrl-k': 'vim-mode-plus-user:move-selected-text-up'
+#   'ctrl-j': 'vim-mode-plus-user:move-selected-text-down'
+#   'ctrl-l': 'vim-mode-plus-user:move-selected-text-right'
+#   'ctrl-h': 'vim-mode-plus-user:move-selected-text-left'

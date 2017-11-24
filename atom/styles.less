@@ -58,20 +58,29 @@ atom-panel.modal.overlay {
   height: 30px;
 }
 
-// condense tree view a little bit
+// Change font and spacing on the treeview
+@tree-view-item-height: 1.4em;
 .tree-view {
   font-family: 'SourceCodePro-Light';
-  font-size: 130%;
-}
-@tree-view-item-height: 23px;
-.tree-view {
-  .list-group .selected::before, .list-tree .selected::before {
+  font-size: 15px;
+  &::before {
     height: @tree-view-item-height;
   }
-  .list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
+  .list-group li:not(.list-nested-item),
+  .list-tree li:not(.list-nested-item),
+  .list-group li.list-nested-item > .list-item,
+  .list-tree li.list-nested-item > .list-item {
+    height: @tree-view-item-height;
+    line-height: @tree-view-item-height;
+  }
+  .tree-view .project-root.project-root:before,
+  .list-group .selected:before,
+  .list-tree .selected:before {
+    height: @tree-view-item-height;
     line-height: @tree-view-item-height;
   }
 }
+
 atom-overlay .easy-motion-redux-letter {
   position: absolute;
   // z-index: 1;

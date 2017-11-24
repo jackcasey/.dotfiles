@@ -9,3 +9,10 @@
 # atom.workspace.observeTextEditors (editor) ->
 #   editor.onDidSave ->
 #     console.log "Saved! #{editor.getPath()}"
+
+console.log 'fixing keybindigs'
+
+atom.keymaps.keyBindings.forEach (x) ->
+  if x.keystrokes == 'g ^'
+    x.keystrokes = 'g shift-6'
+    x.keystrokeArray = ['g', 'shift-6']

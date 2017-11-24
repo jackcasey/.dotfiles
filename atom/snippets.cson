@@ -16,3 +16,8 @@
 # This file uses CoffeeScript Object Notation (CSON).
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
+
+'.source.ruby':
+  'I18n.t':
+    'prefix': 'ii'
+    'body': "I18n.t('$1')"
