@@ -42,6 +42,7 @@ alias pgdc='psql -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_s
 alias diffmerge='/Users/jack/Applications/DiffMerge.app/Contents/MacOS/DiffMerge'
 alias ws='cd ~/dev/website'
 alias e='$EDITOR'
+alias hh='history | grep'
 
 alias preppy='git pull && bundle && npm prune && npm install && be rake db:migrate && ready_test'
 

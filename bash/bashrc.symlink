@@ -20,3 +20,5 @@ get_region_and_rails_env() {
     echo " $AGW_region:$rails_env_tmp$append_db_name_tmp"
   fi
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
