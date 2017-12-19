@@ -72,6 +72,15 @@ atom-panel.modal.overlay {
   .list-tree li.list-nested-item > .list-item {
     height: @tree-view-item-height;
     line-height: @tree-view-item-height;
+    &.project-root-header::before {
+      line-height: @tree-view-item-height;
+      height: @tree-view-item-height;
+      vertical-align: middle;
+    }
+    span.name {
+      line-height: @tree-view-item-height;
+      height: @tree-view-item-height;
+    }
   }
   .tree-view .project-root.project-root:before,
   .list-group .selected:before,

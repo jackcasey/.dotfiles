@@ -12,7 +12,6 @@
     confirmCompletion: "tab"
   "autoupdate-packages":
     handling: "Update automatically and silently"
-    lastUpdateTimestamp: 1511496442606
   blame: {}
   "bracket-matcher": {}
   build: {}
@@ -61,6 +60,7 @@
     replaceCharacters: "abcdefghijklmnopqrstuvwxyz"
   editor:
     fontFamily: "SourceCodePro-ExtraLight"
+    fontSize: 16
     preferredLineLength: 120
   "exception-reporting": {}
   "file-icons": {}
