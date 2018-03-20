@@ -67,6 +67,9 @@
     :narrow
     :vim-mode-plus-exchange
     :easysort-yaml
+    :inline-git-diff
+    :bombe
+    :atom-notes
 
     ;; :linter-solidity
 
@@ -103,6 +106,7 @@
     :atom-mdtoc
     :react-snippets
     :zentabs
+    :easy-motion-redux
   ]
 
   ;; Proton takes over your atom configuration. All settings that are not listed here will get wiped
@@ -165,7 +169,6 @@
     ["vim-mode-plus.findCharsMax" 2]
     ["vim-mode-plus.findConfirmByTimeout" 150]
     ["vim-mode-plus.keymapBackslashToInnerCommentOrParagraphWhenToggleLineCommentsIsPending" true]
-    ["vim-mode-plus.keymapCCToChangeInnerSmartWord" true]
     ["vim-mode-plus.keymapIAndAToInsertAtTargetWhenHasOccurrence" true]
     ["vim-mode-plus.keymapPToPutWithAutoIndent" true]
     ["vim-mode-plus.keymapSToSelect" true]
@@ -178,8 +181,10 @@
     ["vim-mode-plus.useSmartcaseForFind" true]
     ["vim-mode-plus.useSmartcaseForSearch" true]
 
-    ["rspec.command", "bundle exec rspec"]
-    ["autocomplete-paths.maxFileCount", 10000]
+    ["rspec.command" "bundle exec rspec"]
+    ["autocomplete-paths.maxFileCount" 10000]
+    ["narrow.locationToOpen" "center"]
+    ["directionToOpen" "right:always-new-pane"]
   ]
 
   ;; Don't like a keybinding or want to add something yourself? Do it here
@@ -217,6 +222,9 @@
         :p {:title "previous"
             :action "git-diff:move-to-previous-diff",
             :target ".editor.is-focused"}
+        :c {:title "duplicate and comment"
+            :action "vim-mode-plus:duplicate-with-comment-out-original",
+            :target ".editor.is-focused"}
        }
     :e {:category "errors"
         :a {:title "autocorrect"
@@ -227,6 +235,9 @@
         :t {:title "panel toggle"
             :action "github:toggle-git-tab"
             :target ".editor.is-focused"}
+        :s {:title "status files"
+            :action "fuzzy-finder:toggle-git-status-finder"
+            :target ".editor.is-focused"}
        }
     :r {:category "rspec"
         :r {:title "run current file"
@@ -234,6 +245,12 @@
             :target ".editor.is-focused"}
        }
     :n {:category "narrow"
+        :c {:title "close"
+            :action "narrow:close"
+            :target ".editor.is-focused" }
+        :i {:title "focus"
+            :action "narrow:focus-prompt"
+            :target ".editor.is-focused"}
         :s {:title "search"
             :action "narrow:search"
             :target ".editor.is-focused" }
@@ -253,11 +270,14 @@
              :w {:title "search current word"
                  :action "narrow:search-current-project-by-current-word"
                  :target ".editor.is-focused"}
-           }
-        }
+          }
+        :u {:title "update"
+            :action "narrow-ui:update-real-file",
+            :target ".editor.is-focused"}
     }
+  }
 
-  ;; Want some custom behavior inside a certain window?
+  ;; Want some custom behaviour inside a certain window?
   ;; Add your own nifty things here!
   :keymaps [
     {:selector "atom-text-editor" :keymap [
