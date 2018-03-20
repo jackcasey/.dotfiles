@@ -4,7 +4,7 @@
 [alias]
 	co = checkout
 	br = branch
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	hist = log --pretty=format:\"%C(red)%h%Creset %C(dim)%ad%Creset %s%C(blue bold)% D%Creset %C(green dim)%an%Creset\" --graph --date=short
 	throwitallaway = !git reset --hard $(git rev-list --max-count=1 --simplify-by-decoration HEAD^)
 	out = !git hist --boundary $(git rev-list --max-count=1 --simplify-by-decoration HEAD^)..
 [color]
