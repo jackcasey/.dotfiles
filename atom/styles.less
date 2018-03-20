@@ -112,3 +112,41 @@ atom-overlay .easy-motion-redux-letter {
     color: white
   }
 }
+
+atom-text-editor.inline-git-diff-removed .lines {
+    background-color: rgba(254, 102, 102, 0.3) !important;
+}
+.github-HunkView.is-selected {
+  background-color: #111;
+}
+.github-HunkView-line {
+  // background-color: #222;
+  color: white !important;
+  &.is-selected {
+    background-color: #338 !important;
+
+  }
+  &.is-added {
+    color: #0f0 !important;
+    .github-HunkView-lineNumber {
+      background-color: #121 !important;
+      font-weight: bold;
+    }
+    .github-HunkView-lineContent {
+      background-color: #121 !important;
+      color: #0f0 !important;
+    }
+  }
+  &.is-deleted {
+    color: #f44 !important;
+    .github-HunkView-lineNumber {
+      background-color: #311 !important;
+      font-weight: bold;
+    }
+    .github-HunkView-lineContent {
+      background-color: #311 !important;
+      color: #f44 !important;
+    }
+  }
+
+}

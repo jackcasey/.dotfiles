@@ -12,6 +12,7 @@
     confirmCompletion: "tab"
   "autoupdate-packages":
     handling: "Update automatically and silently"
+    lastUpdateTimestamp: 1521514705431
   blame: {}
   "bracket-matcher": {}
   build: {}
@@ -35,6 +36,8 @@
       "Stylus"
       "zentabs"
       "atom-pair"
+      "easy-motion-redux"
+      "tablr"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -56,6 +59,7 @@
     ]
     titleBar: "custom"
   "cursor-history": {}
+  directionToOpen: "right:always-new-pane"
   "easy-motion-redux":
     replaceCharacters: "abcdefghijklmnopqrstuvwxyz"
   editor:
@@ -70,6 +74,7 @@
   "git-blame": {}
   "git-diff": {}
   "git-plus": {}
+  github: {}
   jsformat: {}
   "lazy-motion": {}
   linter:
@@ -83,7 +88,8 @@
   "linter-ui-default":
     decorateOnTreeView: "None"
     tooltipFollows: "Keyboard"
-  narrow: {}
+  narrow:
+    locationToOpen: "center"
   proton:
     core:
       alwaysShowWelcomeScreen: false
@@ -144,7 +150,6 @@
     findConfirmByTimeout: 150
     ignoreCaseForSearchCurrentWord: true
     keymapBackslashToInnerCommentOrParagraphWhenToggleLineCommentsIsPending: true
-    keymapCCToChangeInnerSmartWord: true
     keymapIAndAToInsertAtTargetWhenHasOccurrence: true
     keymapPToPutWithAutoIndent: true
     keymapSToSelect: true
