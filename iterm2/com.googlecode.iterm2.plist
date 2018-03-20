@@ -26,6 +26,8 @@
 	<true/>
 	<key>Control</key>
 	<integer>1</integer>
+	<key>ConvertDosNewlines</key>
+	<true/>
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
@@ -257,6 +259,8 @@
 	<true/>
 	<key>EnableRendezvous</key>
 	<false/>
+	<key>EscapeShellCharsWithBackslash</key>
+	<false/>
 	<key>FocusFollowsMouse</key>
 	<false/>
 	<key>FsTabDelay</key>
@@ -284,13 +288,13 @@
 	<key>Hotkey</key>
 	<false/>
 	<key>HotkeyChar</key>
-	<integer>0</integer>
+	<integer>32</integer>
 	<key>HotkeyCode</key>
-	<integer>0</integer>
+	<integer>49</integer>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>HotkeyModifiers</key>
-	<integer>401666</integer>
+	<integer>262401</integer>
 	<key>IRMemory</key>
 	<integer>4</integer>
 	<key>JobName</key>
@@ -360,19 +364,19 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 364 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>726 766 606 469 0 0 2560 1418 </string>
+	<string>-1130 330 606 469 -1440 0 1440 878 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>342 244 937 512 0 0 1440 878 </string>
+	<string>666 297 918 512 0 0 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 27 2560 1391 0 0 2560 1418 </string>
+	<string>0 839 2560 579 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2762 68 890 602 2560 0 1440 878 </string>
+	<string>-1440 27 1440 851 -1440 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>2560 276 890 602 2560 0 1440 878 </string>
+	<string>654 27 2560 1391 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>455 229 890 602 0 0 1920 1057 </string>
+	<string>738 411 890 602 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>0 26 1440 851 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -1326,7 +1330,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>15</real>
+			<real>14.703759517766496</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1395,16 +1399,22 @@
 			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
+			<key>HotKey Activated By Modifier</key>
+			<false/>
+			<key>HotKey Alternate Shortcuts</key>
+			<array/>
 			<key>HotKey Characters</key>
-			<string>~</string>
+			<string> </string>
 			<key>HotKey Characters Ignoring Modifiers</key>
-			<string>~</string>
+			<string> </string>
 			<key>HotKey Key Code</key>
-			<integer>50</integer>
+			<integer>49</integer>
+			<key>HotKey Modifier Activation</key>
+			<integer>0</integer>
 			<key>HotKey Modifier Flags</key>
-			<integer>401666</integer>
+			<integer>262144</integer>
 			<key>HotKey Window Animates</key>
-			<true/>
+			<false/>
 			<key>HotKey Window AutoHides</key>
 			<true/>
 			<key>HotKey Window Dock Click Action</key>
@@ -1714,7 +1724,7 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>Hotkey Window</string>
+			<string>Visor</string>
 			<key>Non Ascii Font</key>
 			<string>SourceCodePro-Light 18</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -1730,9 +1740,9 @@
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
-			<integer>-1</integer>
+			<integer>0</integer>
 			<key>Scrollback Lines</key>
-			<integer>100000</integer>
+			<integer>10000</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -1874,7 +1884,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.34742975234985352</real>
+			<real>0.19840973984771573</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -2498,7 +2508,7 @@
 			<key>Set Local Environment Vars</key>
 			<true/>
 			<key>Shortcut</key>
-			<string></string>
+			<string>L</string>
 			<key>Silence Bell</key>
 			<false/>
 			<key>Smart Cursor Color</key>
@@ -2681,6 +2691,16 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteSpecialChunkDelay</key>
+	<real>0.099999996802456373</real>
+	<key>PasteSpecialChunkSize</key>
+	<integer>256</integer>
+	<key>PasteSpecialRegex</key>
+	<string></string>
+	<key>PasteSpecialSubstitution</key>
+	<string></string>
+	<key>PasteSpecialUseRegexSubstitution</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -2720,6 +2740,10 @@
 	<true/>
 	<key>PromptOnQuit</key>
 	<true/>
+	<key>QuickPasteBytesPerCall</key>
+	<integer>1013</integer>
+	<key>QuickPasteDelayBetweenCalls</key>
+	<real>0.010101010091602802</real>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
 	<key>RightCommand</key>
@@ -2733,11 +2757,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/nightly.xml?shard=27</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=27</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-16T07:13:23Z</date>
+	<date>2018-02-16T01:28:34Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2795,7 +2819,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.20170930-nightly</string>
+	<string>3.1.git.6dabbd29f4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
