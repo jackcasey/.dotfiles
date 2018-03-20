@@ -14,6 +14,6 @@ echo $keyboard_ids | xargs -n1 -I{} defaults -currentHost write -g "com.apple.ke
 echo "      You may need to log out to get caps-lock mapping to take effect."
 echo "      Or visit System Preferences > Keyboard > Modifier Keys."
 
-safelink ./mac/karabiner-elements/complex_modifications.manuallink ~/.config/karabiner/assets/complex_modifications
+safelink $PWD/mac/karabiner-elements/complex_modifications.manuallink ~/.config/karabiner/assets/complex_modifications
 
 bash ./mac/macos_settings.sh
