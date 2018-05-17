@@ -68,8 +68,9 @@
     :vim-mode-plus-exchange
     :easysort-yaml
     :inline-git-diff
-    :bombe
-    :atom-notes
+
+    :language-vue
+    :tablr
 
     ;; :linter-solidity
 
@@ -107,6 +108,7 @@
     :react-snippets
     :zentabs
     :easy-motion-redux
+    :vim-mode-plus-ex-mode
   ]
 
   ;; Proton takes over your atom configuration. All settings that are not listed here will get wiped
@@ -238,6 +240,17 @@
         :s {:title "status files"
             :action "fuzzy-finder:toggle-git-status-finder"
             :target ".editor.is-focused"}
+        :i {:category "inline diffs"
+            :t {:title "toggle"
+                :action "inline-git-diff:toggle"
+                :target ".editor.is-focused"}
+            :r {:title "revert"
+                :action "inline-git-diff:revert"
+                :target ".editor.is-focused"}
+            :c {:title "copy"
+                :action "inline-git-diff:copy-removed-text"
+                :target ".editor.is-focused"}
+           }
        }
     :r {:category "rspec"
         :r {:title "run current file"
