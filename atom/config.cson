@@ -12,7 +12,7 @@
     confirmCompletion: "tab"
   "autoupdate-packages":
     handling: "Update automatically and silently"
-    lastUpdateTimestamp: 1521514705431
+    lastUpdateTimestamp: 1526540408814
   blame: {}
   "bracket-matcher": {}
   build: {}
@@ -37,7 +37,11 @@
       "zentabs"
       "atom-pair"
       "easy-motion-redux"
-      "tablr"
+      "environment"
+      "atom-notes"
+      "bombe"
+      "tab-switcher"
+      "vue2-autocomplete"
     ]
     followSymlinks: false
     ignoredNames: [

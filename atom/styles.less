@@ -63,6 +63,7 @@ atom-panel.modal.overlay {
 .tree-view {
   font-family: 'SourceCodePro-Light';
   font-size: 15px;
+
   &::before {
     height: @tree-view-item-height;
   }
@@ -70,7 +71,6 @@ atom-panel.modal.overlay {
   .list-tree li:not(.list-nested-item),
   .list-group li.list-nested-item > .list-item,
   .list-tree li.list-nested-item > .list-item {
-    height: @tree-view-item-height;
     line-height: @tree-view-item-height;
     &.project-root-header::before {
       line-height: @tree-view-item-height;
