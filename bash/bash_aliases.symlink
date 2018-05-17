@@ -12,7 +12,7 @@ alias less="less -R"
 alias be='bundle exec'
 
 # Rails
-alias ready_test='psql -d agworld_test -c "drop view oldest_calculation_events;"; RAILS_ENV=test be rake db:drop db:setup --trace'
+alias ready_test='psql -d agworld_test -c "drop view oldest_calculation_events;"; DISABLE_DATABASE_ENVIRONMENT_CHECK=1 RAILS_ENV=test be rake db:drop db:setup --trace'
 alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # Git
