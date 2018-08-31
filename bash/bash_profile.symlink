@@ -2,7 +2,7 @@
 source $HOME/.bashrc
 
 PATH=/usr/local/bin:$PATH
-export PATH=$HOME/.bin:/usr/local/share/npm/bin:/usr/local/Cellar/python/2.7.1/bin:/usr/local/bin:$PATH
+export PATH=$HOME/go/bin:$HOME/.bin:/usr/local/share/npm/bin:/usr/local/Cellar/python/2.7.1/bin:/usr/local/bin:$PATH
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion

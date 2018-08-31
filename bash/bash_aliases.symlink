@@ -12,7 +12,7 @@ alias less="less -R"
 alias be='bundle exec'
 
 # Rails
-alias ready_test='psql -d agworld_test -c "drop view oldest_calculation_events;"; DISABLE_DATABASE_ENVIRONMENT_CHECK=1 RAILS_ENV=test be rake db:drop db:setup --trace'
+alias ready_test='dropdb agworld_test; DISABLE_DATABASE_ENVIRONMENT_CHECK=1 RAILS_ENV=test be rake db:setup --trace'
 alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # Git
@@ -87,3 +87,5 @@ alias ll='ls -lahrt'
 alias atomm='env -i /usr/local/bin/atom'
 
 alias update_keyboard='cd ~/projects/controller/Keyboards && ./whitefox.bash && sleep 2 && dfu-util -D WhiteFox.gcc/kiibohd.dfu.bin'
+
+alias myip="ifconfig | grep inet | grep broadcast | cut -d' ' -f2"
