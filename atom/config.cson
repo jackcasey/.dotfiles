@@ -12,7 +12,7 @@
     confirmCompletion: "tab"
   "autoupdate-packages":
     handling: "Update automatically and silently"
-    lastUpdateTimestamp: 1526540408814
+    lastUpdateTimestamp: 1535698905500
   blame: {}
   "bracket-matcher": {}
   build: {}
@@ -28,20 +28,21 @@
       "jsonlint"
       "wordcount"
       "build"
-      "autocomplete-paths"
       "atomatigit"
-      "linter-jshint"
       "atom-keymap"
       "linter-stylint"
       "Stylus"
-      "zentabs"
       "atom-pair"
-      "easy-motion-redux"
       "environment"
       "atom-notes"
       "bombe"
-      "tab-switcher"
       "vue2-autocomplete"
+      "relative-numbers"
+      "easy-motion-redux"
+      "tab-switcher"
+      "zentabs"
+      "autocomplete-paths"
+      "linter-jshint"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -67,13 +68,13 @@
   "easy-motion-redux":
     replaceCharacters: "abcdefghijklmnopqrstuvwxyz"
   editor:
-    fontFamily: "SourceCodePro-ExtraLight"
+    fontFamily: "SourceCodePro-Light"
     fontSize: 16
     preferredLineLength: 120
   "exception-reporting": {}
   "file-icons": {}
   fonts:
-    fontFamily: "Source Code Pro Extra Light"
+    fontFamily: "Source Code Pro Light"
   "fuzzy-finder": {}
   "git-blame": {}
   "git-diff": {}
@@ -109,6 +110,7 @@
         "tools/linter"
         "lang/ruby"
         "lang/javascript"
+        "lang/json"
       ]
       showTabBar: true
       whichKeyDelay: 0.4

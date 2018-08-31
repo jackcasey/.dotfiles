@@ -31,6 +31,7 @@
     ;; -----------------------------------
     :lang/ruby
     :lang/javascript
+    :lang/json
     ;; :lang/stylus
 
     ;; :lang/clojure
@@ -68,15 +69,13 @@
     :vim-mode-plus-exchange
     :easysort-yaml
     :inline-git-diff
-
     :language-vue
-    :tablr
+    :symbol-gen
 
     ;; :linter-solidity
-
+    ;; :tablr
     ;; :language-vue
     ;; :vue2-autocomplete
-    ;; :symbol-gen
     ;; :rails-i18n
     ;; :git-radar
     ;; :rspec
@@ -104,11 +103,13 @@
     :markdown-scroll-sync
     :autocomplete-ruby
     :autocomplete-paths
+    :autocomplete-modules
     :atom-mdtoc
     :react-snippets
     :zentabs
     :easy-motion-redux
     :vim-mode-plus-ex-mode
+    :git-plus
   ]
 
   ;; Proton takes over your atom configuration. All settings that are not listed here will get wiped
@@ -117,8 +118,8 @@
   :configuration
   [
     ;; appearance
-    ["editor.fontFamily" "SourceCodePro-ExtraLight"]
-    ["fonts.fontFamily" "Source Code Pro Extra Light"]
+    ["editor.fontFamily" "SourceCodePro-Light"]
+    ["fonts.fontFamily" "Source Code Pro Light"]
     ["editor.fontSize" 16]
     ["editor.preferredLineLength" 120]
     ["editor.softWrap" false]
