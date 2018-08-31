@@ -6,6 +6,8 @@
 	<false/>
 	<key>AllowClipboardAccess</key>
 	<false/>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -356,7 +358,7 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>717 238 231 329 0 0 1920 1057 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1974 208 445 175 0 0 2560 1418 </string>
+	<string>1974 155 445 94 0 0 2560 1418 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>504 573 606 456 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
@@ -364,17 +366,17 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 364 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>-1126 329 606 469 -1440 0 1440 878 </string>
+	<string>134 153 606 495 0 0 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>666 297 918 512 0 0 2560 1418 </string>
+	<string>666 180 1016 512 0 0 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 878 0 0 1440 878 </string>
+	<string>0 839 2560 579 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 2560 1418 0 0 2560 1418 </string>
+	<string>-1440 276 890 602 -1440 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>-1435 23 1440 855 -1440 0 1440 878 </string>
+	<string>1280 23 1275 1395 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>738 411 890 602 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -1420,7 +1422,7 @@
 			<key>HotKey Window Dock Click Action</key>
 			<integer>0</integer>
 			<key>HotKey Window Floats</key>
-			<false/>
+			<true/>
 			<key>HotKey Window Reopens On Activation</key>
 			<false/>
 			<key>Idle Code</key>
@@ -2741,9 +2743,9 @@
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuickPasteBytesPerCall</key>
-	<integer>1013</integer>
+	<integer>290</integer>
 	<key>QuickPasteDelayBetweenCalls</key>
-	<real>0.010101010091602802</real>
+	<real>0.035134438425302505</real>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
 	<key>RightCommand</key>
@@ -2761,7 +2763,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-19T05:22:58Z</date>
+	<date>2018-07-02T06:32:21Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
