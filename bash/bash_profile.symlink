@@ -46,6 +46,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/usr/local/bin
 export PATH=$PATH:$HOME/usr/bin
 export PATH=$PATH:$HOME/flutter/bin
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
 ulimit -n 4096
 
@@ -61,3 +62,5 @@ function title {
 
 export PATH="$PATH:./node_modules/.bin"
 export DISABLE_SPRING=yes
+
+export PATH="$HOME/.cargo/bin:$PATH"
