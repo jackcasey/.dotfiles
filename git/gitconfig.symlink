@@ -7,6 +7,7 @@
 	hist = log --pretty=format:\"%C(red)%h%Creset %C(dim)%ad%Creset %s%C(blue bold)% D%Creset %C(green dim)%an%Creset\" --graph --date=short
 	throwitallaway = !git reset --hard $(git rev-list --max-count=1 --simplify-by-decoration HEAD^)
 	out = !git hist --boundary $(git rev-list --max-count=1 --simplify-by-decoration HEAD^)..
+	recent-branches = for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/
 [color]
 	ui = true
 [github]
