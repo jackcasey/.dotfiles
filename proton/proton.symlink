@@ -69,9 +69,10 @@
     :vim-mode-plus-exchange
     :easysort-yaml
     :inline-git-diff
-    :language-vue
     :symbol-gen
+    :language-rust
 
+    ;; :language-vue
     ;; :linter-solidity
     ;; :tablr
     ;; :language-vue
@@ -265,6 +266,9 @@
         :i {:title "focus"
             :action "narrow:focus-prompt"
             :target ".editor.is-focused"}
+        :c {:title "scan"
+            :action "narrow:scan"
+            :target ".editor.is-focused" }
         :s {:title "search"
             :action "narrow:search"
             :target ".editor.is-focused" }
