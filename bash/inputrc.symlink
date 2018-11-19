@@ -8,3 +8,10 @@ set colored-stats On
 set completion-ignore-case On
 set completion-prefix-display-length 3
 set mark-symlinked-directories On
+# Configure option + right arrow to move forward one word in iTerm2
+# https://www.gnu.org/software/bash/manual/bashref.html#Commands-For-Moving
+"\e\e[C": forward-word
+
+# Configure option + left arrow to move backward one word in iTerm2
+# https://www.gnu.org/software/bash/manual/bashref.html#Commands-For-Moving
+"\e\e[D": backward-word
