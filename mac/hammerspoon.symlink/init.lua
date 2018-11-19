@@ -101,3 +101,4 @@ end)
 -- print(jeoEventTap)
 -- ret = jeoEventTap:start()
 -- print(ret)
+require('keyboard') -- Load Hammerspoon bits from https://github.com/jasonrudolph/keyboard
