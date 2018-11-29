@@ -69,7 +69,7 @@ isLeft = function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen():frame()
-  return f.x < 10
+  return f.x - screen.x < 10
 end
 
 
