@@ -71,6 +71,7 @@
     :inline-git-diff
     :symbol-gen
     :language-rust
+    :language-lua
 
     ;; :language-vue
     ;; :linter-solidity
