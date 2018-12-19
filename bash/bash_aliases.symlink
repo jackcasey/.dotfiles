@@ -13,6 +13,7 @@ alias be='bundle exec'
 
 # Rails
 alias ready_test='dropdb agworld_test; DISABLE_DATABASE_ENVIRONMENT_CHECK=1 RAILS_ENV=test be rake db:setup --trace'
+alias ready_dev='dropdb au_master; dropdb agworld_test; be rake db:setup --trace'
 alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # Git
