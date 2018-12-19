@@ -12,7 +12,7 @@
     confirmCompletion: "tab"
   "autoupdate-packages":
     handling: "Update automatically and silently"
-    lastUpdateTimestamp: 1541471281033
+    lastUpdateTimestamp: 1545188104576
   blame: {}
   "bracket-matcher": {}
   build: {}
