@@ -138,6 +138,7 @@ nmap <leader>dn <Plug>GitGutterNextHunk
 nmap <leader>dp <Plug>GitGutterPrevHunk
 
 nmap <leader>gd :tab sp \| Gdiff<CR>
+nmap <leader>gs :Gstatus<CR>
 
 " Buffer management
 nmap <Leader>bd :bd<CR>
@@ -158,7 +159,6 @@ nmap <Leader>tn :tabn<CR>
 nmap <Leader>tn :tabn<CR>
 nmap <Leader>tp :tabp<CR>
 
-
 " Fuzzy Finding
 nmap <Leader>pf :GFiles<CR><Paste>
 nmap <Leader>pF :Files<CR>
@@ -173,3 +173,15 @@ nmap <Leader>fc :BCommits<CR>
 nmap <Leader>pc :Commits<CR>
 command! ModifiedFiles call fzf#run(fzf#wrap({'source': 'git ls-files --exclude-standard --others --modified'}))
 noremap <Leader>pm :ModifiedFiles<CR>
+
+nmap <Leader>tc :tabc<CR>
+
+" Comments - changing the default vim commentary binds
+nmap g/ <Plug>Commentary
+vmap g/ <Plug>Commentary gv
+nmap g// <Plug>CommentaryLine
+
+" Commands
+
+" Share a snippet and get a link to it
+command! -range=% Share  <line1>,<line2>w !curl -F 'c=@-' https://ptpb.pw/?u=1 | tr -d '\n' | pbcopy
