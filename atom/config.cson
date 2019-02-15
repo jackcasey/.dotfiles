@@ -12,7 +12,6 @@
     confirmCompletion: "tab"
   "autoupdate-packages":
     handling: "Update automatically and silently"
-    lastUpdateTimestamp: 1545188104576
   blame: {}
   "bracket-matcher": {}
   build: {}
@@ -20,7 +19,11 @@
   core:
     customFileTypes:
       "source.clojure": [
+        ".proton"
         "proton.symlink"
+      ]
+      "source.ruby.rails": [
+        "rb"
       ]
     disabledPackages: [
       "welcome"
@@ -43,6 +46,7 @@
       "zentabs"
       "autocomplete-paths"
       "linter-jshint"
+      "linter-rust"
     ]
     followSymlinks: false
     ignoredNames: [

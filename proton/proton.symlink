@@ -132,7 +132,8 @@
 
     ["core.followSymlinks" false]
     ["core.customFileTypes" {
-      "source.clojure" ["proton.symlink"]
+      "source.clojure" [".proton", "proton.symlink"]
+      "source.ruby.rails" ["rb"]
     }]
     ["core.ignoredNames" [
       ".git"

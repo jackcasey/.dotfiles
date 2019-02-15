@@ -10,7 +10,7 @@
 #   editor.onDidSave ->
 #     console.log "Saved! #{editor.getPath()}"
 
-console.log 'fixing keybindigs'
+console.log 'fixing keybindings'
 
 atom.keymaps.keyBindings.forEach (x) ->
   if x.keystrokes == 'g ^'
