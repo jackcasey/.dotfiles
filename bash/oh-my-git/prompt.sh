@@ -15,9 +15,7 @@ if [ -n "${BASH_VERSION}" ]; then
     PS2="${yellow}→${reset} "
 
     source ${DIR}/base.sh
-    function bash_prompt() {
+    function git_bash_prompt() {
         PS1="$(build_prompt)"
     }
-
-    PROMPT_COMMAND=bash_prompt
 fi

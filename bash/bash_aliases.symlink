@@ -1,6 +1,5 @@
-# use macvim if available
-command -v mvim >> /dev/null && alias v=mvim
-command -v mvim >> /dev/null || alias v=vim
+# use neovim
+alias v='nvim'
 
 # go to dotfiles directory
 alias gdf='cd $HOME/.dotfiles'
@@ -28,8 +27,6 @@ alias gitrmdbs="git reset db/schema.rb; git checkout db/schema.rb"
 alias githide='git update-index --assume-unchanged'
 alias gitunhide='git update-index --no-assume-unchanged'
 alias gitwhite='git diff -w --no-color | git apply --cached --ignore-whitespace'
-alias bee='~/beautify_git_hash.py bee | tail -n1 | sh'
-alias beef='~/beautify_git_hash.py beef | tail -n1 | sh'
 alias gitpushup='git push --set-upstream origin `git symbolic-ref HEAD --short`'
 # alias clean_branches='git br --merged | grep -v ^* | cut -c3- | xargs git br -d'
 alias omg='sh ~/.dotfiles/bash/oh-my-git/help.sh'
@@ -42,13 +39,15 @@ alias pgdc='psql -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_s
 # Misc
 alias diffmerge='/Users/jack/Applications/DiffMerge.app/Contents/MacOS/DiffMerge'
 alias ws='cd ~/dev/website'
+alias golib='cd ~/workspace/go/src/github.com/agworld/golib'
 alias e='atom'
-alias hh='history | grep'
+alias hh='history | grep --color'
+alias phh='cat ~/.persistent_history | grep --color'
+alias ph='cat ~/.persistent_history'
 
 alias preppy='git pull && bundle && npm prune && npm install && be rake db:migrate && ready_test'
 
 generate_tags() {
-  #do things with parameters like $1 such as
   ctags -R --languages=$1 --exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules .
 }
 alias ct=generate_tags
@@ -85,8 +84,17 @@ alias uni='bundle exec unicorn -p 3000'
 
 alias ll='ls -lahrt'
 
-alias atomm='env -i /usr/local/bin/atom'
-
 alias update_keyboard='cd ~/projects/controller/Keyboards && ./whitefox.bash && sleep 2 && dfu-util -D WhiteFox.gcc/kiibohd.dfu.bin'
+alias idobo='cd ~/projects/qmk_firmware && make idobo:jack:dfu && cd -'
 
 alias myip="ifconfig | grep inet | grep broadcast | cut -d' ' -f2"
+function assettest() {
+  ~/workspace/go/src/github.com/agworld/golib/task-tracker/asset-task-manager/asset-task-manager -buildref `date +%Y%m%d%H%M%S` -branch "$1" |& tee ~/dev/assettimer/`date +%Y%m%d%H%M%S`.log
+}
+function assettesti() {
+  ~/workspace/go/src/github.com/agworld/golib/task-tracker/asset-task-manager/asset-task-manager -buildref `date +%Y%m%d%H%M%S` -branch "$1" -i |& tee ~/dev/assettimer/`date +%Y%m%d%H%M%S`.log
+}
+
+function checkmaster() {
+  git merge-base --is-ancestor $1 origin/master && echo yes || echo no
+}

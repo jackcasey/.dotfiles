@@ -12,7 +12,7 @@ function enrich {
 }
 
 function build_prompt {
-    enabled=`git config --local --get oh-my-git.enabled`
+    enabled=`git config --local --get oh-my-git.enabled 2> /dev/null`
     if [[ ${enabled} == false ]]; then
         echo "${PSORG}"
         exit;

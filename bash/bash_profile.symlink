@@ -2,7 +2,7 @@
 source $HOME/.bashrc
 
 PATH=/usr/local/bin:$PATH
-export PATH=$HOME/go/bin:$HOME/.bin:/usr/local/share/npm/bin:$PATH
+export PATH=$HOME/.bin:/usr/local/share/npm/bin:$PATH
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
@@ -18,6 +18,11 @@ export PATH=$PATH:/Library/Frameworks/GDAL.framework/Programs
 export HISTSIZE=50000
 export HISTFILESIZE=500000
 shopt -s histappend
+
+# tight iterm2 integration
+# export PROMPT_BASE='\[$(iterm2_prompt_mark)\]\[\033[01;34m\]\w\[\033[00m\]'
+# test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
 
 export PROMPT_BASE='\[\033[01;34m\]\w\[\033[00m\]'
 export PROMPT_BASE="$PROMPT_BASE\[\033[33m\]\$(get_region_and_rails_env) \[\033[00m\]$\[\033[00m\] "
@@ -50,7 +55,6 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
 ulimit -n 4096
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 export PATH="$PATH:/usr/local/sbin"
 
@@ -64,3 +68,31 @@ export PATH="$PATH:./node_modules/.bin"
 export DISABLE_SPRING=yes
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+log_bash_persistent_history()
+{
+  [[
+    $(history 1) =~ ^\ *[0-9]+\ +(.*)$
+  ]]
+    local date_part=$(date "+%Y-%m-%d %H:%M:%S")
+  local command_part="${BASH_REMATCH[1]}"
+  if [ "$command_part" != "$PERSISTENT_HISTORY_LAST" ]
+  then
+    echo "$date_part | $command_part" >> ~/.persistent_history
+    export PERSISTENT_HISTORY_LAST="$command_part"
+  fi
+}
+
+# Stuff to do on PROMPT_COMMAND
+run_on_prompt_command()
+{
+    log_bash_persistent_history
+    git_bash_prompt
+}
+
+PROMPT_COMMAND="run_on_prompt_command";
+
+export GOPATH=~/workspace/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
