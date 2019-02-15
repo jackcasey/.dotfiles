@@ -75,19 +75,19 @@ end
 
 -- Full screen
 hs.hotkey.bind({"cmd", "alt"}, "P", fullscreen)
-hs.hotkey.bind({"cmd", "alt"}, "Q", fullscreen)
+hs.hotkey.bind({"cmd", "alt"}, "M", fullscreen)
 
 -- Cycle Left
 hs.hotkey.bind({"cmd", "alt"}, "[", cycleLeft)
-hs.hotkey.bind({"cmd", "alt"}, "A", cycleLeft)
+hs.hotkey.bind({"cmd", "alt"}, ",", cycleLeft)
 
 -- Cycle Right
 hs.hotkey.bind({"cmd", "alt"}, "]", cycleRight)
-hs.hotkey.bind({"cmd", "alt"}, "D", cycleRight)
+hs.hotkey.bind({"cmd", "alt"}, ".", cycleRight)
 
 -- Next Monitor
 hs.hotkey.bind({"cmd", "alt"}, "O", nextMonitor)
-hs.hotkey.bind({"cmd", "alt"}, "E", nextMonitor)
+hs.hotkey.bind({"cmd", "alt"}, "N", nextMonitor)
 
 
 -- reload config

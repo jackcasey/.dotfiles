@@ -8,9 +8,11 @@ return {
   { 'c', 'Slack' },             -- "C for "Chat"
   { 'e', 'Atom' },              -- "E" for "Editor"
   { 'f', 'Finder' },            -- "F" for "Finder"
+  -- { 'g', 'Firefox' },
+  { 'd', 'Dynalist' },
   { 't', 'iTerm2' },            -- "T" for "Terminal"
 
-  { 's', function() hs.eventtap.keyStrokes("⭐") end },            -- "S" for "Star"
-  { 'y', function() hs.eventtap.keyStrokes("✔") end },            -- "Y" for "Yes"
-  { 'n', function() hs.eventtap.keyStrokes("✖") end },            -- "N" for "No"
+  -- { 's', function() hs.eventtap.keyStrokes("⭐") end },            -- "S" for "Star"
+  -- { 'y', function() hs.kventtap.keyStrokes("✔") end },            -- "Y" for "Yes"
+  -- { 'n', function() hs.eventtap.keyStrokes("✖") end },            -- "N" for "No"
 }
