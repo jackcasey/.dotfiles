@@ -40,10 +40,11 @@ alias pgdc='psql -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_s
 alias diffmerge='/Users/jack/Applications/DiffMerge.app/Contents/MacOS/DiffMerge'
 alias ws='cd ~/dev/website'
 alias golib='cd ~/workspace/go/src/github.com/agworld/golib'
-alias e='atom'
+alias e='nvim'
 alias hh='history | grep --color'
 alias phh='cat ~/.persistent_history | grep --color'
 alias ph='cat ~/.persistent_history'
+alias phf='ph | cut -d'\''|'\'' -f2 | sed "s/^ *//" | sort | uniq | grep ... | fzf'
 
 alias preppy='git pull && bundle && npm prune && npm install && be rake db:migrate && ready_test'
 
