@@ -8,11 +8,35 @@ return {
   { 'c', 'Slack' },             -- "C for "Chat"
   { 'e', 'Atom' },              -- "E" for "Editor"
   { 'f', 'Finder' },            -- "F" for "Finder"
-  -- { 'g', 'Firefox' },
   { 'd', 'Dynalist' },
   { 't', 'iTerm2' },            -- "T" for "Terminal"
 
-  -- { 's', function() hs.eventtap.keyStrokes("⭐") end },            -- "S" for "Star"
+  { 'w', function() -- Work standalone
+    hs.eventtap.keyStroke("cmd shift","m")
+    hs.eventtap.keyStrokes("work s")
+    hs.timer.doAfter(0.03, function()
+      hs.eventtap.keyStrokes("tand")
+      hs.timer.doAfter(0.03, function()
+        hs.eventtap.keyStrokes("alone")
+        hs.eventtap.keyStroke({}, "return")
+      end)
+    end)
+  end },
+  { 'p', function() -- Personal standalone
+    hs.eventtap.keyStroke("cmd shift","m")
+    hs.eventtap.keyStrokes("pers")
+    hs.timer.doAfter(0.03, function()
+      hs.eventtap.keyStrokes("onal s")
+      hs.timer.doAfter(0.03, function()
+        hs.eventtap.keyStrokes("tand")
+        hs.timer.doAfter(0.03, function()
+          hs.eventtap.keyStrokes("alone")
+          hs.eventtap.keyStroke({}, "return")
+        end)
+      end)
+    end)
+  end },
   -- { 'y', function() hs.kventtap.keyStrokes("✔") end },            -- "Y" for "Yes"
   -- { 'n', function() hs.eventtap.keyStrokes("✖") end },            -- "N" for "No"
+
 }
