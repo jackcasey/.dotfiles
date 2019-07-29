@@ -19,10 +19,41 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'nanotech/jellybeans.vim'
+Plug 'wellle/targets.vim' " additional text tarkets like pairs and arguments
+Plug 'w0rp/ale'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'christoomey/vim-tmux-navigator'
+" Ranger integration
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
+let g:ranger_map_keys = 0
+
+" Neovim Completion Manager
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+" NCM autocomplete sources
+" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+Plug 'ncm2/ncm2-bufword'
+
 call plug#end()
 
-set termguicolors     " enable true colors support
+" Neovim Completion Manager NCM2 {{{
+  " enable ncm2 for all buffers
+  autocmd BufEnter * call ncm2#enable_for_buffer()
+  " IMPORTANT: :help Ncm2PopupOpen for more information
+  set completeopt=noinsert,menuone,noselect
+  " When the enter key is pressed while the popup menu is visible, it only
+  " hides the menu. Use this mapping to close the menu and also start a new
+  " line.
+  inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+  " Use <TAB> to select the popup menu:
+  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" }}}
 
+set termguicolors     " enable true colors support
 colorscheme jellybeans
 let g:jellybeans_use_gui_italics = 0
 
@@ -31,6 +62,9 @@ let g:better_whitespace_enabled=0
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
 let g:strip_max_file_size = 10000
+
+" Use tree view for netrw file system windows
+let g:netrw_liststyle = 3
 
 syntax enable       " Enable syntax highlighting
 set ruler           " Show file coordinates in statuslin
@@ -55,15 +89,37 @@ set confirm         " Ask to confirm actions like quit without saving etc
       let branch = substitute(branch, 'Git', '', 'g')
       let branch = substitute(branch, '[', '', 'g')
       let branch = substitute(branch, ']', '', 'g')
+      let branch = substitute(branch, ' ', '', 'g')
       return branch
     en
     return ''
   endfunction
-  set statusline=%f\ %r%m%w
+
+  function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? '' : printf(
+    \   '(%d warnings, %d errors)',
+    \   all_non_errors,
+    \   all_errors
+    \)
+  endfunction
+
+  set statusline=
+  set statusline+=%f\ %r%m%w
+  set statusline+=%{LinterStatus()}
   set statusline+=%=
-  set statusline+=%l:%v
+  set statusline+=\ %l:%v
   set statusline+=\ %{GitBranch()}
+
+  hi StatusLine guibg=#303555 guifg=#eeeeee
+  hi StatusLineNC guibg=#252525 guifg=#909090
 " }}}
+"
+hi VertSplit guibg=bg
 
 set list
 set listchars=tab:>·
@@ -78,13 +134,15 @@ set backupdir=/tmp  " Leave .tmp files tidily away in /tmp
 set directory=/tmp
 
 " Better tabs
-set tabstop=4                  " Show tabs as 2 characters wide
+set tabstop=2                  " Show tabs as 2 characters wide
 set softtabstop=2              " Use 2 spaces per indent
 set shiftwidth=2               " Use 2 spaces per indent
 set expandtab                  " Insert spaces for tabs
 set autoindent                 " Newlines will start auto indented
 set smartindent                " Be smart about indenting in c-like languages
 set backspace=indent,eol,start " make backspace delete always not 'locked'
+
+autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 " Search
 set ignorecase      " ignore case when searching etc
@@ -96,6 +154,8 @@ set mat=5           " Highlight matching parens for .5s
 
 " Settings
 :map Y y$         " Make Y yank to end of line
+" Use system clipboard by default
+set clipboard=unnamedplus
 
 " use global (/g) option for substitution regexes as default
 set gdefault
@@ -111,15 +171,6 @@ augroup END
 " Edit vimrc
 nmap <leader>.v :e ~/.dotfiles/vim/vimrc.symlink<CR>
 
-" Terminal bindings
-" This doesn't break fzf
-augroup nvimfixes
-  if has("nvim")
-    au TermOpen * tnoremap <Esc> <c-\><c-n>
-    au FileType fzf tunmap <Esc>
-  endif
-augroup END
-
 " Easy escape to normal mode
 inoremap jk <Esc>
 cnoremap jk <Esc>
@@ -127,24 +178,48 @@ cnoremap jk <Esc>
 " Clear search results on hitting enter
 nnoremap <silent> <CR> :noh<CR><CR>
 
-
-" Toggles
-" Show / Hide invisibles
-:nmap <leader>ti :set invlist<CR>
+" Toggle Invisibles
+nmap <leader>ti :set invlist<CR>
+nmap <leader>tw :set wrap!<CR>
+" Toggle Guides
+nmap <leader>tg :IndentGuidesToggle<CR>
+nmap <leader>gl :0Glog -20<CR><CR>:cwindow<CR>
 
 " Diffs
-" Git Diff Hunk Change Navigation
+" Diff Next
 nmap <leader>dn <Plug>GitGutterNextHunk
+" Diff Previous
 nmap <leader>dp <Plug>GitGutterPrevHunk
 
-nmap <leader>gd :tab sp \| Gdiff<CR>
-nmap <leader>gs :Gstatus<CR>
+" Git Diff
+nmap <silent> <leader>gd :tab sp \| Gdiff<CR>
+" Git Status
+nmap <silent> <leader>gs :Gstatus<CR>
+nmap <silent> <leader>gb :Gblame<CR>
+
+
+" Errors
+nmap <leader>ef :ALEFirst<CR>
+nmap <leader>ep :ALEPreviousWrap<CR>
+nmap <leader>en :ALENextWrap<CR>
 
 " Buffer management
-nmap <Leader>bd :bd<CR>
-nmap <Leader>bn :bn<CR>
-nmap <Leader>bp :bp<CR>
-nmap <Leader>fs :w<CR>
+" Quit
+nmap <silent> <Leader>q :bn<bar>sp<bar>bp<bar>bd<CR>
+" Buffer Close
+nmap <silent> <Leader>bc :bn<bar>sp<bar>bp<bar>bd<CR>
+" Buffer Delete
+nmap <silent> <Leader>bd :bd<CR>
+" Buffer Close
+nmap <silent> <Leader>bn :bn<CR>
+" Buffer Previous
+nmap <silent> <Leader>bp :bp<CR>
+
+" Cursor scroll through buffers
+nmap <silent> <Right> :bn<CR>
+nmap <silent> <Left> :bp<CR>
+" File Save
+nmap <silent> <Leader>fs :w<CR>
 
 " Navigation
 " Move faster
@@ -153,9 +228,8 @@ nnoremap <Down> 4j
 
 " Window management
 " Use SPC W as window command prefix
-nmap <Leader>w <C-W>
+nmap <Leader>w <C-w>
 nmap <Leader>tc :tabc<CR>
-nmap <Leader>tn :tabn<CR>
 nmap <Leader>tn :tabn<CR>
 nmap <Leader>tp :tabp<CR>
 
@@ -166,15 +240,24 @@ nmap <Leader>bb :Buffers<CR>
 nmap <Leader>fr :History<CR>
 nmap <Leader>ft :BTags<CR>
 nmap <Leader>pt :Tags<CR>
+nmap <Leader>pT :call fzf#vim#tags(expand('<cword>'))<CR>
 nmap <Leader>fl :BLines<CR>
 nmap <Leader>pl :Lines<CR>
 nmap <Leader>pg :Rg<CR>
+nmap <Leader>pG :Rg <C-r><C-W><CR>
 nmap <Leader>fc :BCommits<CR>
 nmap <Leader>pc :Commits<CR>
 command! ModifiedFiles call fzf#run(fzf#wrap({'source': 'git ls-files --exclude-standard --others --modified'}))
 noremap <Leader>pm :ModifiedFiles<CR>
 
 nmap <Leader>tc :tabc<CR>
+
+nmap <Leader>py :let @+=@%<CR>
+nmap <Leader>fy :let @+=expand("%:p")<CR>
+
+nmap <silent> <Leader>cn :cnext<CR>
+nmap <silent> <Leader>cp :cprevious<CR>
+nmap <Leader>cw :vert cwindow<CR>
 
 " Comments - changing the default vim commentary binds
 nmap g/ <Plug>Commentary
@@ -184,4 +267,30 @@ nmap g// <Plug>CommentaryLine
 " Commands
 
 " Share a snippet and get a link to it
-command! -range=% Share  <line1>,<line2>w !curl -F 'c=@-' https://ptpb.pw/?u=1 | tr -d '\n' | pbcopy
+command! -range=% Share  <line1>,<line2>w !curl -F 'c=@-' -F 'p=1' https://ptpb.pw/?u=1 | tr -d '\n' | pbcopy
+
+let g:ale_sign_error = 'x'
+let g:ale_sign_warning = '-'
+let g:ale_set_highlights = 1
+highlight SpellBad       ctermbg=9 gui=none guibg=#902020 guisp=Red
+highlight SpellCap       ctermbg=12 gui=none guibg=#202040 guisp=Blue
+highlight SpellRare      ctermbg=13 gui=none guibg=#540063 guisp=Magenta
+highlight SpellLocal     ctermbg=14 gui=none guibg=#2D7067 guisp=Cyan
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 1
+let g:ale_linters = {'ruby': [ 'reek', 'rubocop', 'ruby']}
+let g:ale_fixers = {'ruby': ['rubocop']}
+
+nmap <leader>fe :Ranger<CR>
+
+nmap - gr
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+  \   <bang>0)
+
+autocmd FileType netrw setl bufhidden=wipe
