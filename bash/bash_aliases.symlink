@@ -89,13 +89,12 @@ alias update_keyboard='cd ~/projects/controller/Keyboards && ./whitefox.bash && 
 alias idobo='cd ~/projects/qmk_firmware && make idobo:jack:dfu && cd -'
 
 alias myip="ifconfig | grep inet | grep broadcast | cut -d' ' -f2"
-function assettest() {
-  ~/workspace/go/src/github.com/agworld/golib/task-tracker/asset-task-manager/asset-task-manager -buildref `date +%Y%m%d%H%M%S` -branch "$1" |& tee ~/dev/assettimer/`date +%Y%m%d%H%M%S`.log
-}
-function assettesti() {
-  ~/workspace/go/src/github.com/agworld/golib/task-tracker/asset-task-manager/asset-task-manager -buildref `date +%Y%m%d%H%M%S` -branch "$1" -i |& tee ~/dev/assettimer/`date +%Y%m%d%H%M%S`.log
-}
 
 function checkmaster() {
   git merge-base --is-ancestor $1 origin/master && echo yes || echo no
 }
+
+function gitrename() {
+  git grep -lz $1 | xargs -0 sed -i "" -e "s/$1/$2/g"
+}
+
