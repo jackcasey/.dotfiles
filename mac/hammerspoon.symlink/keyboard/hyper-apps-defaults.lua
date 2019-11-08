@@ -36,7 +36,11 @@ return {
       end)
     end)
   end },
-  -- { 'y', function() hs.kventtap.keyStrokes("✔") end },            -- "Y" for "Yes"
-  -- { 'n', function() hs.eventtap.keyStrokes("✖") end },            -- "N" for "No"
+  { 'y', function() hs.eventtap.keyStrokes("👍") end },
+  { 't', function() hs.eventtap.keyStrokes("✔") end },
+  { 'h', function() hs.eventtap.keyStrokes("💚") end },
+  { 'n', function() hs.eventtap.keyStrokes("👎") end },
+  { 'x', function() hs.eventtap.keyStrokes("✖") end },
+  { 'j', function() hs.eventtap.keyStrokes("💔") end }
 
 }
