@@ -294,3 +294,8 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 
 autocmd FileType netrw setl bufhidden=wipe
+
+autocmd BufWritePost *
+      \ if filereadable('.tags') |
+      \   call system('ctags -a '.expand('%')) |
+      \ endif
