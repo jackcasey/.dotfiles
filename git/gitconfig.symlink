@@ -51,3 +51,5 @@
 	trustExitCode = false
 	keepTemporaries = false
 	keepBackup = false
+[core]
+	excludesfile = /Users/jack/.gitignore_global

@@ -98,3 +98,4 @@ function gitrename() {
   git grep -lz $1 | xargs -0 sed -i "" -e "s/$1/$2/g"
 }
 
+alias unsaved="ls -d */ | xargs -I % sh -c 'test_dir.sh % || echo %'"
