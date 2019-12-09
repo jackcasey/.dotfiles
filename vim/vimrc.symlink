@@ -187,9 +187,9 @@ nmap <leader>gl :0Glog -20<CR><CR>:cwindow<CR>
 
 " Diffs
 " Diff Next
-nmap <leader>dn <Plug>GitGutterNextHunk
+nmap <leader>dn <Plug>(GitGutterNextHunk)
 " Diff Previous
-nmap <leader>dp <Plug>GitGutterPrevHunk
+nmap <leader>dp <Plug>(GitGutterPrevHunk)
 
 " Git Diff
 nmap <silent> <leader>gd :tab sp \| Gdiff<CR>
@@ -234,7 +234,7 @@ nmap <Leader>tn :tabn<CR>
 nmap <Leader>tp :tabp<CR>
 
 " Fuzzy Finding
-nmap <Leader>pf :GFiles<CR><Paste>
+nmap <Leader>pf :GFiles<CR>
 nmap <Leader>pF :Files<CR>
 nmap <Leader>bb :Buffers<CR>
 nmap <Leader>fr :History<CR>
