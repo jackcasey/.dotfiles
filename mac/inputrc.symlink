@@ -1,0 +1,18 @@
+# Arrow up and down will use the current prompt to search history
+# arrow up
+"\e[A":history-search-backward
+# arrow down
+"\e[B":history-search-forward
+
+set colored-stats on
+set completion-ignore-case on
+set completion-prefix-display-length 3
+set mark-symlinked-directories on
+
+# Configure option + right arrow to move forward one word in iTerm2
+# https://www.gnu.org/software/bash/manual/bashref.html#Commands-For-Moving
+"\e\e[C": forward-word
+
+# Configure option + left arrow to move backward one word in iTerm2
+# https://www.gnu.org/software/bash/manual/bashref.html#Commands-For-Moving
+"\e\e[D": backward-word
