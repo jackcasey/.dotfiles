@@ -5,9 +5,6 @@ alias vim='nvim'
 # go to dotfiles directory
 alias gdf='cd $HOME/.dotfiles'
 
-# Fix less ANSI / Colours
-alias less="less -R"
-
 # Ruby bundler
 alias be='bundle exec'
 
@@ -56,3 +53,5 @@ alias myip="ifconfig | grep inet | grep broadcast | cut -d' ' -f2"
 function gitrename() {
   git grep -lz $1 | xargs -0 sed -i "" -e "s/$1/$2/g"
 }
+
+alias ws='cd ~/dev/website && rbenv shell 2.3.1 && RAILS_ENV=development source ~/dev/website/config/settings/boot.sh ~/dev/website'
