@@ -5,6 +5,7 @@
 export ZSH="/Users/jack/.oh-my-zsh"
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin
+export PATH="$PATH:/Users/jack/sdk/flutter/bin"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -97,3 +98,15 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=nvim
 export VISUAL=nvim
 export GITEDITOR=nvim
+
+eval "$(rbenv init -)"
+alias python=/usr/local/bin/python3
+alias pip=/usr/local/bin/pip3
+
+export LESS=-FRX
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+eval "$(rbenv init -)"

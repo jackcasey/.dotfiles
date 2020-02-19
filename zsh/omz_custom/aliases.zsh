@@ -56,4 +56,8 @@ function gitrename() {
   git grep -lz $1 | xargs -0 sed -i "" -e "s/$1/$2/g"
 }
 
-alias ws='cd ~/dev/website && rbenv shell 2.3.1 && RAILS_ENV=development source ~/dev/website/config/settings/boot.sh ~/dev/website'
+alias ws='cd ~/dev/website && RAILS_ENV=development source ~/dev/website/config/settings/boot.sh ~/dev/website'
+
+alias t='tmux a || tmux'
+
+alias keytool='"/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/keytool"'
