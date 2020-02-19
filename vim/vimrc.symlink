@@ -28,6 +28,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " Ranger integration
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'https://github.com/alok/notational-fzf-vim'
 let g:ranger_map_keys = 0
 
 " Neovim Completion Manager
@@ -258,6 +259,26 @@ nmap <Leader>fy :let @+=expand("%:p")<CR>
 nmap <silent> <Leader>cn :cnext<CR>
 nmap <silent> <Leader>cp :cprevious<CR>
 nmap <Leader>cw :vert cwindow<CR>
+
+" Notes
+let g:nv_search_paths = ['~/notes', 'docs.md', './notes.md', './README.md']
+let g:nv_default_extension = '.md'
+let g:nv_ignore_pattern = ['*.sh', '*.sh', 'Notes & Settings']
+" Allow C-v to paste default register in terminals
+tnoremap <expr> <C-v> '<C-\><C-N>pi'
+" Search notes
+nmap <silent> <Leader>nn :NV<CR>
+" Note Open - Follow local link in note to referenced note
+nmap <silent> <Leader>no f]T[yt]:e ~/notes/<C-r>".md<CR>
+" Note from Word - Find notes containing word with cursor
+nmap <silent> <Leader>nw yiw:NV<CR><C-v>
+" Note References - Find notes that reference current Note
+nmap <silent> <Leader>nr :let @+=@%<CR>:NV<CR>[[<C-v><BACKSPACE><BACKSPACE><BACKSPACE>]]
+" Search notes for currently selected text
+vmap <silent> <Leader>nn y:NV<CR><C-v>
+" Note Explore - Open notes folder in ranger
+command! RangerNotes call OpenRangerIn("~/notes/", 'edit')
+nmap <silent> <Leader>ne :RangerNotes<CR>
 
 " Comments - changing the default vim commentary binds
 nmap g/ <Plug>Commentary

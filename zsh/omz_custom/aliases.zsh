@@ -4,6 +4,8 @@ alias vim='nvim'
 
 # go to dotfiles directory
 alias gdf='cd $HOME/.dotfiles'
+# go to notes
+alias gn='cd $HOME/notes'
 
 # Ruby bundler
 alias be='bundle exec'
