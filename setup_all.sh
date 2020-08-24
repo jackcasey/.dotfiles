@@ -26,4 +26,8 @@ for i in `find . -maxdepth 2 -iname 'auto_setup.sh'`; do
   bash $i
 done
 
+echo 'QMK for flashing keyboards: IE idobo 75'
+echo 'setup QMK and set default keyboard to idobo and keymap to jackcasey'
+echo 'then symlink ./keyboards/idobo/keymaps/jackcasey into ~/projects/qmk_firmware/keyboards/idobo/
+
 popd
