@@ -36,6 +36,27 @@ return {
       end)
     end)
   end },
+  { 'd', function() -- Dump (work)
+    hs.eventtap.keyStroke("cmd shift","m")
+    hs.eventtap.keyStrokes("d")
+    hs.timer.doAfter(0.03, function()
+      hs.eventtap.keyStrokes("ump")
+      hs.timer.doAfter(0.03, function()
+        hs.eventtap.keyStroke({}, "return")
+      end)
+    end)
+  end },
+  { 's', function() -- Storage (personal)
+    hs.eventtap.keyStroke("cmd shift","m")
+    hs.eventtap.keyStrokes("work s")
+    hs.timer.doAfter(0.03, function()
+      hs.eventtap.keyStrokes("tand")
+      hs.timer.doAfter(0.03, function()
+        hs.eventtap.keyStrokes("alone")
+        hs.eventtap.keyStroke({}, "return")
+      end)
+    end)
+  end },
   { 'y', function() hs.eventtap.keyStrokes("👍") end },
   { 't', function() hs.eventtap.keyStrokes("✔") end },
   { 'h', function() hs.eventtap.keyStrokes("💚") end },

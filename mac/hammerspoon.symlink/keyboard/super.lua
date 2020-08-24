@@ -24,7 +24,6 @@ local superDuperMode = {
   end,
 }
 superDuperMode:reset()
-
 superDuperModeActivationListener = eventtap.new({ eventTypes.keyDown }, function(event)
   -- If 's' or 'd' is pressed in conjuction with any modifier keys
   -- (e.g., command+s), then we're not activating Super Duper Mode.
