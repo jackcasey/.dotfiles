@@ -17,6 +17,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy finder
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
 Plug 'nanotech/jellybeans.vim'
 Plug 'wellle/targets.vim' " additional text tarkets like pairs and arguments
@@ -29,7 +30,16 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'https://github.com/alok/notational-fzf-vim'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'junegunn/goyo.vim'
+
+let vim_markdown_preview_toggle=3
+let vim_markdown_preview_github=1
+
 let g:ranger_map_keys = 0
+
+filetype plugin on
 
 " Neovim Completion Manager
 Plug 'ncm2/ncm2'
@@ -37,6 +47,7 @@ Plug 'roxma/nvim-yarp'
 " NCM autocomplete sources
 " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
 Plug 'ncm2/ncm2-bufword'
+Plug 'fgrsnau/ncm2-otherbuf'
 
 call plug#end()
 
@@ -114,7 +125,7 @@ set confirm         " Ask to confirm actions like quit without saving etc
   set statusline+=%{LinterStatus()}
   set statusline+=%=
   set statusline+=\ %l:%v
-  set statusline+=\ %{GitBranch()}
+  " set statusline+=\ %{GitBranch()}
 
   hi StatusLine guibg=#303555 guifg=#eeeeee
   hi StatusLineNC guibg=#252525 guifg=#909090
@@ -182,6 +193,10 @@ nnoremap <silent> <CR> :noh<CR><CR>
 " Toggle Invisibles
 nmap <leader>ti :set invlist<CR>
 nmap <leader>tw :set wrap!<CR>
+" Toggle other view stuff
+nmap <leader>tl :set number!<CR>
+nmap <leader>td :Goyo 82<CR>
+nmap <leader>tD :Goyo!<CR>
 " Toggle Guides
 nmap <leader>tg :IndentGuidesToggle<CR>
 nmap <leader>gl :0Glog -20<CR><CR>:cwindow<CR>
@@ -321,10 +336,11 @@ autocmd BufWritePost *
       \   call system('ctags -a '.expand('%')) |
       \ endif
 
-set foldmethod=indent
-" Keep all folds open when a file is opened
-augroup OpenAllFoldsOnFileOpen
-  autocmd!
-  autocmd BufRead * normal zR
-augroup END
+" set foldmethod=indent
+" " Keep all folds open when a file is opened
+" augroup OpenAllFoldsOnFileOpen
+"   autocmd!
+"   autocmd BufRead * normal zR
+" augroup END
 
+set tags=tags
